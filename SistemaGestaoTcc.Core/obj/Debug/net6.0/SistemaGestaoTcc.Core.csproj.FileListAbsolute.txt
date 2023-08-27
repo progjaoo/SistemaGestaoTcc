@@ -1,0 +1,14 @@
+C:\Users\joaom\Documents\SistemaGestaoTcc\SistemaGestaoTcc.Core\bin\Debug\net6.0\SistemaGestaoTcc.Core.deps.json
+C:\Users\joaom\Documents\SistemaGestaoTcc\SistemaGestaoTcc.Core\bin\Debug\net6.0\SistemaGestaoTcc.Core.runtimeconfig.json
+C:\Users\joaom\Documents\SistemaGestaoTcc\SistemaGestaoTcc.Core\bin\Debug\net6.0\SistemaGestaoTcc.Core.dll
+C:\Users\joaom\Documents\SistemaGestaoTcc\SistemaGestaoTcc.Core\bin\Debug\net6.0\SistemaGestaoTcc.Core.pdb
+C:\Users\joaom\Documents\SistemaGestaoTcc\SistemaGestaoTcc.Core\obj\Debug\net6.0\SistemaGestaoTcc.Core.csproj.AssemblyReference.cache
+C:\Users\joaom\Documents\SistemaGestaoTcc\SistemaGestaoTcc.Core\obj\Debug\net6.0\SistemaGestaoTcc.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\joaom\Documents\SistemaGestaoTcc\SistemaGestaoTcc.Core\obj\Debug\net6.0\SistemaGestaoTcc.Core.AssemblyInfoInputs.cache
+C:\Users\joaom\Documents\SistemaGestaoTcc\SistemaGestaoTcc.Core\obj\Debug\net6.0\SistemaGestaoTcc.Core.AssemblyInfo.cs
+C:\Users\joaom\Documents\SistemaGestaoTcc\SistemaGestaoTcc.Core\obj\Debug\net6.0\SistemaGestaoTcc.Core.csproj.CoreCompileInputs.cache
+C:\Users\joaom\Documents\SistemaGestaoTcc\SistemaGestaoTcc.Core\obj\Debug\net6.0\SistemaGestaoTcc.Core.dll
+C:\Users\joaom\Documents\SistemaGestaoTcc\SistemaGestaoTcc.Core\obj\Debug\net6.0\refint\SistemaGestaoTcc.Core.dll
+C:\Users\joaom\Documents\SistemaGestaoTcc\SistemaGestaoTcc.Core\obj\Debug\net6.0\SistemaGestaoTcc.Core.pdb
+C:\Users\joaom\Documents\SistemaGestaoTcc\SistemaGestaoTcc.Core\obj\Debug\net6.0\SistemaGestaoTcc.Core.genruntimeconfig.cache
+C:\Users\joaom\Documents\SistemaGestaoTcc\SistemaGestaoTcc.Core\obj\Debug\net6.0\ref\SistemaGestaoTcc.Core.dll

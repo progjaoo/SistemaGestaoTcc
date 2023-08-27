@@ -1,0 +1,83 @@
+﻿{
+   "CodeGenerationMode": 3,
+   "ContextClassName": "SistemaTccContext",
+   "ContextNamespace": null,
+   "DefaultDacpacSchema": null,
+   "FilterSchemas": false,
+   "IncludeConnectionString": true,
+   "ModelNamespace": null,
+   "OutputContextPath": null,
+   "OutputPath": "Models",
+   "PreserveCasingWithRegex": true,
+   "ProjectRootNamespace": "SistemaGestaoTcc.Core",
+   "Schemas": null,
+   "SelectedHandlebarsLanguage": 0,
+   "SelectedToBeGenerated": 0,
+   "T4TemplatePath": null,
+   "Tables": [
+      {
+         "Name": "[dbo].[Banca]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Calendario]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Convite]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Curso]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Nota]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[ProfessorBanca]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Projeto]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[ProjetoArquivo]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[ProjetoComentario]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Usuario]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[UsuarioProjeto]",
+         "ObjectType": 0
+      }
+   ],
+   "UiHint": "thralljr\\sqlexpress.SistemaTcc.dbo",
+   "UncountableWords": null,
+   "UseBoolPropertiesWithoutDefaultSql": false,
+   "UseDatabaseNames": false,
+   "UseDateOnlyTimeOnly": false,
+   "UseDbContextSplitting": false,
+   "UseFluentApiOnly": true,
+   "UseHandleBars": false,
+   "UseHierarchyId": false,
+   "UseInflector": false,
+   "UseLegacyPluralizer": false,
+   "UseManyToManyEntity": false,
+   "UseNoDefaultConstructor": false,
+   "UseNoObjectFilter": false,
+   "UseNodaTime": false,
+   "UseNullableReferences": false,
+   "UseSchemaFolders": false,
+   "UseSchemaNamespaces": false,
+   "UseSpatial": false,
+   "UseT4": false
+}
