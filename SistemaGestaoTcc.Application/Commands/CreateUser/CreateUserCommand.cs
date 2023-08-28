@@ -17,5 +17,7 @@ namespace SistemaGestaoTcc.Application.Commands.CreateUser
         public string Senha { get; set; }
 
         public string Papel { get; set; }
+
+        public int? Periodo { get; set; }
     }
 }

@@ -7,6 +7,13 @@ namespace SistemaGestaoTcc.Core.Models;
 
 public partial class UsuarioProjeto
 {
+    public UsuarioProjeto(int id, int idProjeto, int idUsuario)
+    {
+        Id = id;
+        IdProjeto = idProjeto;
+        IdUsuario = idUsuario;
+    }
+
     public int Id { get; set; }
 
     public int IdProjeto { get; set; }

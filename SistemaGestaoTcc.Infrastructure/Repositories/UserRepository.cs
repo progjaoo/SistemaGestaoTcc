@@ -11,8 +11,7 @@ namespace SistemaGestaoTcc.Infrastructure.Repositories
 {
     public class UserRepository : IUserRepository
     {
-        private readonly SistemaTccContext _dbcontext
-            ;
+        private readonly SistemaTccContext _dbcontext;
 
         public UserRepository(SistemaTccContext dbcontext)
         {

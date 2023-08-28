@@ -5,18 +5,11 @@ using System.Collections.Generic;
 
 namespace SistemaGestaoTcc.Core.Models;
 
-public partial class Usuario
+public partial class Usuario : BaseEntity
 {
-    //CONFERIR PORQUE TA PEDINDO 2 CONSTRUTORES
-    public Usuario(string nome, string email, string papel1, string papel2, string passwordHash)
+    public Usuario(string nome, string email, string senha, string papel, int? periodo)
     {
-        Nome = nome;
-        Email = email;
-    }
 
-    public Usuario(int id, string nome, string email, string senha, string papel, int? periodo)
-    {
-        Id = id;
         Nome = nome;
         Email = email;
         Senha = senha;
@@ -24,7 +17,7 @@ public partial class Usuario
         Periodo = periodo;
     }
 
-    public int Id { get; set; }
+
 
     public string Nome { get; set; }
 

@@ -5,10 +5,8 @@ using System.Collections.Generic;
 
 namespace SistemaGestaoTcc.Core.Models;
 
-public partial class Banca
+public partial class Banca : BaseEntity
 {
-    public int Id { get; set; }
-
     public int IdCurso { get; set; }
 
     public virtual Curso IdCursoNavigation { get; set; }
