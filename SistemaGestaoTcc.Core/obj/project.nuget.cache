@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "Yl+i46gJ0KxPpKU3WTn4jsiabSKStaLaWFB891yYFURnnDxxI8TEwISrRkqrqRUSbVxQNo7oa/iBMeGxH3ABuw==",
+  "dgSpecHash": "ODdAVVUAdyle4tF2FgE+Wwu9U5p47AuFpbmCNdBOM2vQSBkHXaRRmySNhimNQHTWeQfcUwevl3+9wQrEgyWeSQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestaoTcc.Core\\SistemaGestaoTcc.Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\joaom\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\joaom\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
+    "C:\\Users\\joaom\\.nuget\\packages\\dapper\\2.0.151\\dapper.2.0.151.nupkg.sha512",
     "C:\\Users\\joaom\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\joaom\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\joaom\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

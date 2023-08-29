@@ -95,3 +95,4 @@ C:\Users\joaom\Documents\SistemaGestaoTcc\SistemaGestaoTcc.API\obj\Debug\net6.0\
 C:\Users\joaom\Documents\SistemaGestaoTcc\SistemaGestaoTcc.API\bin\Debug\net6.0\SistemaGestaoTcc.Application.dll
 C:\Users\joaom\Documents\SistemaGestaoTcc\SistemaGestaoTcc.API\bin\Debug\net6.0\SistemaGestaoTcc.Application.pdb
 C:\Users\joaom\Documents\SistemaGestaoTcc\SistemaGestaoTcc.API\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\joaom\Documents\SistemaGestaoTcc\SistemaGestaoTcc.API\bin\Debug\net6.0\Dapper.dll

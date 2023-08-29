@@ -9,12 +9,12 @@ public partial class Usuario : BaseEntity
 {
     public Usuario(string nome, string email, string senha, string papel, int? periodo)
     {
-
         Nome = nome;
         Email = email;
         Senha = senha;
         Papel = papel;
         Periodo = periodo;
+
     }
 
     public string Nome { get; set; }
@@ -37,7 +37,5 @@ public partial class Usuario : BaseEntity
 
     public virtual ICollection<ProjetoComentario> ProjetoComentario { get; set; } = new List<ProjetoComentario>();
 
-    public virtual ICollection<UsuarioProjeto> UsuarioProjeto { get; set; } = new List<UsuarioProjeto>();
-    
-    
+    public virtual ICollection<UsuarioProjeto> UsuarioProjeto { get; set; } = new List<UsuarioProjeto>();    
 }

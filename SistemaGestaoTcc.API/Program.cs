@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using SistemaGestaoTcc.Application.Commands.CreateProject;
 using SistemaGestaoTcc.Application.Commands.CreateUser;
 using SistemaGestaoTcc.Core.Interfaces;
 using SistemaGestaoTcc.Core.Models;
@@ -70,9 +71,12 @@ builder.Services.AddDbContext<SistemaTccContext>(p => p.UseSqlServer(connection)
 
 
 //mediator injecao de dependencia
+//MEDIATOR
+builder.Services.AddMediatR(typeof(CreateProjectCommand));
 builder.Services.AddMediatR(typeof(CreateUserCommand));
 
 //repositorios injecao de dependencia
+builder.Services.AddScoped<IProjectRepository, ProjectRepository>();
 builder.Services.AddTransient<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 

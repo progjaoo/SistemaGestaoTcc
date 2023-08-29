@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Dapper;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using SistemaGestaoTcc.Core.Interfaces;
@@ -51,14 +53,22 @@ namespace SistemaGestaoTcc.Infrastructure.Repositories
             await _dbcontext.ProjetoComentario.AddAsync(projetoComentario);
 
         }
-        public Task<Projeto> SaveChangesAsync()
+        public async Task SaveChangesAsync()
         {
-            throw new NotImplementedException();
+            await _dbcontext.SaveChangesAsync();
+
         }
 
-        public Task<Projeto> StartAsync(Projeto projeto)
+        public async Task StartAsync(Projeto projeto)
         {
-            throw new NotImplementedException();
+            using (var sqlConnection = new SqlConnection(_connectionString))
+            {
+                sqlConnection.Open();
+
+                var script = "UPDATE Projects SET Estado = @estado, DataInicio = @datainicio WHERE Id = @id";
+
+                await sqlConnection.ExecuteAsync(script, new { estado = projeto.Estado, datainicio = projeto.DataInicio, projeto.Id});
+            }
         }
     }
 }

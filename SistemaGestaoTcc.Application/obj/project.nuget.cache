@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "pJQjWf5EEBfh5XuFZ60tKaJ+JE3vTAIfJ9NXCUpyQuRWzJj4FVWgyJuRSUdvHDwE02q74x85jAIfbkHCXy0EjQ==",
+  "dgSpecHash": "k8OtkKt+u6SwQAT1zLul4wtDymPJQ1mHQ8GNPHO+k05sWCSwmK/Qvi3gKlBgigxkkzsmxGHqUF9w8zeVkcBwpw==",
   "success": true,
   "projectFilePath": "C:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestaoTcc.Application\\SistemaGestaoTcc.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\joaom\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\joaom\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
+    "C:\\Users\\joaom\\.nuget\\packages\\dapper\\2.0.151\\dapper.2.0.151.nupkg.sha512",
     "C:\\Users\\joaom\\.nuget\\packages\\mediatr\\11.0.0\\mediatr.11.0.0.nupkg.sha512",
     "C:\\Users\\joaom\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512",
     "C:\\Users\\joaom\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\11.1.0\\mediatr.extensions.microsoft.dependencyinjection.11.1.0.nupkg.sha512",
