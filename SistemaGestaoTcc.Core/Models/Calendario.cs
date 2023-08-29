@@ -5,9 +5,9 @@ using System.Collections.Generic;
 
 namespace SistemaGestaoTcc.Core.Models;
 
-public partial class Calendario : BaseEntity
+public partial class Calendario
 {
-    //public int Id { get; set; }
+    public int Id { get; set; }
 
     public int IdCurso { get; set; }
 

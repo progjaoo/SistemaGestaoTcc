@@ -32,6 +32,7 @@ namespace SistemaGestaoTcc.API.Controllers
             return Ok(user);
         }
         [HttpPost]
+        [Authorize(Roles = "Professor")]
         [AllowAnonymous]
         public async Task<IActionResult> Post([FromBody] CreateUserCommand command)
         {

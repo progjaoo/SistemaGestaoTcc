@@ -7,8 +7,8 @@ namespace SistemaGestaoTcc.Core.Models;
 
 public partial class Curso
 {
-    public int Id { get; set; }
 
+    public int Id { get; set; }
     public string Nome { get; set; }
 
     public int? Periodos { get; set; }

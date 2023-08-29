@@ -7,8 +7,8 @@ namespace SistemaGestaoTcc.Core.Models;
 
 public partial class ProjetoArquivo
 {
-    public int Id { get; set; }
 
+    public int Id { get; set; }
     public int IdUsuario { get; set; }
 
     public int IdProjeto { get; set; }

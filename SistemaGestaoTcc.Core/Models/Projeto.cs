@@ -2,26 +2,40 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using SistemaGestaoTcc.Core.Enums;
 
 namespace SistemaGestaoTcc.Core.Models;
 
-public partial class Projeto
+public partial class Projeto : BaseEntity
 {
-    public int Id { get; set; }
+    public Projeto(string nome, string descricao, bool? publicado, bool? aprovado, Usuario idUsuarioNavigation)
+    {
+        Nome = nome;
+        Descricao = descricao;
+        DataInicio = DateTime.Now;
+        DataFim = DateTime.Now;
+        Publicado = publicado;
+        Aprovado = aprovado;
+        IdUsuarioNavigation = idUsuarioNavigation;
+        Estado = (int?)StatusProjeto.Created;
+        ProjetoComentario = new List<ProjetoComentario>();
+    }
 
     public string Nome { get; set; }
 
-    public string Descricao { get; set; }
+    public string Descricao { get;  set; }
 
-    public DateTime? DataInicio { get; set; }
+    public DateTime? DataInicio { get;  set; }
 
     public DateTime? DataFim { get; set; }
 
-    public bool? Publicado { get; set; }
+    public bool? Publicado { get;  set; }
 
-    public bool? Aprovado { get; set; }
+    public bool? Aprovado { get;  set; }
 
-    public int? Estado { get; set; }
+    public int? Estado { get;  set; }
+
+    public virtual Usuario IdUsuarioNavigation { get; set; }
 
     public virtual ICollection<Convite> Convite { get; set; } = new List<Convite>();
 

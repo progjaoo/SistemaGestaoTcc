@@ -7,8 +7,8 @@ namespace SistemaGestaoTcc.Core.Models;
 
 public partial class ProfessorBanca
 {
-    public int Id { get; set; }
 
+    public int Id { get; set; }
     public int IdProfessor { get; set; }
 
     public int IdBanca { get; set; }

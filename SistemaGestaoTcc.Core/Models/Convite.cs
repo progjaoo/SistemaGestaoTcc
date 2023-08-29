@@ -5,10 +5,10 @@ using System.Collections.Generic;
 
 namespace SistemaGestaoTcc.Core.Models;
 
-public partial class Convite
+public partial class Convite 
 {
-    public int Id { get; set; }
 
+    public int Id { get; set; }
     public int IdUsuario { get; set; }
 
     public int IdProjeto { get; set; }

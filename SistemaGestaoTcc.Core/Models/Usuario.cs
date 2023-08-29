@@ -17,8 +17,6 @@ public partial class Usuario : BaseEntity
         Periodo = periodo;
     }
 
-
-
     public string Nome { get; set; }
 
     public string Email { get; set; }
@@ -40,5 +38,6 @@ public partial class Usuario : BaseEntity
     public virtual ICollection<ProjetoComentario> ProjetoComentario { get; set; } = new List<ProjetoComentario>();
 
     public virtual ICollection<UsuarioProjeto> UsuarioProjeto { get; set; } = new List<UsuarioProjeto>();
-
+    
+    
 }
