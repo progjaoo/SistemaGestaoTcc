@@ -8,17 +8,16 @@ namespace SistemaGestaoTcc.Core.Models;
 
 public partial class Projeto : BaseEntity
 {
-    public Projeto(string nome, string descricao, bool? publicado, bool? aprovado, Usuario idUsuarioNavigation)
+
+    public Projeto(string nome, string descricao)
     {
         Nome = nome;
         Descricao = descricao;
         DataInicio = DateTime.Now;
         DataFim = DateTime.Now;
-        Publicado = publicado;
-        Aprovado = aprovado;
-        IdUsuarioNavigation = idUsuarioNavigation;
         Estado = (int?)StatusProjeto.Created;
-        ProjetoComentario = new List<ProjetoComentario>();
+        Publicado = false;
+        Aprovado = false;
     }
 
     public string Nome { get; set; }
@@ -34,8 +33,6 @@ public partial class Projeto : BaseEntity
     public bool? Aprovado { get;  set; }
 
     public int? Estado { get;  set; }
-
-    public virtual Usuario IdUsuarioNavigation { get; set; }
 
     public virtual ICollection<Convite> Convite { get; set; } = new List<Convite>();
 

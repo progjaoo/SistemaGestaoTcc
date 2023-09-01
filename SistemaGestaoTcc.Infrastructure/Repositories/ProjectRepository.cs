@@ -38,9 +38,7 @@ namespace SistemaGestaoTcc.Infrastructure.Repositories
 
         public async Task<Projeto> GetDetailsByIdAsync(int id)
         {
-            return await _dbcontext.Projeto
-                .Include(p => p.UsuarioProjeto)
-                .SingleOrDefaultAsync(p => p.Id == id);
+            return await _dbcontext.Projeto.SingleOrDefaultAsync(p => p.Id == id);
         }
 
         public async Task AddASync(Projeto projeto)

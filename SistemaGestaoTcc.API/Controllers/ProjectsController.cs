@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using SistemaGestaoTcc.Application.Commands.CreateProject;
 using SistemaGestaoTcc.Application.Queries.GetProjectById;
 using SistemaGestaoTcc.Application.Queries.GetProjects;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace SistemaGestaoTcc.API.Controllers
 {
@@ -19,38 +20,41 @@ namespace SistemaGestaoTcc.API.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Get(GetProjectQuery getProjectsQuery)
+        public async Task<IActionResult> Get(string query)
         {
-            var projects = await _mediator.Send(getProjectsQuery);
+            var getAllProjectQuery = new GetProjectQuery(query);
+            var projects = await _mediator.Send(getAllProjectQuery);
 
             return Ok(projects);
         }
-        [HttpGet]
+        [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
             var query = new GetProjectByIdQuery(id);
 
-            var project = await _mediator.Send(id);
+            var project = await _mediator.Send(query);
+
             if (project == null)
             {
                 return NotFound();
             }
+
             return Ok(project);
         }
-        //[HttpPost]
-        //public async Task<IActionResult> Post([FromBody] CreateProjectCommand command)
+        //[Authorize(Roles = "Aluno")]
+        [HttpPost]
+        public async Task<IActionResult> Post([FromBody] CreateProjectCommand command)
+        {
+            var id = await _mediator.Send(command);
+            return CreatedAtAction(nameof(GetById), new { id = id }, command);
+        }
+        //[HttpPut("{id}")]
+        //[Authorize(Roles = "Aluno")]
+        //public async Task<IActionResult> Put(int id, [FromBody] UpdateProjectCommand command)
         //{
-        //    var id = await _mediator.Send(command);
-        //    return CreatedAtAction(nameof(GetById), new { id = id }, command);
-        ////}
-        ////[HttpPut("{id}")]
-        ////[Authorize(Roles = "Aluno")]
-        ////public async Task<IActionResult> Put(int id, [FromBody] UpdateProjectCommand command)
-        ////{
-        ////    await _mediator.Send(command);
+        //    await _mediator.Send(command);
 
-        ////    return NoContent();
-        ////}
-
+        //    return NoContent();
+        //}
     }
 }

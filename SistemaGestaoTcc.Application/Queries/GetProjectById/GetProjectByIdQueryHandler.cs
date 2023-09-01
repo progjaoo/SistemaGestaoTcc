@@ -32,8 +32,7 @@ namespace SistemaGestaoTcc.Application.Queries.GetProjectById
                     project.DataFim,
                     project.Publicado,
                     project.Aprovado,
-                    project.Estado,
-                    project.UsuarioProjeto);
+                    project.Estado);
             
             return projectDetailsViewModel;
 

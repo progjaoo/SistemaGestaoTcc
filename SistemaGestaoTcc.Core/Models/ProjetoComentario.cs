@@ -7,18 +7,18 @@ namespace SistemaGestaoTcc.Core.Models;
 
 public partial class ProjetoComentario
 {
-    public ProjetoComentario(string conteudo, Projeto idProjetoNavigation, Usuario idUsuarioNavigation)
+    public ProjetoComentario(int idUsuario, int idProjeto, string conteudo)
     {
+        IdUsuario = idUsuario;
+        IdProjeto = idProjeto;
         Conteudo = conteudo;
-        IdProjetoNavigation = idProjetoNavigation;
-        IdUsuarioNavigation = idUsuarioNavigation;
     }
 
     public int Id { get; set; }
 
-    public Usuario IdUsuario { get; set; }
+    public int IdUsuario { get; set; }
 
-    public Projeto IdProjeto { get; set; }
+    public int IdProjeto { get; set; }
 
     public string Conteudo { get; set; }
 

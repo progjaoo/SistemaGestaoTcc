@@ -14,7 +14,6 @@ public partial class Usuario : BaseEntity
         Senha = senha;
         Papel = papel;
         Periodo = periodo;
-
     }
 
     public string Nome { get; set; }

@@ -9,7 +9,7 @@ namespace SistemaGestaoTcc.Application.ViewModels
 {
     public class ProjectDetailsViewModel
     {
-        public ProjectDetailsViewModel(int id, string nome, string descricao, DateTime? dataInicio, DateTime? dataFim, bool? publicado, bool? aprovado, int? estado, ICollection<UsuarioProjeto> usuarioProjeto)
+        public ProjectDetailsViewModel(int id, string nome, string descricao, DateTime? dataInicio, DateTime? dataFim, bool? publicado, bool? aprovado, int? estado)
         {
             Id = id;
             Nome = nome;
@@ -19,7 +19,6 @@ namespace SistemaGestaoTcc.Application.ViewModels
             Publicado = publicado;
             Aprovado = aprovado;
             Estado = estado;
-            UsuarioProjeto = usuarioProjeto;
         }
 
         public int Id { get; set; }

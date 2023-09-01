@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MediatR;
+﻿using MediatR;
 using SistemaGestaoTcc.Core.Interfaces;
 using SistemaGestaoTcc.Core.Models;
 
@@ -19,9 +14,11 @@ namespace SistemaGestaoTcc.Application.Commands.CreateProject
 
         public async Task<int> Handle(CreateProjectCommand request, CancellationToken cancellationToken)
         {
-            var project = new Projeto(request.Nome, request.Descricao, request.Publicado, request.Aprovado, request.IdUsuarioNavigation);
-            project.ProjetoComentario.Add(new ProjetoComentario("Projeto esta criado", request.IdProjetoNavigation ,request.IdUsuarioNavigation));
+            var project = new Projeto(request.Nome, request.Descricao);
+            //project.ProjetoComentario.Add(new ProjetoComentario(request.IdUsuario, request.Id, "Projeto criado"));
+
             await _projectRepository.AddASync(project);
+            await _projectRepository.SaveChangesAsync();
 
             return project.Id;
         }
