@@ -24,17 +24,17 @@ public partial class Projeto : BaseEntity
 
     public string Nome { get; set; }
 
-    public string Descricao { get;  set; }
+    public string Descricao { get; set; }
 
-    public DateTime? DataInicio { get;  set; }
+    public DateTime? DataInicio { get; set; }
 
     public DateTime? DataFim { get; set; }
 
-    public bool? Publicado { get;  set; }
+    public bool? Publicado { get; set; }
 
-    public bool? Aprovado { get;  set; }
+    public bool? Aprovado { get; set; }
 
-    public int? Estado { get;  set; }
+    public int? Estado { get; set; }
 
     public virtual ICollection<Convite> Convite { get; set; } = new List<Convite>();
 
@@ -45,4 +45,10 @@ public partial class Projeto : BaseEntity
     public virtual ICollection<ProjetoComentario> ProjetoComentario { get; set; } = new List<ProjetoComentario>();
 
     public virtual ICollection<UsuarioProjeto> UsuarioProjeto { get; set; } = new List<UsuarioProjeto>();
+
+    public void Update(string nome, string descricao)
+    {
+        Nome = nome;
+        Descricao = descricao;
+    }
 }

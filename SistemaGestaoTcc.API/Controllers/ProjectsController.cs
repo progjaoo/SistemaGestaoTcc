@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SistemaGestaoTcc.Application.Commands.CreateComment;
 using SistemaGestaoTcc.Application.Commands.CreateProject;
+using SistemaGestaoTcc.Application.Commands.DeleteProject;
+using SistemaGestaoTcc.Application.Commands.UpdateProject;
 using SistemaGestaoTcc.Application.Queries.GetProjectById;
 using SistemaGestaoTcc.Application.Queries.GetProjects;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
@@ -49,20 +51,29 @@ namespace SistemaGestaoTcc.API.Controllers
             var id = await _mediator.Send(command);
             return CreatedAtAction(nameof(GetById), new { id = id }, command);
         }
-        //[HttpPut("{id}")]
-        //[Authorize(Roles = "Aluno")]
-        //public async Task<IActionResult> Put(int id, [FromBody] UpdateProjectCommand command)
-        //{
-        //    await _mediator.Send(command);
+        [HttpPut("{id}")]
+        // [Authorize(Roles = "Aluno")]
+        public async Task<IActionResult> Put(int id, [FromBody] UpdateProjectCommand command)
+        {
+            await _mediator.Send(command);
 
-        //    return NoContent();
-        //}
+            return NoContent();
+        }
         [HttpPost("{id}/comments")]
         public async Task<IActionResult> PostComment(int id, [FromBody] CreateCommentCommand command)
         {
             await _mediator.Send(command);
             return NoContent();
         }
-        
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteProject(int id)
+        {
+            var command = new DeleteProjectCommand(id);
+
+            await _mediator.Send(command);
+
+            return NoContent();
+        }
+
     }
 }
