@@ -43,6 +43,7 @@ namespace SistemaGestaoTcc.Infrastructure.Repositories
 
         public async Task AddASync(Projeto projeto)
         {
+            //ok
             await _dbcontext.Projeto.AddAsync(projeto);
         }
 

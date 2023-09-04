@@ -2,6 +2,7 @@
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using SistemaGestaoTcc.Application.Commands.CreateComment;
 using SistemaGestaoTcc.Application.Commands.CreateProject;
 using SistemaGestaoTcc.Application.Queries.GetProjectById;
 using SistemaGestaoTcc.Application.Queries.GetProjects;
@@ -56,5 +57,12 @@ namespace SistemaGestaoTcc.API.Controllers
 
         //    return NoContent();
         //}
+        [HttpPost("{id}/comments")]
+        public async Task<IActionResult> PostComment(int id, [FromBody] CreateCommentCommand command)
+        {
+            await _mediator.Send(command);
+            return NoContent();
+        }
+        
     }
 }

@@ -12,6 +12,8 @@ public partial class ProjetoComentario
         IdUsuario = idUsuario;
         IdProjeto = idProjeto;
         Conteudo = conteudo;
+
+        CriadoEm = DateTime.Now;
     }
 
     public int Id { get; set; }

@@ -18,6 +18,8 @@ public partial class Projeto : BaseEntity
         Estado = (int?)StatusProjeto.Created;
         Publicado = false;
         Aprovado = false;
+
+        ProjetoComentario = new List<ProjetoComentario>();
     }
 
     public string Nome { get; set; }
