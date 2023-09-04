@@ -7,10 +7,11 @@ namespace SistemaGestaoTcc.Core.Models;
 
 public partial class ProjetoComentario
 {
-    public ProjetoComentario(int idUsuario, int idProjeto, string conteudo)
+    public ProjetoComentario( int idProjeto, int idUsuario, string conteudo)
     {
-        IdUsuario = idUsuario;
         IdProjeto = idProjeto;
+        IdUsuario = idUsuario;
+       
         Conteudo = conteudo;
 
         CriadoEm = DateTime.Now;

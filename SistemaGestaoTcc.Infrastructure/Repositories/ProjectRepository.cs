@@ -50,7 +50,7 @@ namespace SistemaGestaoTcc.Infrastructure.Repositories
         public async Task AddCommentAsync(ProjetoComentario projetoComentario)
         {
             await _dbcontext.ProjetoComentario.AddAsync(projetoComentario);
-
+            await _dbcontext.SaveChangesAsync();
         }
         public async Task SaveChangesAsync()
         {

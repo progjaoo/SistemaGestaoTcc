@@ -22,7 +22,6 @@ namespace SistemaGestaoTcc.Application.Commands.CreateComment
             var comment = new ProjetoComentario(request.IdProjeto, request.IdUsuario, request.Conteudo);
 
             await _projectRepository.AddCommentAsync(comment);     
-            await _projectRepository.SaveChangesAsync();
 
             return Unit.Value;
         }
