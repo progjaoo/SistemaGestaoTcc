@@ -78,6 +78,7 @@ builder.Services.AddMediatR(typeof(CreateUserCommand));
 //repositorios injecao de dependencia
 builder.Services.AddScoped<IProjectRepository, ProjectRepository>();
 builder.Services.AddTransient<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IProjectCommentRepository, ProjectCommentRepository>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 
 builder.Services.AddHttpClient();
