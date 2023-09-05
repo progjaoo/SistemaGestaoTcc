@@ -15,7 +15,7 @@ public partial class Projeto : BaseEntity
         Descricao = descricao;
         DataInicio = DateTime.Now;
         DataFim = DateTime.Now;
-        Estado = (int?)StatusProjeto.Created;
+        Estado = StatusProjeto.Created;
         Publicado = false;
         Aprovado = false;
 
@@ -34,7 +34,7 @@ public partial class Projeto : BaseEntity
 
     public bool? Aprovado { get; set; }
 
-    public int? Estado { get; set; }
+    public StatusProjeto Estado { get; set; }
 
     public virtual ICollection<Convite> Convite { get; set; } = new List<Convite>();
 
@@ -50,5 +50,19 @@ public partial class Projeto : BaseEntity
     {
         Nome = nome;
         Descricao = descricao;
+    }
+    public void Start()
+    {
+        if (Estado == StatusProjeto.Created)
+        {
+            Estado = StatusProjeto.InProgress;
+        }
+    }
+    public void Cancel()
+    {
+        if (Estado == StatusProjeto.Created || Estado == StatusProjeto.InProgress )
+        {
+            Estado = StatusProjeto.Canceled;
+        }
     }
 }

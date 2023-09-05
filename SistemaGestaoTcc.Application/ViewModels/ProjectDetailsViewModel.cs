@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SistemaGestaoTcc.Core.Enums;
 using SistemaGestaoTcc.Core.Models;
 
 namespace SistemaGestaoTcc.Application.ViewModels
 {
     public class ProjectDetailsViewModel
     {
-        public ProjectDetailsViewModel(int id, string nome, string descricao, DateTime? dataInicio, DateTime? dataFim, bool? publicado, bool? aprovado, int? estado)
+        public ProjectDetailsViewModel(int id, string nome, string descricao, DateTime? dataInicio, DateTime? dataFim, bool? publicado, bool? aprovado, StatusProjeto estado)
         {
             Id = id;
             Nome = nome;
@@ -35,7 +36,7 @@ namespace SistemaGestaoTcc.Application.ViewModels
 
         public bool? Aprovado { get; set; }
 
-        public int? Estado { get; set; }
+        public StatusProjeto Estado { get; set; }
 
         public virtual ICollection<UsuarioProjeto> UsuarioProjeto { get; set; } = new List<UsuarioProjeto>();
 

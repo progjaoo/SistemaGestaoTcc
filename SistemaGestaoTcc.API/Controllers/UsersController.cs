@@ -1,8 +1,8 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using SistemaGestaoTcc.Application.Commands.CreateUser;
-using SistemaGestaoTcc.Application.Commands.LoginUser;
+using SistemaGestaoTcc.Application.Commands.Users.CreateUser;
+using SistemaGestaoTcc.Application.Commands.Users.LoginUser;
 using SistemaGestaoTcc.Application.Queries.GetUser;
 
 namespace SistemaGestaoTcc.API.Controllers

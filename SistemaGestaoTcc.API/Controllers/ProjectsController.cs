@@ -2,10 +2,10 @@
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using SistemaGestaoTcc.Application.Commands.CreateComment;
-using SistemaGestaoTcc.Application.Commands.CreateProject;
 using SistemaGestaoTcc.Application.Commands.DeleteProject;
-using SistemaGestaoTcc.Application.Commands.UpdateProject;
+using SistemaGestaoTcc.Application.Commands.ProjectComment.CreateComment;
+using SistemaGestaoTcc.Application.Commands.Projects.CreateProject;
+using SistemaGestaoTcc.Application.Commands.Projects.UpdateProject;
 using SistemaGestaoTcc.Application.Queries.GetProjectById;
 using SistemaGestaoTcc.Application.Queries.GetProjects;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
@@ -66,10 +66,10 @@ namespace SistemaGestaoTcc.API.Controllers
             return NoContent();
         }
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteProject(int id)
+        public async Task<IActionResult> Delete(int id)
         {
             var command = new DeleteProjectCommand(id);
-
+            
             await _mediator.Send(command);
 
             return NoContent();

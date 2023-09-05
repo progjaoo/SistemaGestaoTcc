@@ -10,6 +10,7 @@ namespace SistemaGestaoTcc.Core.Enums
     {
         Created = 0,
         InProgress = 1,
-        Finished = 2
+        Canceled = 2,
+        Finished = 3
     }
 }

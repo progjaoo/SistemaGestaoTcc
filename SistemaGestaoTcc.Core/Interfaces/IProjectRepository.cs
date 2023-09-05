@@ -14,6 +14,7 @@ namespace SistemaGestaoTcc.Core.Interfaces
         Task<Projeto> GetDetailsByIdAsync (int id);
         Task AddASync(Projeto projeto);
         Task AddCommentAsync(ProjetoComentario projetoComentario);
+        Task DeleteComment(int id);
         Task StartAsync(Projeto projeto);
         Task SaveChangesAsync();
     }

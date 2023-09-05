@@ -57,7 +57,7 @@ namespace SistemaGestaoTcc.Infrastructure.Repositories
             await _dbcontext.SaveChangesAsync();
 
         }
-
+        
         public async Task StartAsync(Projeto projeto)
         {
             using (var sqlConnection = new SqlConnection(_connectionString))
@@ -68,6 +68,15 @@ namespace SistemaGestaoTcc.Infrastructure.Repositories
 
                 await sqlConnection.ExecuteAsync(script, new { estado = projeto.Estado, datainicio = projeto.DataInicio, projeto.Id});
             }
+        }
+
+        public async Task DeleteComment(int id)
+        {
+            
+            var projectComment = _dbcontext.ProjetoComentario.FindAsync(id);
+
+            _dbcontext.Remove(projectComment);
+            await _dbcontext.SaveChangesAsync();
         }
     }
 }
