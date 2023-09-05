@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MediatR;
+using SistemaGestaoTcc.Application.ViewModels;
 
-namespace SistemaGestaoTcc.Application.Commands.ProjectComment.DeleteComment
+namespace SistemaGestaoTcc.Application.Queries.ProjectsComments
 {
-    public class DeleteCommentCommand : IRequest<Unit>
+    public class GetCommentQuery : IRequest<ProjectCommentViewModel>
     {
-        public DeleteCommentCommand(int id)
+        public GetCommentQuery(int id)
         {
             Id = id;
         }

@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using SistemaGestaoTcc.Application.Commands.ProjectComment.CreateComment;
+using SistemaGestaoTcc.Application.Commands.ProjectComment.UpdateComment;
 using SistemaGestaoTcc.Application.Commands.Projects.CreateProject;
 using SistemaGestaoTcc.Application.Commands.Projects.DeleteProject;
 using SistemaGestaoTcc.Application.Commands.Projects.UpdateProject;
@@ -58,29 +59,14 @@ namespace SistemaGestaoTcc.API.Controllers
 
             return NoContent();
         }
-        [HttpPost("{id}/comments")]
-        public async Task<IActionResult> PostComment(int id, [FromBody] CreateCommentCommand command)
-        {
-            await _mediator.Send(command);
-            return NoContent();
-        }
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
             var command = new DeleteProjectCommand(id);
-            
+
             await _mediator.Send(command);
 
             return NoContent();
         }
-        [HttpDelete("{id}/projectComment")]
-        public async Task<IActionResult> DeleteComment(int id)
-        {
-            await _projectRepository.DeleteComment(id);
-
-            await _projectRepository.SaveChangesAsync();
-            return Ok();
-        }
-
     }
 }

@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Commands\ProjectComment\UpdateComment\" />
+    <Folder Include="Commands\ProjectComment\DeleteComment\" />
   </ItemGroup>
 
 </Project>

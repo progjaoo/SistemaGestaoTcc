@@ -40,7 +40,10 @@ namespace SistemaGestaoTcc.Infrastructure.Repositories
         {
             return await _dbcontext.Projeto.SingleOrDefaultAsync(p => p.Id == id);
         }
-
+        public async Task<ProjetoComentario> GetCommentById(int id)
+        {
+            return await _dbcontext.ProjetoComentario.SingleOrDefaultAsync(c => c.Id == id);
+        }
         public async Task AddASync(Projeto projeto)
         {
             //ok
@@ -78,7 +81,7 @@ namespace SistemaGestaoTcc.Infrastructure.Repositories
             var obj = await _dbcontext.ProjetoComentario.SingleOrDefaultAsync(p => p.Id == id);
 
             if(obj == null)
-                throw new Exception("o comentario nao existe");
+                throw new Exception("O comentario nao existe");
             await RemoverAsync(obj);
 
         }
