@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using MediatR;
 using SistemaGestaoTcc.Application.ViewModels;
 
-namespace SistemaGestaoTcc.Application.Queries.ProjectsComments
+namespace SistemaGestaoTcc.Application.Queries.ProjectsComments.GetCommentById
 {
     public class GetCommentQuery : IRequest<ProjectCommentViewModel>
     {

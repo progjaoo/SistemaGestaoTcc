@@ -40,10 +40,16 @@ namespace SistemaGestaoTcc.Infrastructure.Repositories
         {
             return await _dbcontext.Projeto.SingleOrDefaultAsync(p => p.Id == id);
         }
+        public async Task<List<ProjetoComentario>>GetAllCommentsAsync(string query)
+        {
+            return await _dbcontext.ProjetoComentario.ToListAsync();
+        }
+
         public async Task<ProjetoComentario> GetCommentById(int id)
         {
             return await _dbcontext.ProjetoComentario.SingleOrDefaultAsync(c => c.Id == id);
         }
+
         public async Task AddASync(Projeto projeto)
         {
             //ok

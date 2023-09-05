@@ -2,8 +2,9 @@
 using Microsoft.AspNetCore.Mvc;
 using SistemaGestaoTcc.Application.Commands.ProjectComment.CreateComment;
 using SistemaGestaoTcc.Application.Commands.ProjectComment.UpdateComment;
-using SistemaGestaoTcc.Application.Queries.Projects.GetProjectById;
-using SistemaGestaoTcc.Application.Queries.ProjectsComments;
+using SistemaGestaoTcc.Application.Queries.Projects.GetProjects;
+using SistemaGestaoTcc.Application.Queries.ProjectsComments.GetAllComments;
+using SistemaGestaoTcc.Application.Queries.ProjectsComments.GetCommentById;
 using SistemaGestaoTcc.Core.Interfaces;
 
 namespace SistemaGestaoTcc.API.Controllers
@@ -18,7 +19,14 @@ namespace SistemaGestaoTcc.API.Controllers
             _mediator = mediator;
             _projectRepository = projectRepository;
         }
+        [HttpGet]
+        public async Task<IActionResult> GetAllAsync(string query)
+        {
+            var getAllCommentsQuery = new GetAllCommentsQuery(query);
+            var comments = await _mediator.Send(getAllCommentsQuery);
 
+            return Ok(comments);
+        }
         [HttpGet("{id}")]
         public async Task<IActionResult> GetCommentById(int id)
         {

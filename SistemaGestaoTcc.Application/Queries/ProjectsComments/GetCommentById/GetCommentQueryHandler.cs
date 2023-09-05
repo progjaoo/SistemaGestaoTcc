@@ -7,7 +7,7 @@ using MediatR;
 using SistemaGestaoTcc.Application.ViewModels;
 using SistemaGestaoTcc.Core.Interfaces;
 
-namespace SistemaGestaoTcc.Application.Queries.ProjectsComments
+namespace SistemaGestaoTcc.Application.Queries.ProjectsComments.GetCommentById
 {
     public class GetCommentQueryHandler : IRequestHandler<GetCommentQuery, ProjectCommentViewModel>
     {
