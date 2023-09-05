@@ -69,14 +69,18 @@ namespace SistemaGestaoTcc.Infrastructure.Repositories
                 await sqlConnection.ExecuteAsync(script, new { estado = projeto.Estado, datainicio = projeto.DataInicio, projeto.Id});
             }
         }
-
+        public async Task RemoverAsync(ProjetoComentario projetoComment)
+        {
+            _dbcontext.Remove(projetoComment);
+        }
         public async Task DeleteComment(int id)
         {
-            
-            var projectComment = _dbcontext.ProjetoComentario.FindAsync(id);
+            var obj = await _dbcontext.ProjetoComentario.SingleOrDefaultAsync(p => p.Id == id);
 
-            _dbcontext.Remove(projectComment);
-            await _dbcontext.SaveChangesAsync();
+            if(obj == null)
+                throw new Exception("o comentario nao existe");
+            await RemoverAsync(obj);
+
         }
     }
 }

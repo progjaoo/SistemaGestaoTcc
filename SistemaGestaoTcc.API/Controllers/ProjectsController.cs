@@ -1,14 +1,12 @@
-﻿using System.Data;
-using MediatR;
-using Microsoft.AspNetCore.Authorization;
+﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using SistemaGestaoTcc.Application.Commands.DeleteProject;
 using SistemaGestaoTcc.Application.Commands.ProjectComment.CreateComment;
 using SistemaGestaoTcc.Application.Commands.Projects.CreateProject;
+using SistemaGestaoTcc.Application.Commands.Projects.DeleteProject;
 using SistemaGestaoTcc.Application.Commands.Projects.UpdateProject;
-using SistemaGestaoTcc.Application.Queries.GetProjectById;
-using SistemaGestaoTcc.Application.Queries.GetProjects;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
+using SistemaGestaoTcc.Application.Queries.Projects.GetProjectById;
+using SistemaGestaoTcc.Application.Queries.Projects.GetProjects;
+using SistemaGestaoTcc.Core.Interfaces;
 
 namespace SistemaGestaoTcc.API.Controllers
 {
@@ -16,10 +14,11 @@ namespace SistemaGestaoTcc.API.Controllers
     public class ProjectsController : ControllerBase
     {
         private readonly IMediator _mediator;
-
-        public ProjectsController(IMediator mediator)
+        private readonly IProjectRepository _projectRepository;
+        public ProjectsController(IMediator mediator, IProjectRepository projectRepository)
         {
             _mediator = mediator;
+            _projectRepository = projectRepository;
         }
 
         [HttpGet]
@@ -73,6 +72,14 @@ namespace SistemaGestaoTcc.API.Controllers
             await _mediator.Send(command);
 
             return NoContent();
+        }
+        [HttpDelete("{id}/projectComment")]
+        public async Task<IActionResult> DeleteComment(int id)
+        {
+            await _projectRepository.DeleteComment(id);
+
+            await _projectRepository.SaveChangesAsync();
+            return Ok();
         }
 
     }

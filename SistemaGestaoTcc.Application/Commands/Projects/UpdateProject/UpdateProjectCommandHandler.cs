@@ -7,7 +7,7 @@ using Azure.Core;
 using MediatR;
 using SistemaGestaoTcc.Core.Interfaces;
 
-namespace SistemaGestaoTcc.Application.Commands.UpdateProject
+namespace SistemaGestaoTcc.Application.Commands.Projects.UpdateProject
 {
     public class UpdateProjectCommandHandler : IRequestHandler<UpdateProjectCommand, Unit>
     {

@@ -15,4 +15,8 @@
     <ProjectReference Include="..\SistemaGestaoTcc.Infrastructure\SistemaGestaoTcc.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Commands\ProjectComment\UpdateComment\" />
+  </ItemGroup>
+
 </Project>

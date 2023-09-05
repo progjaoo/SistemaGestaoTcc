@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SistemaGestaoTcc.Application.Commands.Users.CreateUser;
 using SistemaGestaoTcc.Application.Commands.Users.LoginUser;
-using SistemaGestaoTcc.Application.Queries.GetUser;
+using SistemaGestaoTcc.Application.Queries.Users.GetUser;
 
 namespace SistemaGestaoTcc.API.Controllers
 {
