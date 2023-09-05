@@ -13,11 +13,11 @@ namespace SistemaGestaoTcc.API.Controllers
     public class ProjectCommentController : ControllerBase
     {
         private readonly IMediator _mediator;
-        private readonly IProjectRepository _projectRepository;
-        public ProjectCommentController(IMediator mediator, IProjectRepository projectRepository)
+        private readonly IProjectCommentRepository _projectCommentRepository;
+        public ProjectCommentController(IMediator mediator, IProjectCommentRepository projectCommentRepository)
         {
             _mediator = mediator;
-            _projectRepository = projectRepository;
+            _projectCommentRepository = projectCommentRepository;
         }
         [HttpGet]
         public async Task<IActionResult> GetAllAsync(string query)
@@ -51,9 +51,10 @@ namespace SistemaGestaoTcc.API.Controllers
         [HttpDelete("{id}/projectComment")]
         public async Task<IActionResult> DeleteComment(int id)
         {
-            await _projectRepository.DeleteComment(id);
+            await _projectCommentRepository.DeleteComment(id);
 
-            await _projectRepository.SaveChangesAsync();
+            await _projectCommentRepository.SaveChangesAsync();
+
             return Ok();
         }
         [HttpPut("{id}/UpdateComement")]

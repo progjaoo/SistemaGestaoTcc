@@ -10,20 +10,20 @@ namespace SistemaGestaoTcc.Application.Commands.ProjectComment.UpdateComment
 {
     public class UpdateCommentCommandHandler : IRequestHandler<UpdateCommentCommand, Unit>
     {
-        private readonly IProjectRepository _projectRepository;
+        private readonly IProjectCommentRepository _projectCommentRepository;
 
-        public UpdateCommentCommandHandler(IProjectRepository projectRepository)
+        public UpdateCommentCommandHandler(IProjectCommentRepository projectCommentRepository)
         {
-            _projectRepository = projectRepository;
+            _projectCommentRepository = projectCommentRepository;
         }
 
         public async Task<Unit> Handle(UpdateCommentCommand request, CancellationToken cancellationToken)
         {
-            var comment = await _projectRepository.GetCommentById(request.Id);
+            var comment = await _projectCommentRepository.GetCommentById(request.Id);
 
             comment.UpdateComment(request.Conteudo);
 
-            await _projectRepository.SaveChangesAsync();
+            await _projectCommentRepository.SaveChangesAsync();
 
             return Unit.Value;
         }

@@ -11,16 +11,16 @@ namespace SistemaGestaoTcc.Application.Queries.ProjectsComments.GetCommentById
 {
     public class GetCommentQueryHandler : IRequestHandler<GetCommentQuery, ProjectCommentViewModel>
     {
-        private readonly IProjectRepository _projectRepository;
+        private readonly IProjectCommentRepository _projectCommentRepository;
 
-        public GetCommentQueryHandler(IProjectRepository projectRepository)
+        public GetCommentQueryHandler(IProjectCommentRepository projectCommentRepository)
         {
-            _projectRepository = projectRepository;
+            _projectCommentRepository = projectCommentRepository;
         }
 
         public async Task<ProjectCommentViewModel> Handle(GetCommentQuery request, CancellationToken cancellationToken)
         {
-            var comment = await _projectRepository.GetCommentById(request.Id);
+            var comment = await _projectCommentRepository.GetCommentById(request.Id);
 
             if (comment == null) return null;
 

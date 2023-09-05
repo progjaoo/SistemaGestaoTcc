@@ -11,15 +11,15 @@ namespace SistemaGestaoTcc.Application.Queries.ProjectsComments.GetAllComments
 {
     public class GetAllCommentsQueryHandler : IRequestHandler<GetAllCommentsQuery, List<ProjectCommentViewModel>>
     {
-        private readonly IProjectRepository _projectRepository;
+        private readonly IProjectCommentRepository _projectCommentRepository;
 
-        public GetAllCommentsQueryHandler(IProjectRepository projetoRepository)
+        public GetAllCommentsQueryHandler(IProjectCommentRepository projectCommentRepository)
         {
-            _projectRepository = projetoRepository;
+            _projectCommentRepository = projectCommentRepository;
         }
         public async Task<List<ProjectCommentViewModel>> Handle(GetAllCommentsQuery request, CancellationToken cancellationToken)
         {
-            var comment = await _projectRepository.GetAllCommentsAsync(request.Query);
+            var comment = await _projectCommentRepository.GetAllCommentsAsync(request.Query);
 
             var commentViewModel = comment
                 .Select(p => new ProjectCommentViewModel(p.Id, p.Conteudo, p.CriadoEm))

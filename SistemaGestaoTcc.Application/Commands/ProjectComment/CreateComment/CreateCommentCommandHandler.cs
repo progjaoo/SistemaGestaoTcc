@@ -11,17 +11,17 @@ namespace SistemaGestaoTcc.Application.Commands.ProjectComment.CreateComment
 {
     public class CreateCommentCommandHandler : IRequestHandler<CreateCommentCommand, Unit>
     {
-        private readonly IProjectRepository _projectRepository;
-        public CreateCommentCommandHandler(IProjectRepository projectRepository)
+        private readonly IProjectCommentRepository _projectCommentRepository;
+        public CreateCommentCommandHandler(IProjectCommentRepository projecCommenttRepository)
         {
-            _projectRepository = projectRepository;
+            _projectCommentRepository = projecCommenttRepository;
         }
 
         public async Task<Unit> Handle(CreateCommentCommand request, CancellationToken cancellationToken)
         {
             var comment = new ProjetoComentario(request.IdProjeto, request.IdUsuario, request.Conteudo);
 
-            await _projectRepository.AddCommentAsync(comment);
+            await _projectCommentRepository.AddCommentAsync(comment);
 
             return Unit.Value;
         }
