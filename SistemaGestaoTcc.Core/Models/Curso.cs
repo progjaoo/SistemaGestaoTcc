@@ -2,6 +2,7 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 
 namespace SistemaGestaoTcc.Core.Models;
 
@@ -16,4 +17,10 @@ public partial class Curso
     public virtual ICollection<Banca> Banca { get; set; } = new List<Banca>();
 
     public virtual ICollection<Calendario> Calendario { get; set; } = new List<Calendario>();
+
+    public void UpdateCourse(string nome, int? periodo)
+    {
+        Nome = nome;
+        Periodos = periodo;
+    }
 }

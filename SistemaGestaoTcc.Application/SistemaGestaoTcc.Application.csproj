@@ -15,4 +15,11 @@
     <ProjectReference Include="..\SistemaGestaoTcc.Infrastructure\SistemaGestaoTcc.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Commands\Courses\UpdateCourse\" />
+    <Folder Include="Commands\Courses\CreateCourse\" />
+    <Folder Include="Queries\Courses\GetCourseById\" />
+    <Folder Include="Queries\Courses\GetAllCourse\" />
+  </ItemGroup>
+
 </Project>

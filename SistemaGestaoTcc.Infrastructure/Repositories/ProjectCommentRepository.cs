@@ -30,8 +30,6 @@ namespace SistemaGestaoTcc.Infrastructure.Repositories
             return await _dbcontext.ProjetoComentario.SingleOrDefaultAsync(c => c.Id == id);
         }
 
-
-
         public async Task AddCommentAsync(ProjetoComentario projetoComentario)
         {
             await _dbcontext.ProjetoComentario.AddAsync(projetoComentario);
