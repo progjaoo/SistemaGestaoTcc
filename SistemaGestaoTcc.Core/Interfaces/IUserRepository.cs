@@ -11,5 +11,6 @@ namespace SistemaGestaoTcc.Core.Interfaces
     {
         Task<Usuario> GetById(int id);
         Task<Usuario> GetByEmailByPassword(string email, string passwordHash);
+        Task SaveChangesAsync();
     }
 }

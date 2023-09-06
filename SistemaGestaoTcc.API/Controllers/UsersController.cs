@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SistemaGestaoTcc.Application.Commands.Users.CreateUser;
 using SistemaGestaoTcc.Application.Commands.Users.LoginUser;
+using SistemaGestaoTcc.Application.Commands.Users.UpdateUser;
 using SistemaGestaoTcc.Application.Queries.Users.GetUser;
 
 namespace SistemaGestaoTcc.API.Controllers
@@ -32,7 +33,6 @@ namespace SistemaGestaoTcc.API.Controllers
             return Ok(user);
         }
         [HttpPost]
-        [Authorize(Roles = "Professor")]
         [AllowAnonymous]
         public async Task<IActionResult> Post([FromBody] CreateUserCommand command)
         {
@@ -42,6 +42,8 @@ namespace SistemaGestaoTcc.API.Controllers
         }
 
         [HttpPut("login")]
+        [Authorize(Roles = "Professor")]
+        [Authorize(Roles = "Aluno")]
         [AllowAnonymous]
         public async Task <IActionResult> Login([FromBody] LoginUserCommand command)
         {
@@ -52,6 +54,15 @@ namespace SistemaGestaoTcc.API.Controllers
                 return BadRequest();
             }
             return Ok(loginUserViewModel);
+        }
+        [HttpPut("AtualizarLogin")]
+        [Authorize(Roles = "Professor")]
+        [Authorize(Roles = "Aluno")]
+        public async Task<IActionResult> UpdateLogin(int id, [FromBody] UpdateUserCommand command)
+        {
+            await _mediator.Send(command);
+
+            return NoContent();
         }
     }
 }

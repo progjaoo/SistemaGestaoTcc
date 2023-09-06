@@ -2,9 +2,14 @@
 
 namespace SistemaGestaoTcc.API.Controllers
 {
+    [Route("api/courses")]
     public class CoursesController : ControllerBase
     {
-        [Route("api/courses")]
-        public MethodAccessException GetMethodAccessException() { return new MethodAccessException(); }
+        
+        [HttpGet]
+        public IActionResult Get()
+        {
+            return NoContent();
+        }
     }
 }

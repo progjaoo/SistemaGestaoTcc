@@ -37,4 +37,10 @@ public partial class Usuario : BaseEntity
     public virtual ICollection<ProjetoComentario> ProjetoComentario { get; set; } = new List<ProjetoComentario>();
 
     public virtual ICollection<UsuarioProjeto> UsuarioProjeto { get; set; } = new List<UsuarioProjeto>();    
+
+    public void Update(string nome, string senha)
+    {
+        Nome = nome;
+        Senha = senha;
+    }
 }
