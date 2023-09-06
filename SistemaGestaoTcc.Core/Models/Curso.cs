@@ -6,10 +6,13 @@ using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 
 namespace SistemaGestaoTcc.Core.Models;
 
-public partial class Curso
+public partial class Curso : BaseEntity
 {
-
-    public int Id { get; set; }
+    public Curso(string nome, int? periodos)
+    {
+        Nome = nome;
+        Periodos = periodos;
+    }
     public string Nome { get; set; }
 
     public int? Periodos { get; set; }

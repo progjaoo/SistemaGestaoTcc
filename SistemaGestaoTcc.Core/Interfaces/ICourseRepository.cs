@@ -12,6 +12,7 @@ namespace SistemaGestaoTcc.Core.Interfaces
         Task<List<Curso>> GetAllAsync(string query);
         Task<Curso> GetById(int id);
         Task AddASync(Curso curso);
+        Task DeleteCourse(int id);
         Task SaveChangesAsync();
     }
 }

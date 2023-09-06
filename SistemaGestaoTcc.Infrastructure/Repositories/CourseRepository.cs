@@ -27,9 +27,25 @@ namespace SistemaGestaoTcc.Infrastructure.Repositories
         {
             return await _dbcontext.Curso.SingleOrDefaultAsync(p => p.Id == id);
         }
+
         public async Task AddASync(Curso curso)
         {
             await _dbcontext.Curso.AddAsync(curso);
+        }
+
+        //DELETE 
+        public async Task RemoverAsync(Curso curso)
+        {
+            _dbcontext.Remove(curso);
+        }
+
+        public async Task DeleteCourse(int id)
+        {
+            var obj = await _dbcontext.Curso.SingleOrDefaultAsync(p => p.Id == id);
+
+            if (obj == null)
+                throw new Exception("O Curso nao existe");
+            await RemoverAsync(obj);
         }
 
         public async Task SaveChangesAsync()

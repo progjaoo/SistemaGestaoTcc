@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using SistemaGestaoTcc.Application.Commands.Courses.CreateCourse;
+using SistemaGestaoTcc.Application.Commands.ProjectComment.CreateComment;
 using SistemaGestaoTcc.Application.Commands.Projects.CreateProject;
 using SistemaGestaoTcc.Application.Commands.Users.CreateUser;
 using SistemaGestaoTcc.Core.Interfaces;
@@ -74,11 +76,14 @@ builder.Services.AddDbContext<SistemaTccContext>(p => p.UseSqlServer(connection)
 //MEDIATOR
 builder.Services.AddMediatR(typeof(CreateProjectCommand));
 builder.Services.AddMediatR(typeof(CreateUserCommand));
+builder.Services.AddMediatR(typeof(CreateCourseCommand));
+builder.Services.AddMediatR(typeof(CreateCommentCommand));
 
 //repositorios injecao de dependencia
 builder.Services.AddScoped<IProjectRepository, ProjectRepository>();
 builder.Services.AddTransient<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IProjectCommentRepository, ProjectCommentRepository>();
+builder.Services.AddScoped<ICourseRepository, CourseRepository>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 
 builder.Services.AddHttpClient();
