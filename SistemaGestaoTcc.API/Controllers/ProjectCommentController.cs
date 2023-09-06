@@ -47,7 +47,6 @@ namespace SistemaGestaoTcc.API.Controllers
             await _mediator.Send(command);
             return NoContent();
         }
-
         [HttpDelete("{id}/projectComment")]
         public async Task<IActionResult> DeleteComment(int id)
         {
@@ -57,6 +56,7 @@ namespace SistemaGestaoTcc.API.Controllers
 
             return Ok();
         }
+
         [HttpPut("{id}/UpdateComement")]
         public async Task<IActionResult> UpdateComment(int id, [FromBody] UpdateCommentCommand command)
         {

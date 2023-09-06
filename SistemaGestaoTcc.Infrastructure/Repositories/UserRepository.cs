@@ -32,5 +32,19 @@ namespace SistemaGestaoTcc.Infrastructure.Repositories
             await _dbcontext.SaveChangesAsync();
 
         }
+        //DELETE 
+        public async Task RemoverAsync(Usuario usuario)
+        {
+            _dbcontext.Remove(usuario);
+        }
+        public async Task DeleteUser(int id)
+        {
+            var obj = await _dbcontext.Usuario.SingleOrDefaultAsync(p => p.Id == id);
+
+            if (obj == null)
+                throw new Exception("O Usuario nao existe");
+            await RemoverAsync(obj);
+
+        }
     }
 }
