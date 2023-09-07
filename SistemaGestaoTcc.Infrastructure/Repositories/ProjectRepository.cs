@@ -33,7 +33,7 @@ namespace SistemaGestaoTcc.Infrastructure.Repositories
         public async Task<Projeto> GetById(int id)
         {
             //ok
-            return await _dbcontext.Projeto.SingleOrDefaultAsync(p => p.Id == id);   
+            return await _dbcontext.Projeto.SingleOrDefaultAsync(p => p.Id == id);
         }
 
         public async Task<Projeto> GetDetailsByIdAsync(int id)
@@ -45,7 +45,7 @@ namespace SistemaGestaoTcc.Infrastructure.Repositories
             //ok
             await _dbcontext.Projeto.AddAsync(projeto);
         }
-        
+
         public async Task SaveChangesAsync()
         {
             await _dbcontext.SaveChangesAsync();
@@ -59,9 +59,19 @@ namespace SistemaGestaoTcc.Infrastructure.Repositories
 
                 var script = "UPDATE Projects SET Estado = @estado, DataInicio = @datainicio WHERE Id = @id";
 
-                await sqlConnection.ExecuteAsync(script, new { estado = projeto.Estado, datainicio = projeto.DataInicio, projeto.Id});
+                await sqlConnection.ExecuteAsync(script, new { estado = projeto.Estado, datainicio = projeto.DataInicio, projeto.Id });
             }
         }
+        public async Task TornarPublico(int id)
+        {
+            var projeto = await _dbcontext.Projeto.FindAsync(id);
 
+            if (projeto != null)
+            {
+                projeto.Publicado = !projeto.Publicado;
+
+                await _dbcontext.SaveChangesAsync();
+            }
+        }
     }
 }

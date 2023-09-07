@@ -8,6 +8,7 @@ using SistemaGestaoTcc.Application.Commands.Projects.UpdateProject;
 using SistemaGestaoTcc.Application.Queries.Projects.GetProjectById;
 using SistemaGestaoTcc.Application.Queries.Projects.GetProjects;
 using SistemaGestaoTcc.Core.Interfaces;
+using SistemaGestaoTcc.Core.Models;
 
 namespace SistemaGestaoTcc.API.Controllers
 {
@@ -67,6 +68,20 @@ namespace SistemaGestaoTcc.API.Controllers
             await _mediator.Send(command);
 
             return NoContent();
+        }
+        [HttpPut("{id}/alternar-publicado")]
+        public async Task<IActionResult> TornarPublico(int id)
+        {
+            try
+            {
+                await _projectRepository.TornarPublico(id);
+
+                return Ok();
+            }
+            catch(Exception ex) 
+            {
+                return StatusCode(500, $"Erro interno: {ex.Message}");
+            }
         }
     }
 }

@@ -64,7 +64,6 @@ namespace SistemaGestaoTcc.API.Controllers
             return NoContent();
         }
         [HttpDelete("{id}/deleteUser")]
-        [Authorize(Roles = "string")]
         public async Task<IActionResult> DeleteUser(int id)
         {
             await _userRepository.DeleteUser(id);

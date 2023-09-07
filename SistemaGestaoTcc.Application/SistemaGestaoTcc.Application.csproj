@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Commands\ProjectComment\Publicar\" />
     <Folder Include="Queries\Courses\GetCourseById\" />
   </ItemGroup>
 

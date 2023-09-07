@@ -14,6 +14,7 @@ namespace SistemaGestaoTcc.Core.Interfaces
         Task<Projeto> GetDetailsByIdAsync (int id);
         Task AddASync(Projeto projeto);
         Task StartAsync(Projeto projeto);
+        Task TornarPublico(int id);
         Task SaveChangesAsync();
     }
 }
