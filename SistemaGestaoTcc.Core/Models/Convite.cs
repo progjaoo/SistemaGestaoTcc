@@ -23,4 +23,9 @@ public partial class Convite
     public virtual Projeto IdProjetoNavigation { get; set; }
 
     public virtual Usuario IdUsuarioNavigation { get; set; }
+
+    public void Update(bool aceito)
+    {
+        Aceito = aceito;
+    }
 }

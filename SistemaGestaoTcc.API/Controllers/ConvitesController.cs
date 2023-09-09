@@ -6,22 +6,23 @@ using SistemaGestaoTcc.Application.Commands.Convites;
 using SistemaGestaoTcc.Application.Services;
 using SistemaGestaoTcc.Core.Interfaces;
 using SistemaGestaoTcc.Core.Models;
+using SistemaGestaoTcc.Infrastructure.Repositories;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
+
 
 [ApiController]
 [Route("api/convites")]
 public class ConvitesController : ControllerBase
 {
-
-    private readonly SistemaTccContext _dbcontext;
     private readonly IMediator _mediator;
+    private readonly IConviteRepository _conviteRepository;
     private readonly IUsuarioProjetoRepository _usuarioProjetoRepository;
     private readonly IUserRepository _userRepository;
     private readonly IProjectRepository _projectRepository;
-    public ConvitesController(SistemaTccContext dbcontext, IMediator mediator, IUsuarioProjetoRepository usuarioProjetoRepository, IUserRepository userRepository, IProjectRepository projectRepository)
+    public ConvitesController(IConviteRepository conviteRepository, IMediator mediator, IUsuarioProjetoRepository usuarioProjetoRepository, IUserRepository userRepository, IProjectRepository projectRepository)
     {
-        _dbcontext = dbcontext;
         _mediator = mediator;
+        _conviteRepository = conviteRepository;
         _usuarioProjetoRepository = usuarioProjetoRepository;
         _userRepository = userRepository;
         _projectRepository = projectRepository;
@@ -54,9 +55,9 @@ public class ConvitesController : ControllerBase
     }
 
     [HttpPut("aceitarConvite")]
-    public async Task<IActionResult> AceitarConvite(int id)
+    public async Task<IActionResult> AceitarConvite(int id ,[FromBody] UpdateConviteCommand command)
     {
-        var invite = await _dbcontext.Convite.FindAsync(id);
+        var invite = await _conviteRepository.GetById(id);
 
         if (invite == null)
         {
@@ -71,16 +72,15 @@ public class ConvitesController : ControllerBase
             return BadRequest("Este convite já foi rejeitado.");
         }
         invite.Aceito = true;
-        _dbcontext.Entry(invite).State = EntityState.Modified;
 
-        await _dbcontext.SaveChangesAsync();
-
+        await _mediator.Send(command);
         return Ok("Convite aceito com sucesso!");
+
     }
     [HttpPut("rejeitarConvite")]
-    public async Task<IActionResult> RejeitarConvite(int id)
+    public async Task<IActionResult> RejeitarConvite(int id, [FromBody] UpdateConviteCommand command)
     {
-        var invite = await _dbcontext.Convite.FindAsync(id);
+        var invite = await _conviteRepository.GetById(id);
 
         if (invite == null)
         {
@@ -95,10 +95,7 @@ public class ConvitesController : ControllerBase
             return BadRequest("Este convite já foi rejeitado.");
         }
         invite.Aceito = false;
-        _dbcontext.Entry(invite).State = EntityState.Modified;
-
-        await _dbcontext.SaveChangesAsync();
-
-        return Ok("Convite rejeitado com sucesso!");
+        await _mediator.Send(command);
+        return Ok("Convite aceito com sucesso!");
     }
 }
