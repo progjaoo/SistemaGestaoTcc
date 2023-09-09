@@ -9,6 +9,7 @@ public partial class Convite
 {
 
     public int Id { get; set; }
+
     public int IdUsuario { get; set; }
 
     public int IdProjeto { get; set; }

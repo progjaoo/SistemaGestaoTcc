@@ -69,7 +69,7 @@ namespace SistemaGestaoTcc.API.Controllers
 
             return NoContent();
         }
-        [HttpPut("{id}/alternar-publicado")]
+        [HttpPut("{id}/tornarPublico")]
         public async Task<IActionResult> TornarPublico(int id)
         {
             try
