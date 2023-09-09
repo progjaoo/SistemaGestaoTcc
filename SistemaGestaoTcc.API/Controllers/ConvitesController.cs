@@ -38,12 +38,13 @@ public class ConvitesController : ControllerBase
 
         var assunto = $"Convite para o Projeto";
 
-        var content = $"Olá {user.Nome}, Você recebeu um convite para participar do projeto {project.Nome}.";
-        if (user.Papel == "Professor")
+        var content = $"<p>Olá {user.Nome}, Você recebeu um convite para participar do projeto {project.Nome}.<p/>";
+
+        if (user.Papel == "professor")
         {
-            content = $"Olá Professor {user.Nome}, Você recebeu um convite para participar do projeto {project.Nome}.";
+            content = $"<p>Olá Professor {user.Nome}, Você recebeu um convite para participar do projeto {project.Nome}.<p/>";
         }
-        var htmlContent = $"<strong>Você recebeu um convite para participar do projeto. Clique <a href='https://pages.github.com/gilbertolgs/SistemaTCC-FrontEnd/convites'>aqui</a> para aceitar.</strong>";
+        var htmlContent = content + $"<br><strong>Você recebeu um convite para participar do projeto. Clique <a href='https://pages.github.com/gilbertolgs/SistemaTCC-FrontEnd/convites'>aqui</a> para aceitar.</strong>";
 
         var email = new EmailAddress(user.Email);
 
