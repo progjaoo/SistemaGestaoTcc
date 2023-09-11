@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SistemaGestaoTcc.Application.Commands.ProjectComment.CreateComment;
 using SistemaGestaoTcc.Application.Commands.ProjectComment.UpdateComment;

@@ -2,7 +2,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SendGrid.Helpers.Mail;
-using SistemaGestaoTcc.Application.Commands.Convites;
+using SistemaGestaoTcc.Application.Commands.Convites.EnviarConvite;
+using SistemaGestaoTcc.Application.Commands.Convites.UpdateConvite;
 using SistemaGestaoTcc.Application.Services;
 using SistemaGestaoTcc.Core.Interfaces;
 using SistemaGestaoTcc.Core.Models;
@@ -96,6 +97,6 @@ public class ConvitesController : ControllerBase
         }
         invite.Aceito = false;
         await _mediator.Send(command);
-        return Ok("Convite aceito com sucesso!");
+        return Ok("Convite rejeitado com sucesso!");
     }
 }
