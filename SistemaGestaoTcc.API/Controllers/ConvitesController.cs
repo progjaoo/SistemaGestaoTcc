@@ -40,17 +40,9 @@ public class ConvitesController : ControllerBase
 
         var assunto = $"Convite para o Projeto";
 
-        var content = $"<p>Olá {user.Nome}, Você recebeu um convite para participar do projeto {project.Nome}.<p/>";
-
-        if (user.Papel == "professor")
-        {
-            content = $"<p>Olá Professor {user.Nome}, Você recebeu um convite para participar do projeto {project.Nome}.<p/>";
-        }
-        var htmlContent = content + $"<br><strong>Você recebeu um convite para participar do projeto. Clique <a href='https://pages.github.com/gilbertolgs/SistemaTCC-FrontEnd/convites'>aqui</a> para aceitar.</strong>";
-
         var email = new EmailAddress(user.Email);
 
-        await emailService.ConviteEmailAsync(email, assunto, content, htmlContent);
+        await emailService.ConviteEmailAsync(email, assunto, user.Nome, project.Nome);
 
         return CreatedAtAction(nameof(command), new { id = id }, command);
     }
