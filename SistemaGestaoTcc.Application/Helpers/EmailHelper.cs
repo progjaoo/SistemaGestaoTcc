@@ -2,19 +2,6 @@
 {
     public class EmailHelper
     {
-        //public EmailHelper(string assunto, string linkEndereco, string conteudo, string botaoNome)
-        //{
-        //    Assunto = assunto;
-        //    LinkEndereco = linkEndereco;
-        //    Conteudo = conteudo;
-        //    BotaoNome = botaoNome;
-        //}
-
-        //public string Assunto { get; set; }
-        //public string LinkEndereco { get; set; }
-        //public string Conteudo { get; set; }
-        //public string BotaoNome { get; set; }
-
         public string GeralHTML(string linkEndereco, string conteudo, string botaoNome)
         {
             var newEmail = new EmailHelper();

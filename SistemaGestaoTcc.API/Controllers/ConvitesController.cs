@@ -40,7 +40,7 @@ public class ConvitesController : ControllerBase
 
         var assunto = $"Convite para o Projeto";
 
-        var linkEndereco = "https://gilbertolgs.github.io/SistemaTCC-FrontEnd/Convites";
+        var linkEndereco = "https://gilbertolgs.github.io/SistemaTCC-FrontEnd/convites";
         var conteudo = $"{user.Nome}, você recebeu um convite para participar do projeto {project.Nome}.";
         var botaoNome = "Ir para o Projeto";
 
