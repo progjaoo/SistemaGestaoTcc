@@ -32,3 +32,20 @@ C:\Users\Windows7\Desktop\AEDB\Proj Int II\Codigo\SistemaGestaoTcc\SistemaGestao
 C:\Users\Windows7\Desktop\AEDB\Proj Int II\Codigo\SistemaGestaoTcc\SistemaGestaoTcc.Infrastructure\obj\Debug\net6.0\SistemaGestaoTcc.Infrastructure.pdb
 C:\Users\Windows7\Desktop\AEDB\Proj Int II\Codigo\SistemaGestaoTcc\SistemaGestaoTcc.Infrastructure\obj\Debug\net6.0\SistemaGestaoTcc.Infrastructure.genruntimeconfig.cache
 C:\Users\Windows7\Desktop\AEDB\Proj Int II\Codigo\SistemaGestaoTcc\SistemaGestaoTcc.Infrastructure\obj\Debug\net6.0\ref\SistemaGestaoTcc.Infrastructure.dll
+C:\Users\joaom\Documents\testes\SistemaGestaoTcc\SistemaGestaoTcc.Infrastructure\bin\Debug\net6.0\SistemaGestaoTcc.Infrastructure.deps.json
+C:\Users\joaom\Documents\testes\SistemaGestaoTcc\SistemaGestaoTcc.Infrastructure\bin\Debug\net6.0\SistemaGestaoTcc.Infrastructure.runtimeconfig.json
+C:\Users\joaom\Documents\testes\SistemaGestaoTcc\SistemaGestaoTcc.Infrastructure\bin\Debug\net6.0\SistemaGestaoTcc.Infrastructure.dll
+C:\Users\joaom\Documents\testes\SistemaGestaoTcc\SistemaGestaoTcc.Infrastructure\bin\Debug\net6.0\SistemaGestaoTcc.Infrastructure.pdb
+C:\Users\joaom\Documents\testes\SistemaGestaoTcc\SistemaGestaoTcc.Infrastructure\bin\Debug\net6.0\SistemaGestaoTcc.Core.dll
+C:\Users\joaom\Documents\testes\SistemaGestaoTcc\SistemaGestaoTcc.Infrastructure\bin\Debug\net6.0\SistemaGestaoTcc.Core.pdb
+C:\Users\joaom\Documents\testes\SistemaGestaoTcc\SistemaGestaoTcc.Infrastructure\obj\Debug\net6.0\SistemaGestaoTcc.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\joaom\Documents\testes\SistemaGestaoTcc\SistemaGestaoTcc.Infrastructure\obj\Debug\net6.0\SistemaGestaoTcc.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\joaom\Documents\testes\SistemaGestaoTcc\SistemaGestaoTcc.Infrastructure\obj\Debug\net6.0\SistemaGestaoTcc.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\joaom\Documents\testes\SistemaGestaoTcc\SistemaGestaoTcc.Infrastructure\obj\Debug\net6.0\SistemaGestaoTcc.Infrastructure.AssemblyInfo.cs
+C:\Users\joaom\Documents\testes\SistemaGestaoTcc\SistemaGestaoTcc.Infrastructure\obj\Debug\net6.0\SistemaGestaoTcc.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\joaom\Documents\testes\SistemaGestaoTcc\SistemaGestaoTcc.Infrastructure\obj\Debug\net6.0\SistemaGestaoTcc.Infrastructure.csproj.CopyComplete
+C:\Users\joaom\Documents\testes\SistemaGestaoTcc\SistemaGestaoTcc.Infrastructure\obj\Debug\net6.0\SistemaGestaoTcc.Infrastructure.dll
+C:\Users\joaom\Documents\testes\SistemaGestaoTcc\SistemaGestaoTcc.Infrastructure\obj\Debug\net6.0\refint\SistemaGestaoTcc.Infrastructure.dll
+C:\Users\joaom\Documents\testes\SistemaGestaoTcc\SistemaGestaoTcc.Infrastructure\obj\Debug\net6.0\SistemaGestaoTcc.Infrastructure.pdb
+C:\Users\joaom\Documents\testes\SistemaGestaoTcc\SistemaGestaoTcc.Infrastructure\obj\Debug\net6.0\SistemaGestaoTcc.Infrastructure.genruntimeconfig.cache
+C:\Users\joaom\Documents\testes\SistemaGestaoTcc\SistemaGestaoTcc.Infrastructure\obj\Debug\net6.0\ref\SistemaGestaoTcc.Infrastructure.dll

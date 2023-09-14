@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "WPqFEDl09BwghZy+8Jzl7iSNffNhyooHB73pAi36cyZm3JE+4p9b27W39ra0t+KMYdhPGhjnlm8y/NFsDBPpIQ==",
+  "dgSpecHash": "pZwpeEokjoJf5XKq1RmYvDf9gserXlDaJGJpJVzG7EkWDHjbrWxoC4cM9GoVo/yJE+Vk9qZQpnv+me31U6//Lw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\joaom\\Documents\\testes\\SistemaGestaoTcc\\SistemaGestaoTcc.API\\SistemaGestaoTcc.API.csproj",
+  "projectFilePath": "C:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestaoTcc.API\\SistemaGestaoTcc.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\joaom\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\joaom\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
