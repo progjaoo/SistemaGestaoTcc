@@ -5,19 +5,14 @@ using System.Collections.Generic;
 
 namespace SistemaGestaoTcc.Core.Models;
 
-public partial class ProjetoComentario
+public partial class ProjetoComentario : BaseEntity
 {
-    public ProjetoComentario( int idProjeto, int idUsuario, string conteudo)
+    public ProjetoComentario(int idUsuario, int idProjeto, string conteudo)
     {
-        IdProjeto = idProjeto;
         IdUsuario = idUsuario;
-       
+        IdProjeto = idProjeto;
         Conteudo = conteudo;
-
-        CriadoEm = DateTime.Now;
     }
-
-    public int Id { get; set; }
 
     public int IdUsuario { get; set; }
 
@@ -30,10 +25,11 @@ public partial class ProjetoComentario
     public bool? Editado { get; set; }
 
     public bool? Avaliacao { get; set; }
-   
+
     public virtual Projeto IdProjetoNavigation { get; set; }
 
     public virtual Usuario IdUsuarioNavigation { get; set; }
+
 
 
     public void UpdateComment(string conteudo)

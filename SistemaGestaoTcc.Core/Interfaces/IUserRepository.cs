@@ -9,6 +9,8 @@ namespace SistemaGestaoTcc.Core.Interfaces
 {
     public interface IUserRepository
     {
+        Task<List<Usuario>> GetAllByCourse(int id);
+        Task<List<Usuario>> GetAllByRole(string papel);
         Task<Usuario> GetById(int id);
         Task<Usuario> GetByEmailByPassword(string email, string passwordHash);
         Task SaveChangesAsync();

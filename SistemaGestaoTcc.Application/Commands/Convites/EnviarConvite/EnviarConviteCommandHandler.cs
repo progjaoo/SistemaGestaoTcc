@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using SistemaGestaoTcc.Core.Enums;
 using SistemaGestaoTcc.Core.Models;
 
 namespace SistemaGestaoTcc.Application.Commands.Convites.EnviarConvite
@@ -21,7 +22,7 @@ namespace SistemaGestaoTcc.Application.Commands.Convites.EnviarConvite
                 IdProjeto = request.IdProjeto,
                 DataEnvio = DateTime.Now,
                 DataExpira = DateTime.Now.AddDays(7), // Defina uma data de expiração para o convite.
-                Aceito = null // Inicialmente, o convite não foi aceito.
+                Aceito = ConviteAceito.Pendente
             };
 
             _dbcontext.Convite.Add(convidar);

@@ -9,7 +9,7 @@ using SistemaGestaoTcc.Application.ViewModels;
 
 namespace SistemaGestaoTcc.Application.Queries.Users.GetUser
 {
-    public class GetUserQuery : IRequest<UserViewModel>
+    public class GetUserQuery : IRequest<UserViewModel0>
     {
         public GetUserQuery(int id)
         {

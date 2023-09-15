@@ -7,13 +7,13 @@ namespace SistemaGestaoTcc.Core.Models;
 
 public partial class ProfessorBanca
 {
-
     public int Id { get; set; }
-    public int IdProfessor { get; set; }
+
+    public int IdUsuario { get; set; }
 
     public int IdBanca { get; set; }
 
     public virtual Banca IdBancaNavigation { get; set; }
 
-    public virtual Usuario IdProfessorNavigation { get; set; }
+    public virtual Usuario IdUsuarioNavigation { get; set; }
 }

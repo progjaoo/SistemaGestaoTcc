@@ -15,6 +15,7 @@ namespace SistemaGestaoTcc.API.Controllers
     {
         private readonly IMediator _mediator;
         private readonly IUserRepository _userRepository;
+
         public UsersController(IMediator mediator, IUserRepository userRepository)
         {
             _mediator = mediator;
@@ -23,6 +24,14 @@ namespace SistemaGestaoTcc.API.Controllers
 
         [HttpGet("{id}")]
         [AllowAnonymous]
+        public async Task<IActionResult> GetAllByRole(string papel)
+        {
+
+        }
+        public async Task<IActionResult> GetAllByCourse(int id)
+        {
+
+        }
         public async Task<IActionResult> GetById(int id)
         {
             var query = new GetUserQuery(id);

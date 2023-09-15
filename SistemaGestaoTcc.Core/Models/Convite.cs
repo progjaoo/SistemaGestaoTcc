@@ -2,13 +2,12 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using SistemaGestaoTcc.Core.Enums;
 
 namespace SistemaGestaoTcc.Core.Models;
 
-public partial class Convite 
+public partial class Convite : BaseEntity
 {
-
-    public int Id { get; set; }
 
     public int IdUsuario { get; set; }
 
@@ -18,13 +17,13 @@ public partial class Convite
 
     public DateTime? DataExpira { get; set; }
 
-    public bool? Aceito { get; set; }
+    public ConviteAceito Aceito { get; set; }
 
     public virtual Projeto IdProjetoNavigation { get; set; }
 
     public virtual Usuario IdUsuarioNavigation { get; set; }
 
-    public void Update(bool aceito)
+    public void Update(ConviteAceito aceito)
     {
         Aceito = aceito;
     }

@@ -7,14 +7,17 @@ namespace SistemaGestaoTcc.Core.Models;
 
 public partial class Usuario : BaseEntity
 {
-    public Usuario(string nome, string email, string senha, string papel, int? periodo)
+    public Usuario(int idCurso, string nome, string email, string senha, string papel, int? periodo)
     {
+        IdCurso = idCurso;
         Nome = nome;
         Email = email;
         Senha = senha;
         Papel = papel;
         Periodo = periodo;
     }
+
+    public int IdCurso { get; set; }
 
     public string Nome { get; set; }
 
@@ -28,6 +31,8 @@ public partial class Usuario : BaseEntity
 
     public virtual ICollection<Convite> Convite { get; set; } = new List<Convite>();
 
+    public virtual Curso IdCursoNavigation { get; set; }
+
     public virtual ICollection<Nota> Nota { get; set; } = new List<Nota>();
 
     public virtual ICollection<ProfessorBanca> ProfessorBanca { get; set; } = new List<ProfessorBanca>();
@@ -36,7 +41,7 @@ public partial class Usuario : BaseEntity
 
     public virtual ICollection<ProjetoComentario> ProjetoComentario { get; set; } = new List<ProjetoComentario>();
 
-    public virtual ICollection<UsuarioProjeto> UsuarioProjeto { get; set; } = new List<UsuarioProjeto>();    
+    public virtual ICollection<UsuarioProjeto> UsuarioProjeto { get; set; } = new List<UsuarioProjeto>();
 
     public void Update(string nome, string senha)
     {

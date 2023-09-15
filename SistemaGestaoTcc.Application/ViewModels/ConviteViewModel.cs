@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SistemaGestaoTcc.Core.Enums;
 
 namespace SistemaGestaoTcc.Application.ViewModels
 {
     public class ConviteViewModel
     {
-        public ConviteViewModel(int id, DateTime? dataEnvio, DateTime? dataExpira, bool? aceito)
+        public ConviteViewModel(int id, DateTime? dataEnvio, DateTime? dataExpira, ConviteAceito aceito)
         {
             Id = id;
             DataEnvio = dataEnvio;
@@ -22,6 +23,6 @@ namespace SistemaGestaoTcc.Application.ViewModels
 
         public DateTime? DataExpira { get; set; }
 
-        public bool? Aceito { get; set; }
+        public ConviteAceito Aceito { get; set; }
     }
 }

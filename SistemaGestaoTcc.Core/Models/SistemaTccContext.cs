@@ -8,10 +8,6 @@ namespace SistemaGestaoTcc.Core.Models;
 
 public partial class SistemaTccContext : DbContext
 {
-    public SistemaTccContext()
-    {
-    }
-
     public SistemaTccContext(DbContextOptions<SistemaTccContext> options)
         : base(options)
     {
@@ -43,23 +39,23 @@ public partial class SistemaTccContext : DbContext
     {
         modelBuilder.Entity<Banca>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Banca__3214EC07216A1A56");
+            entity.HasKey(e => e.Id).HasName("PK__Banca__3214EC07912D8316");
 
             entity.HasIndex(e => e.IdCurso, "Banca_FKIndex1");
 
             entity.HasOne(d => d.IdCursoNavigation).WithMany(p => p.Banca)
                 .HasForeignKey(d => d.IdCurso)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Banca__IdCurso__412EB0B6");
+                .HasConstraintName("FK__Banca__IdCurso__44FF419A");
         });
 
         modelBuilder.Entity<Calendario>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Calendar__3214EC079053AAED");
+            entity.HasKey(e => e.Id).HasName("PK__Calendar__3214EC07B3199D77");
 
             entity.HasIndex(e => e.IdCurso, "Calendario_FKIndex1");
 
-            entity.Property(e => e.DataInicio).HasColumnType("datetime");
+            entity.Property(e => e.DataInicio).HasColumnType("date");
             entity.Property(e => e.Descricao)
                 .HasMaxLength(500)
                 .IsUnicode(false);
@@ -70,34 +66,34 @@ public partial class SistemaTccContext : DbContext
             entity.HasOne(d => d.IdCursoNavigation).WithMany(p => p.Calendario)
                 .HasForeignKey(d => d.IdCurso)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Calendari__IdCur__45F365D3");
+                .HasConstraintName("FK__Calendari__IdCur__49C3F6B7");
         });
 
         modelBuilder.Entity<Convite>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Convite__3214EC07E946B505");
+            entity.HasKey(e => e.Id).HasName("PK__Convite__3214EC0702A37F85");
 
             entity.HasIndex(e => e.IdProjeto, "Convite_FKIndex1");
 
             entity.HasIndex(e => e.IdUsuario, "Convite_FKIndex2");
 
-            entity.Property(e => e.DataEnvio).HasColumnType("datetime");
-            entity.Property(e => e.DataExpira).HasColumnType("datetime");
+            entity.Property(e => e.DataEnvio).HasColumnType("date");
+            entity.Property(e => e.DataExpira).HasColumnType("date");
 
             entity.HasOne(d => d.IdProjetoNavigation).WithMany(p => p.Convite)
                 .HasForeignKey(d => d.IdProjeto)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Convite__IdProje__5FB337D6");
+                .HasConstraintName("FK__Convite__IdProje__6383C8BA");
 
             entity.HasOne(d => d.IdUsuarioNavigation).WithMany(p => p.Convite)
                 .HasForeignKey(d => d.IdUsuario)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Convite__IdUsuar__60A75C0F");
+                .HasConstraintName("FK__Convite__IdUsuar__6477ECF3");
         });
 
         modelBuilder.Entity<Curso>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Curso__3214EC07A2F6EBB6");
+            entity.HasKey(e => e.Id).HasName("PK__Curso__3214EC07F609C051");
 
             entity.Property(e => e.Nome)
                 .HasMaxLength(100)
@@ -106,7 +102,7 @@ public partial class SistemaTccContext : DbContext
 
         modelBuilder.Entity<Nota>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Nota__3214EC07E5499FCB");
+            entity.HasKey(e => e.Id).HasName("PK__Nota__3214EC07A77A981A");
 
             entity.HasIndex(e => e.IdUsuario, "Nota_FKIndex1");
 
@@ -115,56 +111,63 @@ public partial class SistemaTccContext : DbContext
             entity.HasOne(d => d.IdProjetoNavigation).WithMany(p => p.Nota)
                 .HasForeignKey(d => d.IdProjeto)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Nota__IdProjeto__6754599E");
+                .HasConstraintName("FK__Nota__IdProjeto__6B24EA82");
 
             entity.HasOne(d => d.IdUsuarioNavigation).WithMany(p => p.Nota)
                 .HasForeignKey(d => d.IdUsuario)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Nota__IdUsuario__66603565");
+                .HasConstraintName("FK__Nota__IdUsuario__6A30C649");
         });
 
         modelBuilder.Entity<ProfessorBanca>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Professo__3214EC07C961204A");
+            entity.HasKey(e => e.Id).HasName("PK__Professo__3214EC07D1BF91D3");
 
             entity.HasIndex(e => e.IdBanca, "ProfessorBanca_FKIndex1");
 
-            entity.HasIndex(e => e.IdProfessor, "ProfessorBanca_FKIndex2");
+            entity.HasIndex(e => e.IdUsuario, "ProfessorBanca_FKIndex2");
 
             entity.HasOne(d => d.IdBancaNavigation).WithMany(p => p.ProfessorBanca)
                 .HasForeignKey(d => d.IdBanca)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Professor__IdBan__6D0D32F4");
+                .HasConstraintName("FK__Professor__IdBan__70DDC3D8");
 
-            entity.HasOne(d => d.IdProfessorNavigation).WithMany(p => p.ProfessorBanca)
-                .HasForeignKey(d => d.IdProfessor)
+            entity.HasOne(d => d.IdUsuarioNavigation).WithMany(p => p.ProfessorBanca)
+                .HasForeignKey(d => d.IdUsuario)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Professor__IdPro__6E01572D");
+                .HasConstraintName("FK__Professor__IdUsu__71D1E811");
         });
 
         modelBuilder.Entity<Projeto>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Projeto__3214EC07A234990B");
+            entity.HasKey(e => e.Id).HasName("PK__Projeto__3214EC07D1D74331");
 
-            entity.Property(e => e.DataFim).HasColumnType("datetime");
-            entity.Property(e => e.DataInicio).HasColumnType("datetime");
+            entity.HasIndex(e => e.IdCurso, "Projeto_FKIndex1");
+
+            entity.Property(e => e.DataFim).HasColumnType("date");
+            entity.Property(e => e.DataInicio).HasColumnType("date");
             entity.Property(e => e.Descricao)
                 .HasMaxLength(300)
                 .IsUnicode(false);
             entity.Property(e => e.Nome)
                 .HasMaxLength(200)
                 .IsUnicode(false);
+
+            entity.HasOne(d => d.IdCursoNavigation).WithMany(p => p.Projeto)
+                .HasForeignKey(d => d.IdCurso)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__Projeto__IdCurso__403A8C7D");
         });
 
         modelBuilder.Entity<ProjetoArquivo>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__ProjetoA__3214EC07F3A31F12");
+            entity.HasKey(e => e.Id).HasName("PK__ProjetoA__3214EC0782FCA0E2");
 
             entity.HasIndex(e => e.IdProjeto, "ProjetoArquivo_FKIndex1");
 
             entity.HasIndex(e => e.IdUsuario, "ProjetoArquivo_FKIndex2");
 
-            entity.Property(e => e.CriadoEm).HasColumnType("datetime");
+            entity.Property(e => e.CriadoEm).HasColumnType("date");
             entity.Property(e => e.DiretorioArquivo)
                 .HasMaxLength(500)
                 .IsUnicode(false);
@@ -172,17 +175,17 @@ public partial class SistemaTccContext : DbContext
             entity.HasOne(d => d.IdProjetoNavigation).WithMany(p => p.ProjetoArquivo)
                 .HasForeignKey(d => d.IdProjeto)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__ProjetoAr__IdPro__59063A47");
+                .HasConstraintName("FK__ProjetoAr__IdPro__5CD6CB2B");
 
             entity.HasOne(d => d.IdUsuarioNavigation).WithMany(p => p.ProjetoArquivo)
                 .HasForeignKey(d => d.IdUsuario)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__ProjetoAr__IdUsu__59FA5E80");
+                .HasConstraintName("FK__ProjetoAr__IdUsu__5DCAEF64");
         });
 
         modelBuilder.Entity<ProjetoComentario>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__ProjetoC__3214EC078C55A598");
+            entity.HasKey(e => e.Id).HasName("PK__ProjetoC__3214EC07A78AF7FF");
 
             entity.HasIndex(e => e.IdProjeto, "ProjetoComentario_FKIndex1");
 
@@ -191,22 +194,24 @@ public partial class SistemaTccContext : DbContext
             entity.Property(e => e.Conteudo)
                 .HasMaxLength(500)
                 .IsUnicode(false);
-            entity.Property(e => e.CriadoEm).HasColumnType("datetime");
+            entity.Property(e => e.CriadoEm).HasColumnType("date");
 
             entity.HasOne(d => d.IdProjetoNavigation).WithMany(p => p.ProjetoComentario)
                 .HasForeignKey(d => d.IdProjeto)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__ProjetoCo__IdPro__52593CB8");
+                .HasConstraintName("FK__ProjetoCo__IdPro__4F7CD00D");
 
             entity.HasOne(d => d.IdUsuarioNavigation).WithMany(p => p.ProjetoComentario)
                 .HasForeignKey(d => d.IdUsuario)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__ProjetoCo__IdUsu__534D60F1");
+                .HasConstraintName("FK__ProjetoCo__IdUsu__5070F446");
         });
 
         modelBuilder.Entity<Usuario>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Usuario__3214EC073804DA99");
+            entity.HasKey(e => e.Id).HasName("PK__Usuario__3214EC07C928CF36");
+
+            entity.HasIndex(e => e.IdCurso, "Usuario_FKIndex1");
 
             entity.Property(e => e.Email)
                 .HasMaxLength(200)
@@ -220,11 +225,16 @@ public partial class SistemaTccContext : DbContext
             entity.Property(e => e.Senha)
                 .HasMaxLength(300)
                 .IsUnicode(false);
+
+            entity.HasOne(d => d.IdCursoNavigation).WithMany(p => p.Usuario)
+                .HasForeignKey(d => d.IdCurso)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__Usuario__IdCurso__3B75D760");
         });
 
         modelBuilder.Entity<UsuarioProjeto>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__UsuarioP__3214EC076231A295");
+            entity.HasKey(e => e.Id).HasName("PK__UsuarioP__3214EC0725537E70");
 
             entity.HasIndex(e => e.IdUsuario, "UsuarioProjeto_FKIndex1");
 
@@ -233,12 +243,12 @@ public partial class SistemaTccContext : DbContext
             entity.HasOne(d => d.IdProjetoNavigation).WithMany(p => p.UsuarioProjeto)
                 .HasForeignKey(d => d.IdProjeto)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__UsuarioPr__IdPro__4CA06362");
+                .HasConstraintName("FK__UsuarioPr__IdPro__571DF1D5");
 
             entity.HasOne(d => d.IdUsuarioNavigation).WithMany(p => p.UsuarioProjeto)
                 .HasForeignKey(d => d.IdUsuario)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__UsuarioPr__IdUsu__4BAC3F29");
+                .HasConstraintName("FK__UsuarioPr__IdUsu__5629CD9C");
         });
 
         OnModelCreatingPartial(modelBuilder);

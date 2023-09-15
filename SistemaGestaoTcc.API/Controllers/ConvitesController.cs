@@ -5,6 +5,7 @@ using SendGrid.Helpers.Mail;
 using SistemaGestaoTcc.Application.Commands.Convites.EnviarConvite;
 using SistemaGestaoTcc.Application.Commands.Convites.UpdateConvite;
 using SistemaGestaoTcc.Application.Services;
+using SistemaGestaoTcc.Core.Enums;
 using SistemaGestaoTcc.Core.Interfaces;
 using SistemaGestaoTcc.Core.Models;
 using SistemaGestaoTcc.Infrastructure.Repositories;
@@ -60,15 +61,15 @@ public class ConvitesController : ControllerBase
         {
             return NotFound("Convite não encontrado.");
         }
-        if (invite.Aceito == true)
+        if (invite.Aceito == ConviteAceito.Aceito) 
         {
             return BadRequest("Este convite já foi aceito.");
         }
-        if (invite.Aceito == false)
+        if (invite.Aceito == ConviteAceito.Recusado)
         {
             return BadRequest("Este convite já foi rejeitado.");
         }
-        invite.Aceito = true;
+        invite.Aceito = ConviteAceito.Aceito;
 
         await _mediator.Send(command);
         return Ok("Convite aceito com sucesso!");
@@ -83,15 +84,15 @@ public class ConvitesController : ControllerBase
         {
             return NotFound("Convite não encontrado.");
         }
-        if (invite.Aceito == true)
+        if (invite.Aceito == ConviteAceito.Aceito)
         {
             return BadRequest("Este convite já foi aceito.");
         }
-        if (invite.Aceito == false)
+        if (invite.Aceito == ConviteAceito.Recusado)
         {
             return BadRequest("Este convite já foi rejeitado.");
         }
-        invite.Aceito = false;
+        invite.Aceito = ConviteAceito.Recusado;
         await _mediator.Send(command);
         return Ok("Convite rejeitado com sucesso!");
     }
