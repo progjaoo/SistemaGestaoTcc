@@ -8,13 +8,13 @@ using SistemaGestaoTcc.Application.ViewModels;
 
 namespace SistemaGestaoTcc.Application.Queries.Users.GetAllByCourse
 {
-    public class GetAllByCourseCommand : IRequest<UserViewModel0>
+    public class GetAllByCourseCommand : IRequest<List<UserViewModel>>
     {
-        public GetAllByCourseCommand(int id)
+        public GetAllByCourseCommand(string query)
         {
-            Id = id;
+            Query = query;
         }
 
-        public int Id { get; set; }
+        public string Query { get; set; }
     }
 }

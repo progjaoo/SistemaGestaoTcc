@@ -21,12 +21,12 @@ namespace SistemaGestaoTcc.Application.Queries.Users.GetAllByCourse
 
         public async Task<UserViewModel> Handle(GetAllByCourseCommand request, CancellationToken cancellationToken)
         {
-            var user = await _userRepository.GetAllByCourse(request.Id);
+            var listUser = await _userRepository.GetAllUserByCourse(request.Id);
 
-            if (user == null) return null;
+            if (listUser == null) return null;
 
             var userViewModel = new UserViewModel(
-                    user);
+                    listUser);
 
             return userViewModel;
         }
