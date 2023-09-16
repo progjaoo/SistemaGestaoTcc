@@ -9,7 +9,7 @@ using SistemaGestaoTcc.Core.Interfaces;
 
 namespace SistemaGestaoTcc.Application.Queries.Users.GetUser
 {
-    public class GetUserQueryHandler : IRequestHandler<GetUserQuery, UserViewModel0>
+    public class GetUserQueryHandler : IRequestHandler<GetUserQuery, UserViewModel>
     {
         private readonly IUserRepository _userRepository;
 
@@ -18,7 +18,7 @@ namespace SistemaGestaoTcc.Application.Queries.Users.GetUser
             _userRepository = userRepository;
         }
 
-        public async Task<UserViewModel0> Handle(GetUserQuery request, CancellationToken cancellationToken)
+        public async Task<UserViewModel> Handle(GetUserQuery request, CancellationToken cancellationToken)
         {
             var user = await _userRepository.GetById(request.Id);
 
@@ -27,7 +27,7 @@ namespace SistemaGestaoTcc.Application.Queries.Users.GetUser
                 return null;
             }
 
-            return new UserViewModel0(user.Nome, user.Email, user.IdCurso);
+            return new UserViewModel(user.Nome, user.Email, user.IdCurso);
         }
     }
 }

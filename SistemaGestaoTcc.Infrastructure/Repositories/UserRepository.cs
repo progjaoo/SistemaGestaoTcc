@@ -18,10 +18,10 @@ namespace SistemaGestaoTcc.Infrastructure.Repositories
             _dbcontext = dbcontext;
         }
 
-        public async Task<List<Usuario>> GetAllUserByCourse(int id)
+        public async Task<List<Usuario>>GetAllUserByCourse(int idCurso)
         {
 
-            return await _dbcontext.Usuario.Where(u => u.IdCurso == id).ToListAsync();
+            return await _dbcontext.Usuario.Where(c => c.IdCurso == idCurso).ToListAsync();
         }
 
         public async Task<List<Usuario>> GetAllUserByRole(string papel)

@@ -4,13 +4,16 @@ using Microsoft.AspNetCore.Mvc;
 using SistemaGestaoTcc.Application.Commands.Users.CreateUser;
 using SistemaGestaoTcc.Application.Commands.Users.LoginUser;
 using SistemaGestaoTcc.Application.Commands.Users.UpdateUser;
+using SistemaGestaoTcc.Application.Queries.Users.GetAllUserByRole;
+using SistemaGestaoTcc.Application.Queries.Users.GetAllUsersByCourse;
 using SistemaGestaoTcc.Application.Queries.Users.GetUser;
 using SistemaGestaoTcc.Core.Interfaces;
+using SistemaGestaoTcc.Core.Models;
 
 namespace SistemaGestaoTcc.API.Controllers
 {
     [Route("api/users")]
-    [Authorize]
+    //[Authorize]
     public class UsersController : ControllerBase
     {
         private readonly IMediator _mediator;
@@ -22,16 +25,24 @@ namespace SistemaGestaoTcc.API.Controllers
             _userRepository = userRepository;
         }
 
-        [HttpGet("{id}")]
-        [AllowAnonymous]
+        [HttpGet("userByRole")]
         public async Task<IActionResult> GetAllByRole(string papel)
         {
+            var getAllUserByRole = new GetAllUserByRoleQuery(papel);
+            var listUsersRole = await _mediator.Send(getAllUserByRole);
 
+            return Ok(listUsersRole);
         }
-        public async Task<IActionResult> GetAllByCourse(int id)
+        [HttpGet("userByCourse")]
+        public async Task<IActionResult> GetAllUserByCourse(int idCurso)
         {
+            var getAllByCourse = new GetAllByCourseQuery(idCurso);
 
+            var listUsers = await _mediator.Send(getAllByCourse);
+
+            return Ok(listUsers);
         }
+        [HttpGet("id")]
         public async Task<IActionResult> GetById(int id)
         {
             var query = new GetUserQuery(id);
