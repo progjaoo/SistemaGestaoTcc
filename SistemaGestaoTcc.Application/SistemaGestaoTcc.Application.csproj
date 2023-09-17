@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <Folder Include="Queries\Courses\GetCourseById\" />
+    <Folder Include="Queries\Notas\GetByIdNotas\" />
   </ItemGroup>
 
 </Project>

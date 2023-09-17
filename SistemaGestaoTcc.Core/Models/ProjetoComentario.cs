@@ -12,6 +12,7 @@ public partial class ProjetoComentario : BaseEntity
         IdUsuario = idUsuario;
         IdProjeto = idProjeto;
         Conteudo = conteudo;
+        CriadoEm = DateTime.Now;
     }
 
     public int IdUsuario { get; set; }

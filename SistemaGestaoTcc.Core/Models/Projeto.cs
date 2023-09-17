@@ -14,13 +14,14 @@ public partial class Projeto : BaseEntity
         Nome = nome;
         Descricao = descricao;
         DataInicio = DateTime.Now;
-        DataFim = DateTime.Now;
+        DataFim = DateTime.Now.AddMonths(3);
 
         Estado = StatusProjeto.Created;
         Publicado = false;
         Aprovado = false;
 
         ProjetoComentario = new List<ProjetoComentario>();
+        Nota = new List<Nota>();
     }
 
 

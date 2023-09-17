@@ -15,6 +15,6 @@ namespace SistemaGestaoTcc.Application.Queries.Users.GetAllUsersByCourse
             Query = query;
         }
 
-        public int Query { get; set; } 
+        public int Query { get; set; }
     }
 }

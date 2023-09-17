@@ -34,9 +34,9 @@ namespace SistemaGestaoTcc.API.Controllers
             return Ok(listUsersRole);
         }
         [HttpGet("userByCourse")]
-        public async Task<IActionResult> GetAllUserByCourse(int idCurso)
+        public async Task<IActionResult> GetAllUserByCourse(int id)
         {
-            var getAllByCourse = new GetAllByCourseQuery(idCurso);
+            var getAllByCourse = new GetAllByCourseQuery(id);
 
             var listUsers = await _mediator.Send(getAllByCourse);
 
@@ -55,7 +55,7 @@ namespace SistemaGestaoTcc.API.Controllers
             }
             return Ok(user);
         }
-        [HttpPost]
+        [HttpPost("criarUsuario")]
         [AllowAnonymous]
         public async Task<IActionResult> Post([FromBody] CreateUserCommand command)
         {

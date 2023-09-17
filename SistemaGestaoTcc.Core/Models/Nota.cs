@@ -5,9 +5,14 @@ using System.Collections.Generic;
 
 namespace SistemaGestaoTcc.Core.Models;
 
-public partial class Nota
+public partial class Nota : BaseEntity
 {
-    public int Id { get; set; }
+    public Nota(int idProjeto, int idUsuario, int? valor)
+    {
+        IdProjeto = idProjeto;
+        IdUsuario = idUsuario;
+        Valor = valor;
+    }
 
     public int IdProjeto { get; set; }
 
@@ -18,4 +23,9 @@ public partial class Nota
     public virtual Projeto IdProjetoNavigation { get; set; }
 
     public virtual Usuario IdUsuarioNavigation { get; set; }
+    
+    public void Update(int? valor)
+    {
+        Valor = valor;
+    }
 }

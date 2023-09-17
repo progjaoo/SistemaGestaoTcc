@@ -19,7 +19,7 @@ namespace SistemaGestaoTcc.Application.Commands.ProjectComment.CreateComment
 
         public async Task<Unit> Handle(CreateCommentCommand request, CancellationToken cancellationToken)
         {
-            var comment = new ProjetoComentario(request.IdProjeto, request.IdUsuario, request.Conteudo);
+            var comment = new ProjetoComentario(request.IdUsuario, request.IdProjeto, request.Conteudo);
 
             await _projectCommentRepository.AddCommentAsync(comment);
 

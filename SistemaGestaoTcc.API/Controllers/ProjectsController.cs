@@ -47,7 +47,7 @@ namespace SistemaGestaoTcc.API.Controllers
             return Ok(project);
         }
         //[Authorize(Roles = "Aluno")]
-        [HttpPost]
+        [HttpPost("criarProjeto")]
         public async Task<IActionResult> Post([FromBody] CreateProjectCommand command)
         {
             var id = await _mediator.Send(command);

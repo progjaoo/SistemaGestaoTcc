@@ -10,6 +10,7 @@ using SistemaGestaoTcc.Core.Interfaces;
 namespace SistemaGestaoTcc.API.Controllers
 {
     [Route("api/courses")]
+    [ApiController]
     public class CoursesController : ControllerBase
     {
         private readonly IMediator _mediator;
@@ -42,7 +43,7 @@ namespace SistemaGestaoTcc.API.Controllers
             }
             return Ok(course);
         }
-        [HttpPost]
+        [HttpPost("createCourse")]
         public async Task<IActionResult> PostCourse([FromBody] CreateCourseCommand command)
         {
             var id = await _mediator.Send(command);

@@ -20,12 +20,14 @@ builder.Services.AddAuthorization();
 builder.Services.AddControllers();
 
 //ADICIONANDO CORS PARA PODER SER CONSUMINDO NO FRONT-END
-builder.Services.AddCors(options => {
+builder.Services.AddCors(options =>
+{
     options.AddDefaultPolicy(
-    policy => {
+    policy =>
+    {
         policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
     });
-}); 
+});
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -75,33 +77,29 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
+//
 var connection = builder.Configuration.GetConnectionString("SistemaTcc");
 builder.Services.AddDbContext<SistemaTccContext>(p => p.UseSqlServer(connection));
 
 
 //mediator injecao de dependencia
-//MEDIATOR
 builder.Services.AddMediatR(typeof(CreateProjectCommand));
 builder.Services.AddMediatR(typeof(CreateUserCommand));
 builder.Services.AddMediatR(typeof(CreateCourseCommand));
 builder.Services.AddMediatR(typeof(CreateCommentCommand));
-
-
-
 //repositorios injecao de dependencia
 builder.Services.AddScoped<IProjectRepository, ProjectRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IProjectCommentRepository, ProjectCommentRepository>();
 builder.Services.AddScoped<ICourseRepository, CourseRepository>();
 builder.Services.AddScoped<IConviteRepository, ConviteRepository>();
-builder.Services.AddScoped<IUsuarioProjetoRepository,  UsuarioProjetoRepository>();
+builder.Services.AddScoped<IUsuarioProjetoRepository, UsuarioProjetoRepository>();
+builder.Services.AddScoped<INotaRepository, NotaRepository>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 
 builder.Services.AddHttpClient();
 
 var app = builder.Build();
-
-
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
