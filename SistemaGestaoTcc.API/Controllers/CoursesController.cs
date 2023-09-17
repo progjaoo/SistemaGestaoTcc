@@ -9,7 +9,7 @@ using SistemaGestaoTcc.Core.Interfaces;
 
 namespace SistemaGestaoTcc.API.Controllers
 {
-    [Route("api/courses")]
+    [Route("api/cursos")]
     [ApiController]
     public class CoursesController : ControllerBase
     {
@@ -43,20 +43,20 @@ namespace SistemaGestaoTcc.API.Controllers
             }
             return Ok(course);
         }
-        [HttpPost("createCourse")]
+        [HttpPost("criarCurso")]
         public async Task<IActionResult> PostCourse([FromBody] CreateCourseCommand command)
         {
             var id = await _mediator.Send(command);
             return CreatedAtAction(nameof(GetByIdAsync), new { id = id }, command);
         }
-        [HttpPut("{id}")]
+        [HttpPut("{id}/atualizarCurso")]
         public async Task<IActionResult> Update(int id, [FromBody] UpdateCourseCommand command)
         {
             await _mediator.Send(command);
 
             return NoContent();
         }
-        [HttpDelete("{id}")]
+        [HttpDelete("{id}/deletarCurso")]
         public async Task<IActionResult> Delete(int id)
         {
             await _courseRepository.DeleteCourse(id);

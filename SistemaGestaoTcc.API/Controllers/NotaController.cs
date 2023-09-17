@@ -64,7 +64,7 @@ namespace SistemaGestaoTcc.API.Controllers
 
             return NoContent();
         }
-        [HttpDelete("{id}/deleteNota")]
+        [HttpDelete("{id}/deletarNota")]
         public async Task<IActionResult> DeleteNota(int id)
         {
             await _notaRepository.DeleteNota(id);

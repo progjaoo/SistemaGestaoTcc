@@ -12,7 +12,7 @@ using SistemaGestaoTcc.Core.Models;
 
 namespace SistemaGestaoTcc.API.Controllers
 {
-    [Route("api/users")]
+    [Route("api/usuarios")]
     //[Authorize]
     public class UsersController : ControllerBase
     {

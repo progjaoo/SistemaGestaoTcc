@@ -9,7 +9,7 @@ using SistemaGestaoTcc.Core.Interfaces;
 
 namespace SistemaGestaoTcc.API.Controllers
 {
-    [Route("api/ProjectsComments")]
+    [Route("api/projetoComentarios")]
     public class ProjectCommentController : ControllerBase
     {
         private readonly IMediator _mediator;
@@ -41,13 +41,13 @@ namespace SistemaGestaoTcc.API.Controllers
 
             return Ok(comment);
         }
-        [HttpPost("{id}/comments")]
+        [HttpPost("{id}/criarComentario")]
         public async Task<IActionResult> PostComment(int id, [FromBody] CreateCommentCommand command)
         {
             await _mediator.Send(command);
             return NoContent();
         }
-        [HttpDelete("{id}/projectComment")]
+        [HttpDelete("{id}/deletarComentario")]
         public async Task<IActionResult> DeleteComment(int id)
         {
             await _projectCommentRepository.DeleteComment(id);

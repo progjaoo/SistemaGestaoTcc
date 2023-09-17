@@ -13,7 +13,7 @@ using SistemaGestaoTcc.Core.Models;
 
 namespace SistemaGestaoTcc.API.Controllers
 {
-    [Route("api/projects")]
+    [Route("api/projetos")]
     public class ProjectsController : ControllerBase
     {
         private readonly IMediator _mediator;
@@ -53,7 +53,7 @@ namespace SistemaGestaoTcc.API.Controllers
             var id = await _mediator.Send(command);
             return CreatedAtAction(nameof(GetById), new { id = id }, command);
         }
-        [HttpPut("{id}")]
+        [HttpPut("{id}/atualizarComentario")]
         // [Authorize(Roles = "Aluno")]
         public async Task<IActionResult> Put(int id, [FromBody] UpdateProjectCommand command)
         {
@@ -61,7 +61,7 @@ namespace SistemaGestaoTcc.API.Controllers
 
             return NoContent();
         }
-        [HttpDelete("{id}")]
+        [HttpDelete("{id}/deletarProjeto")]
         public async Task<IActionResult> Delete(int id)
         {
             var command = new DeleteProjectCommand(id);
