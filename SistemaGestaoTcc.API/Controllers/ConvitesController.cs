@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 using SendGrid.Helpers.Mail;
 using SistemaGestaoTcc.Application.Commands.Convites.EnviarConvite;
 using SistemaGestaoTcc.Application.Commands.Convites.UpdateConvite;
+using SistemaGestaoTcc.Application.Queries.Convites;
+using SistemaGestaoTcc.Application.Queries.Convites.GetAllConvites;
 using SistemaGestaoTcc.Application.Services;
 using SistemaGestaoTcc.Core.Enums;
 using SistemaGestaoTcc.Core.Interfaces;
@@ -26,7 +28,29 @@ namespace SistemaGestaoTcc.API.Controllers
             _userRepository = userRepository;
             _projectRepository = projectRepository;
         }
+        [HttpGet]
+        public async Task<IActionResult> GetAllAsync(string query)
+        {
+            var getAllQuery = new GetAllConvitesQuery(query);
 
+            var convite = await _mediator.Send(getAllQuery);
+
+            return Ok(convite);
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetById(int id)
+        {
+            var query = new GetByIdConviteQuery(id);
+
+            var convite = await _mediator.Send(query);
+
+            if (convite == null)
+            {
+                return NotFound();
+            }
+            return Ok(convite);
+        }
         [HttpPost("enviarConvite")]
         public async Task<IActionResult> EnviarConvite([FromBody] EnviarConviteCommand command)
         {
@@ -46,7 +70,7 @@ namespace SistemaGestaoTcc.API.Controllers
 
             await emailService.ConviteEmailAsync(email, assunto, linkEndereco, conteudo, botaoNome);
 
-            return CreatedAtAction(nameof(command), new { id = id }, command);
+            return CreatedAtAction(nameof(GetById), new { id = id }, command);
         }
 
         [HttpPut("aceitarConvite")]

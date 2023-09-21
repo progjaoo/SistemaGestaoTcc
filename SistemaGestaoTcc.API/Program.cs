@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using SistemaGestaoTcc.Application.Commands.Convites.EnviarConvite;
 using SistemaGestaoTcc.Application.Commands.Courses.CreateCourse;
 using SistemaGestaoTcc.Application.Commands.ProjectComment.CreateComment;
 using SistemaGestaoTcc.Application.Commands.Projects.CreateProject;
@@ -77,7 +78,7 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
-//
+//CONNECTION STRING
 var connection = builder.Configuration.GetConnectionString("SistemaTcc");
 builder.Services.AddDbContext<SistemaTccContext>(p => p.UseSqlServer(connection));
 
@@ -87,6 +88,8 @@ builder.Services.AddMediatR(typeof(CreateProjectCommand));
 builder.Services.AddMediatR(typeof(CreateUserCommand));
 builder.Services.AddMediatR(typeof(CreateCourseCommand));
 builder.Services.AddMediatR(typeof(CreateCommentCommand));
+builder.Services.AddMediatR(typeof(EnviarConviteCommand));
+
 //repositorios injecao de dependencia
 builder.Services.AddScoped<IProjectRepository, ProjectRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();

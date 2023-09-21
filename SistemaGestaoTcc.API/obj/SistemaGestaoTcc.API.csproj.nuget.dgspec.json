@@ -39,8 +39,8 @@
               "C:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestaoTcc.Core\\SistemaGestaoTcc.Core.csproj": {
                 "projectPath": "C:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestaoTcc.Core\\SistemaGestaoTcc.Core.csproj"
               },
-              "C:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestaoTcc.Infrastructure\\SistemaGestaoTcc.Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestaoTcc.Infrastructure\\SistemaGestaoTcc.Infrastructure.csproj"
+              "c:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestaoTcc.Infrastructure\\SistemaGestaoTcc.Infrastructure.csproj": {
+                "projectPath": "c:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestaoTcc.Infrastructure\\SistemaGestaoTcc.Infrastructure.csproj"
               }
             }
           }
@@ -155,8 +155,8 @@
               "C:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestaoTcc.Core\\SistemaGestaoTcc.Core.csproj": {
                 "projectPath": "C:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestaoTcc.Core\\SistemaGestaoTcc.Core.csproj"
               },
-              "C:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestaoTcc.Infrastructure\\SistemaGestaoTcc.Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestaoTcc.Infrastructure\\SistemaGestaoTcc.Infrastructure.csproj"
+              "c:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestaoTcc.Infrastructure\\SistemaGestaoTcc.Infrastructure.csproj": {
+                "projectPath": "c:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestaoTcc.Infrastructure\\SistemaGestaoTcc.Infrastructure.csproj"
               }
             }
           }
@@ -282,14 +282,14 @@
         }
       }
     },
-    "C:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestaoTcc.Infrastructure\\SistemaGestaoTcc.Infrastructure.csproj": {
+    "c:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestaoTcc.Infrastructure\\SistemaGestaoTcc.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestaoTcc.Infrastructure\\SistemaGestaoTcc.Infrastructure.csproj",
+        "projectUniqueName": "c:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestaoTcc.Infrastructure\\SistemaGestaoTcc.Infrastructure.csproj",
         "projectName": "SistemaGestaoTcc.Infrastructure",
-        "projectPath": "C:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestaoTcc.Infrastructure\\SistemaGestaoTcc.Infrastructure.csproj",
+        "projectPath": "c:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestaoTcc.Infrastructure\\SistemaGestaoTcc.Infrastructure.csproj",
         "packagesPath": "C:\\Users\\joaom\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestaoTcc.Infrastructure\\obj\\",
+        "outputPath": "c:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestaoTcc.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
