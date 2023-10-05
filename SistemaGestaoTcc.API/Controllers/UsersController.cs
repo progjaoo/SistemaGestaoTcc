@@ -72,7 +72,7 @@ namespace SistemaGestaoTcc.API.Controllers
 
             if(loginUserViewModel == null)
             {
-                return BadRequest();
+                Unauthorized();
             }
             return Ok(loginUserViewModel);
         }

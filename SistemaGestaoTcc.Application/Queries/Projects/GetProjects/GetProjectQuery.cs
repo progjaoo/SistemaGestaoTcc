@@ -10,10 +10,10 @@ namespace SistemaGestaoTcc.Application.Queries.Projects.GetProjects
 {
     public class GetProjectQuery : IRequest<List<ProjectViewModel>>
     {
-        public GetProjectQuery(string query)
-        {
-            Query = query;
-        }
+        //public GetProjectQuery(string query)
+        //{
+        //    Query = query;
+        //}
 
         public string Query { get; set; }
     }

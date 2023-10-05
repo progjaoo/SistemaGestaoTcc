@@ -25,9 +25,9 @@ namespace SistemaGestaoTcc.API.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAllAsync(string query)
+        public async Task<IActionResult> GetAllAsync()
         {
-            var getAllProjectQuery = new GetProjectQuery(query);
+            var getAllProjectQuery = new GetProjectQuery();
             var projects = await _mediator.Send(getAllProjectQuery);
 
             return Ok(projects);

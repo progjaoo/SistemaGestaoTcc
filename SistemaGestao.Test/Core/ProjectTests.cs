@@ -1,20 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.Identity.Client;
-using SistemaGestaoTcc.Core.Enums;
+﻿using SistemaGestaoTcc.Core.Enums;
 using SistemaGestaoTcc.Core.Models;
 
 namespace SistemaGestao.Test.Core
 {
-    
+
     public class ProjectTests
     {
         [Fact]
         public void TesteInicioProjetoFunciona()
         {
+            //arrange
             var project = new Projeto("Nome teste", "Descricao de testes");
 
             Assert.NotNull(project.Nome);
