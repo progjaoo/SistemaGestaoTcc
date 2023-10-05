@@ -31,7 +31,7 @@ namespace SistemaGestaoTcc.API.Controllers
             return Ok(course);
         }
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetByIdAsync(int id)
+        public async Task<IActionResult> GetById(int id)
         {
             var query = new GetCoursesByIdQuery(id);
 
@@ -47,7 +47,7 @@ namespace SistemaGestaoTcc.API.Controllers
         public async Task<IActionResult> PostCourse([FromBody] CreateCourseCommand command)
         {
             var id = await _mediator.Send(command);
-            return CreatedAtAction(nameof(GetByIdAsync), new { id = id }, command);
+            return CreatedAtAction(nameof(GetById), new { id = id }, command);
         }
         [HttpPut("{id}/atualizarCurso")]
         public async Task<IActionResult> Update(int id, [FromBody] UpdateCourseCommand command)

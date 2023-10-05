@@ -9,7 +9,7 @@ namespace SistemaGestaoTcc.Core.Interfaces
     public interface IConviteRepository
     {
         Task<Convite> GetById(int id);
-        Task<List<Convite>> GetAllAsync();
+        Task<List<Convite>> GetAllAsync(string query);
         Task<List<Convite>> GetAllByUserId(int id);
         Task AddASync(Convite convite);
         Task SaveChangesAsync();

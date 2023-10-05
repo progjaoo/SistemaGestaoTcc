@@ -1,0 +1,17 @@
+C:\Users\joaom\Documents\SistemaGestaoTcc\SistemaGestaoTcc.Application\bin\Release\net6.0\SistemaGestaoTcc.Application.deps.json
+C:\Users\joaom\Documents\SistemaGestaoTcc\SistemaGestaoTcc.Application\bin\Release\net6.0\SistemaGestaoTcc.Application.dll
+C:\Users\joaom\Documents\SistemaGestaoTcc\SistemaGestaoTcc.Application\bin\Release\net6.0\SistemaGestaoTcc.Application.pdb
+C:\Users\joaom\Documents\SistemaGestaoTcc\SistemaGestaoTcc.Application\bin\Release\net6.0\SistemaGestaoTcc.Core.dll
+C:\Users\joaom\Documents\SistemaGestaoTcc\SistemaGestaoTcc.Application\bin\Release\net6.0\SistemaGestaoTcc.Infrastructure.dll
+C:\Users\joaom\Documents\SistemaGestaoTcc\SistemaGestaoTcc.Application\bin\Release\net6.0\SistemaGestaoTcc.Core.pdb
+C:\Users\joaom\Documents\SistemaGestaoTcc\SistemaGestaoTcc.Application\bin\Release\net6.0\SistemaGestaoTcc.Infrastructure.pdb
+C:\Users\joaom\Documents\SistemaGestaoTcc\SistemaGestaoTcc.Application\obj\Release\net6.0\SistemaGestaoTcc.Application.csproj.AssemblyReference.cache
+C:\Users\joaom\Documents\SistemaGestaoTcc\SistemaGestaoTcc.Application\obj\Release\net6.0\SistemaGestaoTcc.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\joaom\Documents\SistemaGestaoTcc\SistemaGestaoTcc.Application\obj\Release\net6.0\SistemaGestaoTcc.Application.AssemblyInfoInputs.cache
+C:\Users\joaom\Documents\SistemaGestaoTcc\SistemaGestaoTcc.Application\obj\Release\net6.0\SistemaGestaoTcc.Application.AssemblyInfo.cs
+C:\Users\joaom\Documents\SistemaGestaoTcc\SistemaGestaoTcc.Application\obj\Release\net6.0\SistemaGestaoTcc.Application.csproj.CoreCompileInputs.cache
+C:\Users\joaom\Documents\SistemaGestaoTcc\SistemaGestaoTcc.Application\obj\Release\net6.0\SistemaGestaoTcc.Application.csproj.CopyComplete
+C:\Users\joaom\Documents\SistemaGestaoTcc\SistemaGestaoTcc.Application\obj\Release\net6.0\SistemaGestaoTcc.Application.dll
+C:\Users\joaom\Documents\SistemaGestaoTcc\SistemaGestaoTcc.Application\obj\Release\net6.0\refint\SistemaGestaoTcc.Application.dll
+C:\Users\joaom\Documents\SistemaGestaoTcc\SistemaGestaoTcc.Application\obj\Release\net6.0\SistemaGestaoTcc.Application.pdb
+C:\Users\joaom\Documents\SistemaGestaoTcc\SistemaGestaoTcc.Application\obj\Release\net6.0\ref\SistemaGestaoTcc.Application.dll

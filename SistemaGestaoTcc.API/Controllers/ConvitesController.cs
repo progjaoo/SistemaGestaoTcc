@@ -68,7 +68,8 @@ namespace SistemaGestaoTcc.API.Controllers
 
             var email = new EmailAddress(user.Email);
 
-            await emailService.ConviteEmailAsync(email, assunto, linkEndereco, conteudo, botaoNome);
+#warning "RETIRADA DO AWAIT E TESTE DO WAIT"
+            emailService.ConviteEmailAsync(email, assunto, linkEndereco, conteudo, botaoNome).Wait();
 
             return CreatedAtAction(nameof(GetById), new { id = id }, command);
         }

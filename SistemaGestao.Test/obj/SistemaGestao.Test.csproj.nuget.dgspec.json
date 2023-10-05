@@ -1,0 +1,348 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestao.Test\\SistemaGestao.Test.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestao.Test\\SistemaGestao.Test.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestao.Test\\SistemaGestao.Test.csproj",
+        "projectName": "SistemaGestao.Test",
+        "projectPath": "C:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestao.Test\\SistemaGestao.Test.csproj",
+        "packagesPath": "C:\\Users\\joaom\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestao.Test\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\joaom\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestaoTcc.Application\\SistemaGestaoTcc.Application.csproj": {
+                "projectPath": "C:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestaoTcc.Application\\SistemaGestaoTcc.Application.csproj"
+              },
+              "C:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestaoTcc.Core\\SistemaGestaoTcc.Core.csproj": {
+                "projectPath": "C:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestaoTcc.Core\\SistemaGestaoTcc.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[17.1.0, )"
+            },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.20.69, )"
+            },
+            "coverlet.collector": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.2, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.4.1, )"
+            },
+            "xunit.runner.visualstudio": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.4.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestaoTcc.Application\\SistemaGestaoTcc.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestaoTcc.Application\\SistemaGestaoTcc.Application.csproj",
+        "projectName": "SistemaGestaoTcc.Application",
+        "projectPath": "C:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestaoTcc.Application\\SistemaGestaoTcc.Application.csproj",
+        "packagesPath": "C:\\Users\\joaom\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestaoTcc.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\joaom\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestaoTcc.Core\\SistemaGestaoTcc.Core.csproj": {
+                "projectPath": "C:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestaoTcc.Core\\SistemaGestaoTcc.Core.csproj"
+              },
+              "C:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestaoTcc.Infrastructure\\SistemaGestaoTcc.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestaoTcc.Infrastructure\\SistemaGestaoTcc.Infrastructure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "MediatR.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[11.1.0, )"
+            },
+            "SendGrid": {
+              "target": "Package",
+              "version": "[9.28.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestaoTcc.Core\\SistemaGestaoTcc.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestaoTcc.Core\\SistemaGestaoTcc.Core.csproj",
+        "projectName": "SistemaGestaoTcc.Core",
+        "projectPath": "C:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestaoTcc.Core\\SistemaGestaoTcc.Core.csproj",
+        "packagesPath": "C:\\Users\\joaom\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestaoTcc.Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\joaom\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.0.151, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.10, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestaoTcc.Infrastructure\\SistemaGestaoTcc.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestaoTcc.Infrastructure\\SistemaGestaoTcc.Infrastructure.csproj",
+        "projectName": "SistemaGestaoTcc.Infrastructure",
+        "projectPath": "C:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestaoTcc.Infrastructure\\SistemaGestaoTcc.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\joaom\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestaoTcc.Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\joaom\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestaoTcc.Core\\SistemaGestaoTcc.Core.csproj": {
+                "projectPath": "C:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestaoTcc.Core\\SistemaGestaoTcc.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.10, )"
+            },
+            "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.IdentityModel.Tokens": {
+              "target": "Package",
+              "version": "[6.32.2, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.32.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

@@ -9,7 +9,7 @@ using SistemaGestaoTcc.Core.Models;
 
 namespace SistemaGestaoTcc.Infrastructure.Repositories
 {
-    
+
     public class ConviteRepository : IConviteRepository
     {
         private readonly SistemaTccContext _dbcontext;
@@ -24,7 +24,7 @@ namespace SistemaGestaoTcc.Infrastructure.Repositories
             await _dbcontext.Convite.AddAsync(convite);
         }
 
-        public async Task<List<Convite>> GetAllAsync()
+        public async Task<List<Convite>> GetAllAsync(string query)
         {
             return await _dbcontext.Convite.ToListAsync();
         }

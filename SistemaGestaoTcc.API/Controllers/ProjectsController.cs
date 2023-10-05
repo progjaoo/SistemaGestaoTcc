@@ -25,7 +25,7 @@ namespace SistemaGestaoTcc.API.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Get(string query)
+        public async Task<IActionResult> GetAllAsync(string query)
         {
             var getAllProjectQuery = new GetProjectQuery(query);
             var projects = await _mediator.Send(getAllProjectQuery);
@@ -79,7 +79,7 @@ namespace SistemaGestaoTcc.API.Controllers
 
                 return Ok();
             }
-            catch(Exception ex) 
+            catch (Exception ex)
             {
                 return StatusCode(500, $"Erro interno: {ex.Message}");
             }
