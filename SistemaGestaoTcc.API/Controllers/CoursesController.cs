@@ -22,9 +22,9 @@ namespace SistemaGestaoTcc.API.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAllAsync(string query)
+        public async Task<IActionResult> GetAllAsync()
         {
-            var getAllCoursesQuery = new GetAllCoursesQuery(query);
+            var getAllCoursesQuery = new GetAllCoursesQuery();
 
             var course = await _mediator.Send(getAllCoursesQuery);
 

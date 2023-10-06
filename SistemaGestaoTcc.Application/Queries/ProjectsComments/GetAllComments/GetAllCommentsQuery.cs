@@ -10,11 +10,11 @@ namespace SistemaGestaoTcc.Application.Queries.ProjectsComments.GetAllComments
 {
     public class GetAllCommentsQuery : IRequest<List<ProjectCommentViewModel>>
     {
-        public GetAllCommentsQuery(string query)
+        public GetAllCommentsQuery(int idProjeto)
         {
-            Query = query;
+            IdProjeto = idProjeto;
         }
 
-        public string Query { get; set; }
+        public int IdProjeto { get; set; }
     }
 }

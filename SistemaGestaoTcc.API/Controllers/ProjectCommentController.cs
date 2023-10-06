@@ -20,9 +20,9 @@ namespace SistemaGestaoTcc.API.Controllers
             _projectCommentRepository = projectCommentRepository;
         }
         [HttpGet]
-        public async Task<IActionResult> GetAllAsync(string query)
+        public async Task<IActionResult> GetAllByProjectIdAsync(int idProjeto)
         {
-            var getAllCommentsQuery = new GetAllCommentsQuery(query);
+            var getAllCommentsQuery = new GetAllCommentsQuery(idProjeto);
             var comments = await _mediator.Send(getAllCommentsQuery);
 
             return Ok(comments);
@@ -41,8 +41,9 @@ namespace SistemaGestaoTcc.API.Controllers
 
             return Ok(comment);
         }
-        [HttpPost("{id}/criarComentario")]
-        public async Task<IActionResult> PostComment(int id, [FromBody] CreateCommentCommand command)
+
+        [HttpPost("criarComentario")]
+        public async Task<IActionResult> PostComment([FromBody] CreateCommentCommand command)
         {
             await _mediator.Send(command);
             return NoContent();

@@ -18,7 +18,7 @@ namespace SistemaGestaoTcc.Application.Queries.Courses.GetAllCourse
 
         public async Task<List<CourseViewModel>> Handle(GetAllCoursesQuery request, CancellationToken cancellationToken)
         {
-            var course = await _courseRepository.GetAllAsync(request.Query);
+            var course = await _courseRepository.GetAllAsync();
 
             var courseViewModel = course
             .Select(c => new CourseViewModel(c.Id, c.Nome, c.Periodos)).ToList();

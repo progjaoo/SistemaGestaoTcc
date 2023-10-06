@@ -26,7 +26,7 @@ namespace SistemaGestaoTcc.Application.Queries.Projects.GetProjects
             var projeto = await _projectRepository.GetAllAsync(request.Query);
 
             var projectViewModel = projeto
-                .Select(p => new ProjectViewModel(p.Id, p.Nome, p.DataInicio, p.Estado)).Where(p => p.Estado == Core.Enums.StatusProjeto.Created)
+                .Select(p => new ProjectViewModel(p.Id, p.Nome, p.Descricao, p.DataInicio, p.Estado)).Where(p => p.Estado == Core.Enums.StatusProjeto.Created)
                 .ToList();
 
             return projectViewModel;

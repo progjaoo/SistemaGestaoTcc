@@ -9,11 +9,11 @@ namespace SistemaGestaoTcc.Application.Queries.Convites.GetAllConvites
 {
     public class GetAllConvitesQuery : IRequest<List<ConviteViewModel>>
     {
-        public GetAllConvitesQuery(string query)
+        public GetAllConvitesQuery(int idUsuario)
         {
-            Query = query;
+            IdUsuario = idUsuario;
         }
-        public string Query { get; set; }
+        public int IdUsuario { get; set; }
 
     }
 }

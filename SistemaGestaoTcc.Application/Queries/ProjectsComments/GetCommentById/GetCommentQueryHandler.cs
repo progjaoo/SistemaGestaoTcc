@@ -26,6 +26,8 @@ namespace SistemaGestaoTcc.Application.Queries.ProjectsComments.GetCommentById
 
             var commentViewModel = new ProjectCommentViewModel(
                 comment.Id,
+                comment.IdUsuario,
+                new UserViewModel(comment.IdUsuarioNavigation.Nome, comment.IdUsuarioNavigation.Email, comment.IdUsuarioNavigation.IdCurso),
                 comment.Conteudo,
                 comment.CriadoEm);
 

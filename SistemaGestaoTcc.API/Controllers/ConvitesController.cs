@@ -29,9 +29,9 @@ namespace SistemaGestaoTcc.API.Controllers
             _projectRepository = projectRepository;
         }
         [HttpGet]
-        public async Task<IActionResult> GetAllAsync(string query)
+        public async Task<IActionResult> GetAllByUserIdAsync(int IdUsuario)
         {
-            var getAllQuery = new GetAllConvitesQuery(query);
+            var getAllQuery = new GetAllConvitesQuery(IdUsuario);
 
             var convite = await _mediator.Send(getAllQuery);
 
@@ -74,10 +74,10 @@ namespace SistemaGestaoTcc.API.Controllers
             return CreatedAtAction(nameof(GetById), new { id = id }, command);
         }
 
-        [HttpPut("aceitarConvite")]
-        public async Task<IActionResult> AceitarConvite(int id, [FromBody] UpdateConviteCommand command)
+        [HttpPut("responderConvite")]
+        public async Task<IActionResult> ResponderConvite([FromBody] UpdateConviteCommand command)
         {
-            var invite = await _conviteRepository.GetById(id);
+            var invite = await _conviteRepository.GetById(command.Id);
 
             if (invite == null)
             {
@@ -91,32 +91,11 @@ namespace SistemaGestaoTcc.API.Controllers
             {
                 return BadRequest("Este convite já foi rejeitado.");
             }
-            invite.Aceito = ConviteAceito.Aceito;
+            invite.Aceito = command.Aceito;
 
             await _mediator.Send(command);
-            return Ok("Convite aceito com sucesso!");
+            return Ok("Convite respondido com suscesso!");
 
-        }
-        [HttpPut("rejeitarConvite")]
-        public async Task<IActionResult> RejeitarConvite(int id, [FromBody] UpdateConviteCommand command)
-        {
-            var invite = await _conviteRepository.GetById(id);
-
-            if (invite == null)
-            {
-                return NotFound("Convite não encontrado.");
-            }
-            if (invite.Aceito == ConviteAceito.Aceito)
-            {
-                return BadRequest("Este convite já foi aceito.");
-            }
-            if (invite.Aceito == ConviteAceito.Recusado)
-            {
-                return BadRequest("Este convite já foi rejeitado.");
-            }
-            invite.Aceito = ConviteAceito.Recusado;
-            await _mediator.Send(command);
-            return Ok("Convite rejeitado com sucesso!");
         }
     }
 }

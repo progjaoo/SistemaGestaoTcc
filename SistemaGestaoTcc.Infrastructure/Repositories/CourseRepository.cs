@@ -18,7 +18,7 @@ namespace SistemaGestaoTcc.Infrastructure.Repositories
             _dbcontext = dbcontext;
         }
 
-        public async Task<List<Curso>> GetAllAsync(string query)
+        public async Task<List<Curso>> GetAllAsync()
         {
             return await _dbcontext.Curso.ToListAsync();
         }

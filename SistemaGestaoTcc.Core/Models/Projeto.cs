@@ -8,8 +8,9 @@ namespace SistemaGestaoTcc.Core.Models;
 
 public partial class Projeto : BaseEntity
 {
-    public Projeto(string nome, string descricao)
+    public Projeto(int idCurso, string nome, string descricao)
     {
+        IdCurso = idCurso;
         Nome = nome;
         Descricao = descricao;
         DataInicio = DateTime.Now;

@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using MediatR;
 using SistemaGestaoTcc.Application.ViewModels;
 using SistemaGestaoTcc.Core.Interfaces;
+using SistemaGestaoTcc.Core.Models;
 
 namespace SistemaGestaoTcc.Application.Queries.Convites
 {
@@ -22,7 +23,9 @@ namespace SistemaGestaoTcc.Application.Queries.Convites
 
             if (convite == null) return null;
 
-            var conviteViewModel = new ConviteViewModel(convite.Id, convite.DataEnvio, convite.DataExpira, convite.Aceito);
+            var conviteViewModel = new ConviteViewModel(convite.Id, convite.IdProjeto, convite.IdUsuario,
+            new Projeto(convite.IdProjetoNavigation.IdCurso, convite.IdProjetoNavigation.Nome, convite.IdProjetoNavigation.Descricao), 
+            convite.DataEnvio, convite.DataExpira, convite.Aceito);
 
             return conviteViewModel;
         }

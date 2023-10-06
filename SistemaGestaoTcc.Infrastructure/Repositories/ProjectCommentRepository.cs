@@ -18,16 +18,22 @@ namespace SistemaGestaoTcc.Infrastructure.Repositories
             _dbcontext = dbcontext;
         }
 
-        public async Task<List<ProjetoComentario>> GetAllCommentsAsync(string query)
+        public async Task<List<ProjetoComentario>> GetAllCommentsByProjectAsync(int IdProjeto)
         {
-            return await _dbcontext.ProjetoComentario.ToListAsync();
+            return await _dbcontext.ProjetoComentario.Where(c => c.IdProjeto == IdProjeto)
+            .Include(c => c.IdUsuarioNavigation)
+            .ToListAsync();
         }
 
 
 
         public async Task<ProjetoComentario> GetCommentById(int id)
         {
-            return await _dbcontext.ProjetoComentario.SingleOrDefaultAsync(c => c.Id == id);
+            return await _dbcontext.ProjetoComentario
+            .Include(c => c.IdUsuarioNavigation.Nome)
+            .Include(c => c.IdUsuarioNavigation.Email)
+            .Include(c => c.IdUsuarioNavigation.IdCurso)
+            .SingleOrDefaultAsync(c => c.Id == id);
         }
 
         public async Task AddCommentAsync(ProjetoComentario projetoComentario)

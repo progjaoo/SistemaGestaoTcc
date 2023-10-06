@@ -9,14 +9,20 @@ namespace SistemaGestaoTcc.Application.ViewModels
 {
     public class ProjectCommentViewModel 
     {
-        public ProjectCommentViewModel(int id, string conteudo, DateTime? criadoEm)
+        public ProjectCommentViewModel(int id, int idUsuario, UserViewModel usuario, string conteudo, DateTime? criadoEm)
         {
             Id = id;
+            IdUsuario = idUsuario;
+            Usuario = usuario;
             Conteudo = conteudo;
             CriadoEm = criadoEm;
         }
 
         public int Id { get; set; }
+
+        public int IdUsuario { get; set; }
+
+        public UserViewModel Usuario { get; set; }
 
         public string Conteudo { get; set; }
 

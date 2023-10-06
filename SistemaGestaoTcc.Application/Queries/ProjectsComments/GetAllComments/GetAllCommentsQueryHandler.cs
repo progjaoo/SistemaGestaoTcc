@@ -19,10 +19,12 @@ namespace SistemaGestaoTcc.Application.Queries.ProjectsComments.GetAllComments
         }
         public async Task<List<ProjectCommentViewModel>> Handle(GetAllCommentsQuery request, CancellationToken cancellationToken)
         {
-            var comment = await _projectCommentRepository.GetAllCommentsAsync(request.Query);
+            var comment = await _projectCommentRepository.GetAllCommentsByProjectAsync(request.IdProjeto);
 
             var commentViewModel = comment
-                .Select(p => new ProjectCommentViewModel(p.Id, p.Conteudo, p.CriadoEm))
+                .Select(p => new ProjectCommentViewModel(p.Id, p.IdUsuario, 
+                new UserViewModel(p.IdUsuarioNavigation.Nome, p.IdUsuarioNavigation.Email, p.IdUsuarioNavigation.IdCurso),
+                p.Conteudo, p.CriadoEm))
                 .ToList();
 
             return commentViewModel;

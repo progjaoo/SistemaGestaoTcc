@@ -10,9 +10,9 @@ namespace SistemaGestaoTcc.Application.Queries.Courses.GetAllCourse
 {
     public class GetAllCoursesQuery : IRequest<List<CourseViewModel>>
     {
-        public GetAllCoursesQuery(string query)
+        public GetAllCoursesQuery()
         {
-            Query = query;
+            
         }
 
         public string Query { get; set; }

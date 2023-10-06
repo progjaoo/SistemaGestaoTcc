@@ -31,7 +31,7 @@ namespace SistemaGestaoTcc.Infrastructure.Repositories
 
         public async Task<List<Convite>> GetAllByUserId(int id)
         {
-            return await _dbcontext.Convite.Where(up => up.Id == id).ToListAsync();
+            return await _dbcontext.Convite.Where(up => up.IdUsuario == id).Include(up => up.IdProjetoNavigation).ToListAsync();
         }
 
         public async Task<Convite> GetById(int id)

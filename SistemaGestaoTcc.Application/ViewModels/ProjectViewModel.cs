@@ -9,10 +9,11 @@ namespace SistemaGestaoTcc.Application.ViewModels
 {
     public class ProjectViewModel
     {
-        public ProjectViewModel(int id, string nome, DateTime? dataInicio, StatusProjeto estado)
+        public ProjectViewModel(int id, string nome, string descricao, DateTime? dataInicio, StatusProjeto estado)
         {
             Id = id;
             Nome = nome;
+            Descricao = descricao;
             DataInicio = dataInicio;
             Estado = estado;
         }
@@ -20,6 +21,8 @@ namespace SistemaGestaoTcc.Application.ViewModels
         public int Id { get; set; } 
 
         public string Nome { get; set; }
+
+        public string Descricao { get; set; }
 
         public DateTime? DataInicio { get; set; }
 

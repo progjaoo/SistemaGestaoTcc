@@ -10,7 +10,7 @@ namespace SistemaGestao.Test.Core
         public void TesteInicioProjetoFunciona()
         {
             //arrange
-            var project = new Projeto("Nome teste", "Descricao de testes");
+            var project = new Projeto(3, "Nome teste", "Descricao de testes");
 
             Assert.NotNull(project.Nome);
             Assert.NotEmpty(project.Nome);

@@ -19,9 +19,9 @@ namespace SistemaGestao.Test.Application.Queries
             //arrange
             var projects = new List<Projeto>
             {
-                new Projeto("Teste 1", "Descricao teste 1"),
-                new Projeto("Teste 2", "Descricao teste 2"),
-                new Projeto("Teste 3", "Descricao teste 3")
+                new Projeto(3, "Teste 1", "Descricao teste 1"),
+                new Projeto(3, "Teste 2", "Descricao teste 2"),
+                new Projeto(3, "Teste 3", "Descricao teste 3")
             };
 
             var projectRepositoryMock = new Mock<IProjectRepository>();

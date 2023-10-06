@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using MediatR;
 using SistemaGestaoTcc.Application.ViewModels;
 using SistemaGestaoTcc.Core.Interfaces;
+using SistemaGestaoTcc.Core.Models;
 
 namespace SistemaGestaoTcc.Application.Queries.Convites.GetAllConvites
 {
@@ -18,10 +19,12 @@ namespace SistemaGestaoTcc.Application.Queries.Convites.GetAllConvites
 
         public async Task<List<ConviteViewModel>> Handle(GetAllConvitesQuery request, CancellationToken cancellationToken)
         {
-            var convite = await _conviteRepository.GetAllAsync(request.Query);
+            var convite = await _conviteRepository.GetAllByUserId(request.IdUsuario);
 
             var conviteViewModel = convite
-            .Select(c => new ConviteViewModel(c.Id, c.DataEnvio, c.DataExpira, c.Aceito)).ToList();
+            .Select(c => new ConviteViewModel(c.Id, c.IdProjeto, c.IdUsuario, 
+            new Projeto(c.IdProjetoNavigation.IdCurso, c.IdProjetoNavigation.Nome, c.IdProjetoNavigation.Descricao),
+            c.DataEnvio, c.DataExpira, c.Aceito)).ToList();
 
             return conviteViewModel;
         }
