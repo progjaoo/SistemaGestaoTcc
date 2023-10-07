@@ -165,7 +165,7 @@ public partial class SistemaTccContext : DbContext
 
             entity.HasIndex(e => e.IdProjeto, "ProjetoArquivo_FKIndex1");
 
-            entity.HasIndex(e => e.IdUsuario, "ProjetoArquivo_FKIndex2");
+            //entity.HasIndex(e => e.IdUsuario, "ProjetoArquivo_FKIndex2");
 
             entity.Property(e => e.CriadoEm).HasColumnType("date");
             entity.Property(e => e.DiretorioArquivo)
@@ -177,10 +177,10 @@ public partial class SistemaTccContext : DbContext
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK__ProjetoAr__IdPro__5CD6CB2B");
 
-            entity.HasOne(d => d.IdUsuarioNavigation).WithMany(p => p.ProjetoArquivo)
-                .HasForeignKey(d => d.IdUsuario)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__ProjetoAr__IdUsu__5DCAEF64");
+            //entity.HasOne(d => d.IdUsuarioNavigation).WithMany(p => p.ProjetoArquivo)
+            //    .HasForeignKey(d => d.IdUsuario)
+            //    .OnDelete(DeleteBehavior.ClientSetNull)
+            //    .HasConstraintName("FK__ProjetoAr__IdUsu__5DCAEF64");
         });
 
         modelBuilder.Entity<ProjetoComentario>(entity =>

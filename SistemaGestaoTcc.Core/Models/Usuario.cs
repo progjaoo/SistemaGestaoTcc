@@ -37,7 +37,7 @@ public partial class Usuario : BaseEntity
 
     public virtual ICollection<ProfessorBanca> ProfessorBanca { get; set; } = new List<ProfessorBanca>();
 
-    public virtual ICollection<ProjetoArquivo> ProjetoArquivo { get; set; } = new List<ProjetoArquivo>();
+    //public virtual ICollection<ProjetoArquivo> ProjetoArquivo { get; set; } = new List<ProjetoArquivo>();
 
     public virtual ICollection<ProjetoComentario> ProjetoComentario { get; set; } = new List<ProjetoComentario>();
 

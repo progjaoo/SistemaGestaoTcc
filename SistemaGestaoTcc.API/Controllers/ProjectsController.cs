@@ -18,10 +18,12 @@ namespace SistemaGestaoTcc.API.Controllers
     {
         private readonly IMediator _mediator;
         private readonly IProjectRepository _projectRepository;
+
         public ProjectsController(IMediator mediator, IProjectRepository projectRepository)
         {
             _mediator = mediator;
             _projectRepository = projectRepository;
+
         }
 
         [HttpGet]

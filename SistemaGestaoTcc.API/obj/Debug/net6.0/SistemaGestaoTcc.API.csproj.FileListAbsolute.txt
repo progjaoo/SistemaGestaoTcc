@@ -304,3 +304,7 @@ C:\Users\joaom\Documents\testes\SistemaGestaoTcc\SistemaGestaoTcc.API\obj\Debug\
 C:\Users\joaom\Documents\testes\SistemaGestaoTcc\SistemaGestaoTcc.API\obj\Debug\net6.0\SistemaGestaoTcc.API.pdb
 C:\Users\joaom\Documents\testes\SistemaGestaoTcc\SistemaGestaoTcc.API\obj\Debug\net6.0\SistemaGestaoTcc.API.genruntimeconfig.cache
 C:\Users\joaom\Documents\testes\SistemaGestaoTcc\SistemaGestaoTcc.API\obj\Debug\net6.0\ref\SistemaGestaoTcc.API.dll
+C:\Users\joaom\Documents\SistemaGestaoTcc\SistemaGestaoTcc.API\bin\Debug\net6.0\Azure.Storage.Blobs.dll
+C:\Users\joaom\Documents\SistemaGestaoTcc\SistemaGestaoTcc.API\bin\Debug\net6.0\Azure.Storage.Common.dll
+C:\Users\joaom\Documents\SistemaGestaoTcc\SistemaGestaoTcc.API\bin\Debug\net6.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\joaom\Documents\SistemaGestaoTcc\SistemaGestaoTcc.API\bin\Debug\net6.0\System.IO.Hashing.dll

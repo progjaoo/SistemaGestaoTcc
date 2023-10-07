@@ -7,9 +7,20 @@ namespace SistemaGestaoTcc.Core.Models;
 
 public partial class ProjetoArquivo
 {
-    public int Id { get; set; }
+    public ProjetoArquivo()
+    {
+    }
 
-    public int IdUsuario { get; set; }
+    public ProjetoArquivo(int idProjeto, string diretorioArquivo, DateTime? criadoEm)
+    {
+        IdProjeto = idProjeto;
+        DiretorioArquivo = diretorioArquivo;
+        CriadoEm = criadoEm;
+    }
+
+    public int Id { get; set; } 
+
+    //public int IdUsuario { get; set; }
 
     public int IdProjeto { get; set; }
 
@@ -19,5 +30,5 @@ public partial class ProjetoArquivo
 
     public virtual Projeto IdProjetoNavigation { get; set; }
 
-    public virtual Usuario IdUsuarioNavigation { get; set; }
+    //public virtual Usuario IdUsuarioNavigation { get; set; }
 }

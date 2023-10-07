@@ -99,6 +99,7 @@ builder.Services.AddScoped<IConviteRepository, ConviteRepository>();
 builder.Services.AddScoped<IUsuarioProjetoRepository, UsuarioProjetoRepository>();
 builder.Services.AddScoped<INotaRepository, NotaRepository>();
 builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<IProjetoArquivoRepository, ProjetoArquivoRepository>();
 
 builder.Services.AddHttpClient();
 
