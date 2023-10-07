@@ -10,5 +10,7 @@
 + Repository Patterns (Padrão Repositório)
 + Autenticação e Autorização com JWT 
 + Testes Unitários
++ Integração com Microsoft Azure (Blog Storage/Azure AppService)
++ Aplicação Contâinerizada - Docker
 
 <p>Breve novidades...</p>
