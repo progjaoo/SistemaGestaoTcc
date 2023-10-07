@@ -3572,23 +3572,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\joaom\\.nuget\\packages\\": {},
+    "C:\\Users\\Windows7\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestaoTcc.Core\\SistemaGestaoTcc.Core.csproj",
+      "projectUniqueName": "C:\\Users\\Windows7\\Desktop\\AEDB\\Proj Int II\\Codigo\\SistemaGestaoTcc\\SistemaGestaoTcc.Core\\SistemaGestaoTcc.Core.csproj",
       "projectName": "SistemaGestaoTcc.Core",
-      "projectPath": "C:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestaoTcc.Core\\SistemaGestaoTcc.Core.csproj",
-      "packagesPath": "C:\\Users\\joaom\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestaoTcc.Core\\obj\\",
+      "projectPath": "C:\\Users\\Windows7\\Desktop\\AEDB\\Proj Int II\\Codigo\\SistemaGestaoTcc\\SistemaGestaoTcc.Core\\SistemaGestaoTcc.Core.csproj",
+      "packagesPath": "C:\\Users\\Windows7\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Windows7\\Desktop\\AEDB\\Proj Int II\\Codigo\\SistemaGestaoTcc\\SistemaGestaoTcc.Core\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\joaom\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Windows7\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -3657,7 +3657,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

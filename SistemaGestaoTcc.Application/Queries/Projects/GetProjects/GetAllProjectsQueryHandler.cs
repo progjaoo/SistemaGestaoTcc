@@ -23,10 +23,10 @@ namespace SistemaGestaoTcc.Application.Queries.Projects.GetProjects
         public async Task<List<ProjectViewModel>> Handle(GetProjectQuery request, CancellationToken cancellationToken)
         {
 
-            var projeto = await _projectRepository.GetAllAsync(request.Query);
+            var projeto = await _projectRepository.GetAllAsync();
 
             var projectViewModel = projeto
-                .Select(p => new ProjectViewModel(p.Id, p.Nome, p.Descricao, p.DataInicio, p.Estado)).Where(p => p.Estado == Core.Enums.StatusProjeto.Created)
+                .Select(p => new ProjectViewModel(p.Id, p.Nome, p.Descricao, p.DataInicio, p.Estado))
                 .ToList();
 
             return projectViewModel;

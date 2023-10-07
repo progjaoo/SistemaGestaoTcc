@@ -7,18 +7,25 @@ namespace SistemaGestaoTcc.Application.Commands.Projects.CreateProject
     public class CreateProjectCommandHandler : IRequestHandler<CreateProjectCommand, int>
     {
         private readonly IProjectRepository _projectRepository;
-        public CreateProjectCommandHandler(IProjectRepository projectRepository)
+        private readonly IUsuarioProjetoRepository _usuarioProjetoRepository;
+        public CreateProjectCommandHandler(IProjectRepository projectRepository, IUsuarioProjetoRepository usuarioProjetoRepository)
         {
             _projectRepository = projectRepository;
+            _usuarioProjetoRepository = usuarioProjetoRepository;
         }
 
         public async Task<int> Handle(CreateProjectCommand request, CancellationToken cancellationToken)
         {
             var project = new Projeto(request.IdCurso, request.Nome, request.Descricao);
-            //project.ProjetoComentario.Add(new ProjetoComentario(request.IdUsuario, request.Id, "Projeto criado"));
-
+            
+            
             await _projectRepository.AddASync(project);
             await _projectRepository.SaveChangesAsync();
+
+            var usuarioProjeto = new UsuarioProjeto(project.Id, request.IdUsuario);
+
+            await _usuarioProjetoRepository.AddASync(usuarioProjeto);
+            await _usuarioProjetoRepository.SaveChangesAsync();
 
             return project.Id;
         }

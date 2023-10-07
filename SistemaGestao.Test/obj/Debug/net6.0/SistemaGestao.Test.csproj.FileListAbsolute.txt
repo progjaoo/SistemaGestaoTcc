@@ -326,3 +326,8 @@ C:\Users\Windows7\Desktop\AEDB\Proj Int II\Codigo\SistemaGestaoTcc\SistemaGestao
 C:\Users\Windows7\Desktop\AEDB\Proj Int II\Codigo\SistemaGestaoTcc\SistemaGestao.Test\obj\Debug\net6.0\SistemaGestao.Test.csproj.CopyComplete
 C:\Users\Windows7\Desktop\AEDB\Proj Int II\Codigo\SistemaGestaoTcc\SistemaGestao.Test\obj\Debug\net6.0\SistemaGestao.Test.genruntimeconfig.cache
 C:\Users\Windows7\Desktop\AEDB\Proj Int II\Codigo\SistemaGestaoTcc\SistemaGestao.Test\obj\Debug\net6.0\ref\SistemaGestao.Test.dll
+C:\Users\Windows7\Desktop\AEDB\Proj Int II\Codigo\SistemaGestaoTcc\SistemaGestao.Test\bin\Debug\net6.0\Azure.Storage.Blobs.dll
+C:\Users\Windows7\Desktop\AEDB\Proj Int II\Codigo\SistemaGestaoTcc\SistemaGestao.Test\bin\Debug\net6.0\Azure.Storage.Common.dll
+C:\Users\Windows7\Desktop\AEDB\Proj Int II\Codigo\SistemaGestaoTcc\SistemaGestao.Test\bin\Debug\net6.0\Microsoft.AspNetCore.Http.Features.dll
+C:\Users\Windows7\Desktop\AEDB\Proj Int II\Codigo\SistemaGestaoTcc\SistemaGestao.Test\bin\Debug\net6.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Windows7\Desktop\AEDB\Proj Int II\Codigo\SistemaGestaoTcc\SistemaGestao.Test\bin\Debug\net6.0\System.IO.Hashing.dll

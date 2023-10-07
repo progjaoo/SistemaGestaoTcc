@@ -13,7 +13,7 @@ namespace SistemaGestaoTcc.Application.Commands.Convites.UpdateConvite
     {
         private readonly IConviteRepository _conviteRepository;
 
-        public UpdateConviteCommandHandler(IConviteRepository conviteRepository)
+        public UpdateConviteCommandHandler(IConviteRepository conviteRepository) 
         {
             _conviteRepository = conviteRepository;
         }

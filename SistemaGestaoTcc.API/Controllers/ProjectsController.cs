@@ -8,6 +8,8 @@ using SistemaGestaoTcc.Application.Commands.Projects.DeleteProject;
 using SistemaGestaoTcc.Application.Commands.Projects.UpdateProject;
 using SistemaGestaoTcc.Application.Queries.Projects.GetProjectById;
 using SistemaGestaoTcc.Application.Queries.Projects.GetProjects;
+using SistemaGestaoTcc.Application.Queries.Projects.GetProjectsPending;
+using SistemaGestaoTcc.Application.Queries.Projects.GetProjectsByUser;
 using SistemaGestaoTcc.Core.Interfaces;
 using SistemaGestaoTcc.Core.Models;
 
@@ -34,6 +36,22 @@ namespace SistemaGestaoTcc.API.Controllers
 
             return Ok(projects);
         }
+        [HttpGet("pendente")]
+        public async Task<IActionResult> GetAllPendingAsync()
+        {
+            var getAllProjectQuery = new GetProjectPendingQuery();
+            var projects = await _mediator.Send(getAllProjectQuery);
+
+            return Ok(projects);
+        }
+        [HttpGet("porUsuario/{id}")]
+        public async Task<IActionResult> GetAllByUserAsync(int id)
+        {
+            var getAllProjectQuery = new GetProjectByUserQuery(id);
+            var projects = await _mediator.Send(getAllProjectQuery);
+
+            return Ok(projects);
+        }
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
@@ -55,9 +73,9 @@ namespace SistemaGestaoTcc.API.Controllers
             var id = await _mediator.Send(command);
             return CreatedAtAction(nameof(GetById), new { id = id }, command);
         }
-        [HttpPut("{id}/atualizarComentario")]
+        [HttpPut("atualizarProjeto")]
         // [Authorize(Roles = "Aluno")]
-        public async Task<IActionResult> Put(int id, [FromBody] UpdateProjectCommand command)
+        public async Task<IActionResult> Put([FromBody] UpdateProjectCommand command)
         {
             await _mediator.Send(command);
 

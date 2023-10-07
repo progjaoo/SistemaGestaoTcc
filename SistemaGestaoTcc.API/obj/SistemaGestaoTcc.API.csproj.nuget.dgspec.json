@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestaoTcc.API\\SistemaGestaoTcc.API.csproj": {}
+    "C:\\Users\\Windows7\\Desktop\\AEDB\\Proj Int II\\Codigo\\SistemaGestaoTcc\\SistemaGestaoTcc.API\\SistemaGestaoTcc.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestaoTcc.API\\SistemaGestaoTcc.API.csproj": {
+    "C:\\Users\\Windows7\\Desktop\\AEDB\\Proj Int II\\Codigo\\SistemaGestaoTcc\\SistemaGestaoTcc.API\\SistemaGestaoTcc.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestaoTcc.API\\SistemaGestaoTcc.API.csproj",
+        "projectUniqueName": "C:\\Users\\Windows7\\Desktop\\AEDB\\Proj Int II\\Codigo\\SistemaGestaoTcc\\SistemaGestaoTcc.API\\SistemaGestaoTcc.API.csproj",
         "projectName": "SistemaGestaoTcc.API",
-        "projectPath": "C:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestaoTcc.API\\SistemaGestaoTcc.API.csproj",
-        "packagesPath": "C:\\Users\\joaom\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestaoTcc.API\\obj\\",
+        "projectPath": "C:\\Users\\Windows7\\Desktop\\AEDB\\Proj Int II\\Codigo\\SistemaGestaoTcc\\SistemaGestaoTcc.API\\SistemaGestaoTcc.API.csproj",
+        "packagesPath": "C:\\Users\\Windows7\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Windows7\\Desktop\\AEDB\\Proj Int II\\Codigo\\SistemaGestaoTcc\\SistemaGestaoTcc.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\joaom\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Windows7\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -33,14 +33,14 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestaoTcc.Application\\SistemaGestaoTcc.Application.csproj": {
-                "projectPath": "C:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestaoTcc.Application\\SistemaGestaoTcc.Application.csproj"
+              "C:\\Users\\Windows7\\Desktop\\AEDB\\Proj Int II\\Codigo\\SistemaGestaoTcc\\SistemaGestaoTcc.Application\\SistemaGestaoTcc.Application.csproj": {
+                "projectPath": "C:\\Users\\Windows7\\Desktop\\AEDB\\Proj Int II\\Codigo\\SistemaGestaoTcc\\SistemaGestaoTcc.Application\\SistemaGestaoTcc.Application.csproj"
               },
-              "C:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestaoTcc.Core\\SistemaGestaoTcc.Core.csproj": {
-                "projectPath": "C:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestaoTcc.Core\\SistemaGestaoTcc.Core.csproj"
+              "C:\\Users\\Windows7\\Desktop\\AEDB\\Proj Int II\\Codigo\\SistemaGestaoTcc\\SistemaGestaoTcc.Core\\SistemaGestaoTcc.Core.csproj": {
+                "projectPath": "C:\\Users\\Windows7\\Desktop\\AEDB\\Proj Int II\\Codigo\\SistemaGestaoTcc\\SistemaGestaoTcc.Core\\SistemaGestaoTcc.Core.csproj"
               },
-              "C:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestaoTcc.Infrastructure\\SistemaGestaoTcc.Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestaoTcc.Infrastructure\\SistemaGestaoTcc.Infrastructure.csproj"
+              "C:\\Users\\Windows7\\Desktop\\AEDB\\Proj Int II\\Codigo\\SistemaGestaoTcc\\SistemaGestaoTcc.Infrastructure\\SistemaGestaoTcc.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\Windows7\\Desktop\\AEDB\\Proj Int II\\Codigo\\SistemaGestaoTcc\\SistemaGestaoTcc.Infrastructure\\SistemaGestaoTcc.Infrastructure.csproj"
               }
             }
           }
@@ -127,24 +127,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestaoTcc.Application\\SistemaGestaoTcc.Application.csproj": {
+    "C:\\Users\\Windows7\\Desktop\\AEDB\\Proj Int II\\Codigo\\SistemaGestaoTcc\\SistemaGestaoTcc.Application\\SistemaGestaoTcc.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestaoTcc.Application\\SistemaGestaoTcc.Application.csproj",
+        "projectUniqueName": "C:\\Users\\Windows7\\Desktop\\AEDB\\Proj Int II\\Codigo\\SistemaGestaoTcc\\SistemaGestaoTcc.Application\\SistemaGestaoTcc.Application.csproj",
         "projectName": "SistemaGestaoTcc.Application",
-        "projectPath": "C:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestaoTcc.Application\\SistemaGestaoTcc.Application.csproj",
-        "packagesPath": "C:\\Users\\joaom\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestaoTcc.Application\\obj\\",
+        "projectPath": "C:\\Users\\Windows7\\Desktop\\AEDB\\Proj Int II\\Codigo\\SistemaGestaoTcc\\SistemaGestaoTcc.Application\\SistemaGestaoTcc.Application.csproj",
+        "packagesPath": "C:\\Users\\Windows7\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Windows7\\Desktop\\AEDB\\Proj Int II\\Codigo\\SistemaGestaoTcc\\SistemaGestaoTcc.Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\joaom\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Windows7\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -160,11 +160,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestaoTcc.Core\\SistemaGestaoTcc.Core.csproj": {
-                "projectPath": "C:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestaoTcc.Core\\SistemaGestaoTcc.Core.csproj"
+              "C:\\Users\\Windows7\\Desktop\\AEDB\\Proj Int II\\Codigo\\SistemaGestaoTcc\\SistemaGestaoTcc.Core\\SistemaGestaoTcc.Core.csproj": {
+                "projectPath": "C:\\Users\\Windows7\\Desktop\\AEDB\\Proj Int II\\Codigo\\SistemaGestaoTcc\\SistemaGestaoTcc.Core\\SistemaGestaoTcc.Core.csproj"
               },
-              "C:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestaoTcc.Infrastructure\\SistemaGestaoTcc.Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestaoTcc.Infrastructure\\SistemaGestaoTcc.Infrastructure.csproj"
+              "C:\\Users\\Windows7\\Desktop\\AEDB\\Proj Int II\\Codigo\\SistemaGestaoTcc\\SistemaGestaoTcc.Infrastructure\\SistemaGestaoTcc.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\Windows7\\Desktop\\AEDB\\Proj Int II\\Codigo\\SistemaGestaoTcc\\SistemaGestaoTcc.Infrastructure\\SistemaGestaoTcc.Infrastructure.csproj"
               }
             }
           }
@@ -208,24 +208,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestaoTcc.Core\\SistemaGestaoTcc.Core.csproj": {
+    "C:\\Users\\Windows7\\Desktop\\AEDB\\Proj Int II\\Codigo\\SistemaGestaoTcc\\SistemaGestaoTcc.Core\\SistemaGestaoTcc.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestaoTcc.Core\\SistemaGestaoTcc.Core.csproj",
+        "projectUniqueName": "C:\\Users\\Windows7\\Desktop\\AEDB\\Proj Int II\\Codigo\\SistemaGestaoTcc\\SistemaGestaoTcc.Core\\SistemaGestaoTcc.Core.csproj",
         "projectName": "SistemaGestaoTcc.Core",
-        "projectPath": "C:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestaoTcc.Core\\SistemaGestaoTcc.Core.csproj",
-        "packagesPath": "C:\\Users\\joaom\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestaoTcc.Core\\obj\\",
+        "projectPath": "C:\\Users\\Windows7\\Desktop\\AEDB\\Proj Int II\\Codigo\\SistemaGestaoTcc\\SistemaGestaoTcc.Core\\SistemaGestaoTcc.Core.csproj",
+        "packagesPath": "C:\\Users\\Windows7\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Windows7\\Desktop\\AEDB\\Proj Int II\\Codigo\\SistemaGestaoTcc\\SistemaGestaoTcc.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\joaom\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Windows7\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -294,24 +294,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestaoTcc.Infrastructure\\SistemaGestaoTcc.Infrastructure.csproj": {
+    "C:\\Users\\Windows7\\Desktop\\AEDB\\Proj Int II\\Codigo\\SistemaGestaoTcc\\SistemaGestaoTcc.Infrastructure\\SistemaGestaoTcc.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestaoTcc.Infrastructure\\SistemaGestaoTcc.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\Windows7\\Desktop\\AEDB\\Proj Int II\\Codigo\\SistemaGestaoTcc\\SistemaGestaoTcc.Infrastructure\\SistemaGestaoTcc.Infrastructure.csproj",
         "projectName": "SistemaGestaoTcc.Infrastructure",
-        "projectPath": "C:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestaoTcc.Infrastructure\\SistemaGestaoTcc.Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\joaom\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestaoTcc.Infrastructure\\obj\\",
+        "projectPath": "C:\\Users\\Windows7\\Desktop\\AEDB\\Proj Int II\\Codigo\\SistemaGestaoTcc\\SistemaGestaoTcc.Infrastructure\\SistemaGestaoTcc.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\Windows7\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Windows7\\Desktop\\AEDB\\Proj Int II\\Codigo\\SistemaGestaoTcc\\SistemaGestaoTcc.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\joaom\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Windows7\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -327,8 +327,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestaoTcc.Core\\SistemaGestaoTcc.Core.csproj": {
-                "projectPath": "C:\\Users\\joaom\\Documents\\SistemaGestaoTcc\\SistemaGestaoTcc.Core\\SistemaGestaoTcc.Core.csproj"
+              "C:\\Users\\Windows7\\Desktop\\AEDB\\Proj Int II\\Codigo\\SistemaGestaoTcc\\SistemaGestaoTcc.Core\\SistemaGestaoTcc.Core.csproj": {
+                "projectPath": "C:\\Users\\Windows7\\Desktop\\AEDB\\Proj Int II\\Codigo\\SistemaGestaoTcc\\SistemaGestaoTcc.Core\\SistemaGestaoTcc.Core.csproj"
               }
             }
           }
@@ -386,7 +386,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

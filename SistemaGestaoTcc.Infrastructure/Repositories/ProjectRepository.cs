@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Dapper;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Update.Internal;
 using Microsoft.Extensions.Configuration;
 using SistemaGestaoTcc.Core.Interfaces;
 using SistemaGestaoTcc.Core.Models;
@@ -15,19 +16,41 @@ namespace SistemaGestaoTcc.Infrastructure.Repositories
     public class ProjectRepository : IProjectRepository
     {
         private readonly SistemaTccContext _dbcontext;
+        private readonly IUsuarioProjetoRepository _usuarioProjetoRepository;
         private readonly string _connectionString;
 
-        public ProjectRepository(SistemaTccContext dbcontext, IConfiguration configuration)
+        public ProjectRepository(SistemaTccContext dbcontext, IUsuarioProjetoRepository usuarioProjetoRepository, IConfiguration configuration)
         {
             _dbcontext = dbcontext;
+            _usuarioProjetoRepository = usuarioProjetoRepository;
             _connectionString = configuration.GetConnectionString("SistemaTcc");
         }
 
-        public async Task<List<Projeto>> GetAllAsync(string query)
+        public async Task<List<Projeto>> GetAllAsync()
         {
             //ok
-            return await _dbcontext.Projeto.ToListAsync();
+            return await _dbcontext.Projeto
+            //.Where(p => p.Estado == Core.Enums.StatusProjeto.Created)
+            .Where(p => p.Publicado == true)
+            .ToListAsync();
 
+        }
+
+        public async Task<List<Projeto>> GetAllPendingAsync()
+        {
+            //ok
+            return await _dbcontext.Projeto
+            .Where(p => p.Estado == Core.Enums.StatusProjeto.Finished && p.Publicado == false)
+            .ToListAsync();
+        }
+
+        public async Task<List<Projeto>> GetAllByUserAsync(int id)
+        {
+            //ok
+            var idsProjetos = (await _usuarioProjetoRepository.GetAllByUserId(id)).Select(p => p.IdProjeto);
+            return await _dbcontext.Projeto
+            .Where(p => idsProjetos.Contains(p.Id))
+            .ToListAsync();
         }
 
         public async Task<Projeto> GetById(int id)
