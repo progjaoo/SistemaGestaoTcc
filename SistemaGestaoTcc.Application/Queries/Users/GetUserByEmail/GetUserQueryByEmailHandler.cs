@@ -7,20 +7,20 @@ using MediatR;
 using SistemaGestaoTcc.Application.ViewModels;
 using SistemaGestaoTcc.Core.Interfaces;
 
-namespace SistemaGestaoTcc.Application.Queries.Users.GetUser
+namespace SistemaGestaoTcc.Application.Queries.Users.GetUserByEmail
 {
-    public class GetUserQueryHandler : IRequestHandler<GetUserQuery, UserViewModel>
+    public class GetUserByEmailQueryHandler : IRequestHandler<GetUserByEmailQuery, UserViewModel>
     {
         private readonly IUserRepository _userRepository;
 
-        public GetUserQueryHandler(IUserRepository userRepository)
+        public GetUserByEmailQueryHandler(IUserRepository userRepository)
         {
             _userRepository = userRepository;
         }
 
-        public async Task<UserViewModel> Handle(GetUserQuery request, CancellationToken cancellationToken)
+        public async Task<UserViewModel> Handle(GetUserByEmailQuery request, CancellationToken cancellationToken)
         {
-            var user = await _userRepository.GetById(request.Id);
+            var user = await _userRepository.GetByEmail(request.Email);
 
             if (user == null)
             {

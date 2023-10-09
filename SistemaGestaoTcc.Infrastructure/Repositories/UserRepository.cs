@@ -38,6 +38,10 @@ namespace SistemaGestaoTcc.Infrastructure.Repositories
         {
             return await _dbcontext.Usuario.SingleOrDefaultAsync(u => u.Email == email && u.Senha == passwordHash);
         }
+        public async Task<Usuario> GetByEmail(string email)
+        {
+            return await _dbcontext.Usuario.SingleOrDefaultAsync(u => u.Email == email);
+        }
         public async Task SaveChangesAsync()
         {
             await _dbcontext.SaveChangesAsync();

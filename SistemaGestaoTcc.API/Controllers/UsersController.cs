@@ -7,6 +7,7 @@ using SistemaGestaoTcc.Application.Commands.Users.UpdateUser;
 using SistemaGestaoTcc.Application.Queries.Users.GetAllUserByRole;
 using SistemaGestaoTcc.Application.Queries.Users.GetAllUsersByCourse;
 using SistemaGestaoTcc.Application.Queries.Users.GetUser;
+using SistemaGestaoTcc.Application.Queries.Users.GetUserByEmail;
 using SistemaGestaoTcc.Core.Interfaces;
 using SistemaGestaoTcc.Core.Models;
 
@@ -55,6 +56,19 @@ namespace SistemaGestaoTcc.API.Controllers
             }
             return Ok(user);
         }
+        [HttpGet("email")]
+        public async Task<IActionResult> GetByEmail(string email)
+        {
+            var query = new GetUserByEmailQuery(email);
+
+            var user = await _mediator.Send(query);
+
+            if (user == null)
+            {
+                return NotFound();
+            }
+            return Ok(user);
+        }
         [HttpPost("criarUsuario")]
         [AllowAnonymous]
         public async Task<IActionResult> Post([FromBody] CreateUserCommand command)
@@ -72,7 +86,7 @@ namespace SistemaGestaoTcc.API.Controllers
 
             if(loginUserViewModel == null)
             {
-                Unauthorized();
+                return Unauthorized();
             }
             return Ok(loginUserViewModel);
         }

@@ -58,8 +58,8 @@ namespace SistemaGestaoTcc.API.Controllers
             return Ok();
         }
 
-        [HttpPut("{id}/UpdateComement")]
-        public async Task<IActionResult> UpdateComment(int id, [FromBody] UpdateCommentCommand command)
+        [HttpPut("atualizarComentario")]
+        public async Task<IActionResult> UpdateComment([FromBody] UpdateCommentCommand command)
         {
             await _mediator.Send(command);
             return NoContent();
