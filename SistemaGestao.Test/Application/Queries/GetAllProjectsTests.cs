@@ -26,7 +26,7 @@ namespace SistemaGestao.Test.Application.Queries
 
             var projectRepositoryMock = new Mock<IProjectRepository>();
 
-            projectRepositoryMock.Setup(p => p.GetAllAsync(It.IsAny<string>()).Result).Returns(projects);
+            projectRepositoryMock.Setup(p => p.GetAllAsync().Result).Returns(projects);
 
             var getAllProjectsQuery = new GetProjectQuery {Query = ""};
 

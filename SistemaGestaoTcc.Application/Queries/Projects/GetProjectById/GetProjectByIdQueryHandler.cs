@@ -26,8 +26,8 @@ namespace SistemaGestaoTcc.Application.Queries.Projects.GetProjectById
 
             var projectDetailsViewModel = new ProjectDetailsViewModel(
                     project.Id,
-                    project.Descricao,
                     project.Nome,
+                    project.Descricao,
                     project.DataInicio,
                     project.DataFim,
                     project.Publicado,

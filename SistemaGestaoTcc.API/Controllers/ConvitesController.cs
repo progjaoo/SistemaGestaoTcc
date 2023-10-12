@@ -8,6 +8,7 @@ using SistemaGestaoTcc.Application.Queries.Convites.GetAllConvites;
 using SistemaGestaoTcc.Application.Services;
 using SistemaGestaoTcc.Core.Enums;
 using SistemaGestaoTcc.Core.Interfaces;
+using SistemaGestaoTcc.Core.Models;
 
 namespace SistemaGestaoTcc.API.Controllers
 {
@@ -94,6 +95,12 @@ namespace SistemaGestaoTcc.API.Controllers
             invite.Aceito = command.Aceito;
 
             await _mediator.Send(command);
+            
+            if(command.Aceito == ConviteAceito.Aceito)
+            {
+                UsuarioProjeto usuarioProjeto = new UsuarioProjeto(invite.IdProjeto, invite.IdUsuario);
+                await _usuarioProjetoRepository.AddASync(usuarioProjeto);
+            }
             return Ok("Convite respondido com suscesso!");
 
         }

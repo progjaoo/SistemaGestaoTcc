@@ -49,8 +49,8 @@ namespace SistemaGestaoTcc.API.Controllers
             var id = await _mediator.Send(command);
             return CreatedAtAction(nameof(GetById), new { id = id }, command);
         }
-        [HttpPut("{id}/atualizarCurso")]
-        public async Task<IActionResult> Update(int id, [FromBody] UpdateCourseCommand command)
+        [HttpPut("atualizarCurso")]
+        public async Task<IActionResult> Update([FromBody] UpdateCourseCommand command)
         {
             await _mediator.Send(command);
 

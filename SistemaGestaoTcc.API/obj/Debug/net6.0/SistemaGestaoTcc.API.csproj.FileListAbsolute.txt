@@ -308,3 +308,7 @@ C:\Users\joaom\Documents\SistemaGestaoTcc\SistemaGestaoTcc.API\bin\Debug\net6.0\
 C:\Users\joaom\Documents\SistemaGestaoTcc\SistemaGestaoTcc.API\bin\Debug\net6.0\Azure.Storage.Common.dll
 C:\Users\joaom\Documents\SistemaGestaoTcc\SistemaGestaoTcc.API\bin\Debug\net6.0\System.Diagnostics.DiagnosticSource.dll
 C:\Users\joaom\Documents\SistemaGestaoTcc\SistemaGestaoTcc.API\bin\Debug\net6.0\System.IO.Hashing.dll
+C:\Users\Windows7\Desktop\AEDB\Proj Int II\Codigo\SistemaGestaoTcc\SistemaGestaoTcc.API\bin\Debug\net6.0\Azure.Storage.Blobs.dll
+C:\Users\Windows7\Desktop\AEDB\Proj Int II\Codigo\SistemaGestaoTcc\SistemaGestaoTcc.API\bin\Debug\net6.0\Azure.Storage.Common.dll
+C:\Users\Windows7\Desktop\AEDB\Proj Int II\Codigo\SistemaGestaoTcc\SistemaGestaoTcc.API\bin\Debug\net6.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Windows7\Desktop\AEDB\Proj Int II\Codigo\SistemaGestaoTcc\SistemaGestaoTcc.API\bin\Debug\net6.0\System.IO.Hashing.dll

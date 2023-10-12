@@ -29,7 +29,12 @@ namespace SistemaGestaoTcc.Infrastructure.Repositories
 
         public async Task<List<UsuarioProjeto>> GetAllByUserId(int id)
         {
-            return await _dbcontext.UsuarioProjeto.Where(up => up.Id == id).ToListAsync();
+            return await _dbcontext.UsuarioProjeto.Where(up => up.IdUsuario == id).ToListAsync();
+        }
+
+        public async Task<List<UsuarioProjeto>> GetAllByProjectId(int id)
+        {
+            return await _dbcontext.UsuarioProjeto.Where(up => up.IdProjeto == id).ToListAsync();
         }
 
         public async Task<UsuarioProjeto> GetById(int id)

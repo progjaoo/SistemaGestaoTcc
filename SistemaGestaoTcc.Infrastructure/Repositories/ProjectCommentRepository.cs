@@ -30,9 +30,7 @@ namespace SistemaGestaoTcc.Infrastructure.Repositories
         public async Task<ProjetoComentario> GetCommentById(int id)
         {
             return await _dbcontext.ProjetoComentario
-            .Include(c => c.IdUsuarioNavigation.Nome)
-            .Include(c => c.IdUsuarioNavigation.Email)
-            .Include(c => c.IdUsuarioNavigation.IdCurso)
+            .Include(c => c.IdUsuarioNavigation)
             .SingleOrDefaultAsync(c => c.Id == id);
         }
 
