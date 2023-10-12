@@ -16,8 +16,7 @@ namespace SistemaGestaoTcc.API.Controllers
             _projectRepository = projectRepository;
         }
 
-        [HttpPost]
-        [Route("enviar/{idProjeto}")]
+        [HttpPost("enviarArquivos")]
         public async Task<IActionResult> EnviarArquivoParaProjeto(int idProjeto, IFormFile file)
         {
             try
@@ -27,12 +26,10 @@ namespace SistemaGestaoTcc.API.Controllers
                 {
                     return NotFound("Projeto não encontrado.");
                 }
-
                 if (file == null || file.Length == 0)
                 {
                     return BadRequest("Nenhum arquivo enviado.");
                 }
-
                 string nomeArquivoBlob = $"{idProjeto}-{Guid.NewGuid()}{Path.GetExtension(file.FileName)}";
 
                 await _projetoArquivoRepository.Upload(file, nomeArquivoBlob);
@@ -60,6 +57,41 @@ namespace SistemaGestaoTcc.API.Controllers
 
                 Console.WriteLine($"Erro ao salvar as alterações no banco de dados: {ex.Message}");
                 return BadRequest($"Ocorreu um erro ao enviar o arquivo: {ex.Message}");
+            }
+        }
+        [HttpGet("listarArquivos")]
+        public async Task<IActionResult> GetAllAsync()
+        {
+            try
+            {
+                var listBlobs = await _projetoArquivoRepository.ListBlobFilesAsync();
+                
+                return Ok(listBlobs);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"Ocorreu um erro ao listar os arquivos.: {ex.Message}");                
+            }
+        }
+        [HttpGet("downloadArquivos")]
+        public async Task<IActionResult> DownloadArquivoDoBlobStorage(string nomeArquivo)
+        {
+            try
+            {
+                var arquivoBytes = await _projetoArquivoRepository.DownloadBlobAsync(nomeArquivo);
+
+                if (arquivoBytes != null)
+                {
+                    return File(arquivoBytes, "application/octet-stream", nomeArquivo);
+                }
+                else
+                {
+                    return NotFound("Arquivo não encontrado.");
+                }
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"Ocorreu um erro ao baixar o arquivo: {ex.Message}");
             }
         }
     }

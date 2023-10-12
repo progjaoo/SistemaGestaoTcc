@@ -20,8 +20,6 @@ public partial class ProjetoArquivo
 
     public int Id { get; set; } 
 
-    //public int IdUsuario { get; set; }
-
     public int IdProjeto { get; set; }
 
     public string DiretorioArquivo { get; set; }
@@ -30,5 +28,6 @@ public partial class ProjetoArquivo
 
     public virtual Projeto IdProjetoNavigation { get; set; }
 
+    //public int IdUsuario { get; set; }
     //public virtual Usuario IdUsuarioNavigation { get; set; }
 }

@@ -25,14 +25,12 @@ namespace SistemaGestaoTcc.Infrastructure.Repositories
 
         public async Task<List<Projeto>> GetAllAsync(string query)
         {
-            //ok
             return await _dbcontext.Projeto.ToListAsync();
 
         }
 
         public async Task<Projeto> GetById(int id)
         {
-            //ok
             return await _dbcontext.Projeto.SingleOrDefaultAsync(p => p.Id == id);
         }
 
@@ -42,14 +40,12 @@ namespace SistemaGestaoTcc.Infrastructure.Repositories
         }
         public async Task AddASync(Projeto projeto)
         {
-            //ok
             await _dbcontext.Projeto.AddAsync(projeto);
         }
 
         public async Task SaveChangesAsync()
         {
             await _dbcontext.SaveChangesAsync();
-
         }
         public async Task StartAsync(Projeto projeto)
         {

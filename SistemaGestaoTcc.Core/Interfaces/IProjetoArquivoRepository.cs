@@ -10,8 +10,11 @@ namespace SistemaGestaoTcc.Core.Interfaces
 {
     public interface IProjetoArquivoRepository
     {
+        Task<List<ProjetoArquivo>> GetAllAsync();
+        Task<List<string>> ListBlobFilesAsync();
         Task AddAsync(ProjetoArquivo projetoArquivo);
         Task Upload(IFormFile file, string nomeArquivoBlob);
+        Task<byte[]> DownloadBlobAsync(string nomeArquivo);
         Task SaveChangesAsync();
     }
 }
