@@ -64,7 +64,7 @@ namespace SistemaGestaoTcc.Infrastructure.Repositories
             await _dbcontext.SaveChangesAsync();
         }
 
-        public async Task Upload(IFormFile file, string nomeArquivoBlob)
+        public async Task UploadArquivos(IFormFile file, string nomeArquivoBlob)
         {
             using var stream = new MemoryStream();
             file.CopyTo(stream);

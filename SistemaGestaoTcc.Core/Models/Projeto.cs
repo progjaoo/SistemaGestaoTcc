@@ -27,6 +27,8 @@ public partial class Projeto : BaseEntity
 
     public int IdCurso { get; set; }
 
+    public string Imagem { get; set; }
+
     public string Nome { get; set; }
 
     public string Descricao { get; set; }

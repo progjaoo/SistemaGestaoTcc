@@ -28,6 +28,4 @@ public partial class ProjetoArquivo
 
     public virtual Projeto IdProjetoNavigation { get; set; }
 
-    //public int IdUsuario { get; set; }
-    //public virtual Usuario IdUsuarioNavigation { get; set; }
 }

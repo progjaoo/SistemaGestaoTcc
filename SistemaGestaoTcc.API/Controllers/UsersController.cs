@@ -10,6 +10,7 @@ using SistemaGestaoTcc.Application.Queries.Users.GetUser;
 using SistemaGestaoTcc.Application.Queries.Users.GetUserByEmail;
 using SistemaGestaoTcc.Core.Interfaces;
 using SistemaGestaoTcc.Core.Models;
+using SistemaGestaoTcc.Infrastructure.Repositories;
 
 namespace SistemaGestaoTcc.API.Controllers
 {
@@ -19,11 +20,13 @@ namespace SistemaGestaoTcc.API.Controllers
     {
         private readonly IMediator _mediator;
         private readonly IUserRepository _userRepository;
+        private readonly IEnvioImagemRepository _envioImagemRepository;
 
-        public UsersController(IMediator mediator, IUserRepository userRepository)
+        public UsersController(IMediator mediator, IUserRepository userRepository, IEnvioImagemRepository envioImagemRepository)
         {
             _mediator = mediator;
             _userRepository = userRepository;
+            _envioImagemRepository = envioImagemRepository;
         }
 
         [HttpGet("userByRole")]
@@ -90,8 +93,8 @@ namespace SistemaGestaoTcc.API.Controllers
             }
             return Ok(loginUserViewModel);
         }
-        [HttpPut("AtualizarLogin")]
-        public async Task<IActionResult> UpdateLogin(int id, [FromBody] UpdateUserCommand command)
+        [HttpPut("atualizarUsuario")]
+        public async Task<IActionResult> UpdateUser(int id, [FromBody] UpdateUserCommand command)
         {
             await _mediator.Send(command);
 
@@ -105,6 +108,43 @@ namespace SistemaGestaoTcc.API.Controllers
             await _userRepository.SaveChangesAsync();
 
             return Ok();
+        }
+        [HttpPut("envioImagens")]
+        public async Task<IActionResult> EnvioImagens(int idUsuario, IFormFile file)
+        {
+            try
+            {
+                var usuario = await _userRepository.GetById(idUsuario);
+                if (usuario == null)
+                {
+                    return NotFound("Projeto não encontrado.");
+                }
+                if (file == null || file.Length == 0)
+                {
+                    return BadRequest("Nenhum arquivo enviado.");
+                }
+                string nomeArquivoBlob = $"Usuario-{idUsuario}-{Guid.NewGuid()}{Path.GetExtension(file.FileName)}";
+
+                await _envioImagemRepository.UploadImage(file, nomeArquivoBlob);
+                usuario.Imagem = nomeArquivoBlob;
+
+                await _userRepository.SaveChangesAsync();
+
+                await _envioImagemRepository.SaveChangesAsync();
+
+                return Ok("Arquivo enviado com sucesso.");
+            }
+            catch (Exception ex)
+            {
+                if (ex.InnerException != null)
+                {
+                    var innerExceptionMessage = ex.InnerException.Message;
+                    Console.WriteLine($"Exceção interna: {innerExceptionMessage}");
+                }
+
+                Console.WriteLine($"Erro ao salvar as alterações no banco de dados: {ex.Message}");
+                return BadRequest($"Ocorreu um erro ao enviar o arquivo: {ex.Message}");
+            }
         }
     }
 }

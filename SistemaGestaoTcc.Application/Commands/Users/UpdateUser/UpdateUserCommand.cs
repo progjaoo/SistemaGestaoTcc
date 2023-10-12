@@ -11,6 +11,8 @@ namespace SistemaGestaoTcc.Application.Commands.Users.UpdateUser
     {
         public int Id { get; set; }
 
+        public int IdCurso { get; set; }
+
         public string Nome { get; set; }
 
         public string Senha { get; set; }

@@ -8,6 +8,21 @@ namespace SistemaGestaoTcc.Application.ViewModels
 {
     public class UserViewModel
     {
+        public UserViewModel(int id, string nome, string email, int idCurso, string papel, string? imagem)
+        {
+            Id = id;
+            Nome = nome;
+            Email = email;
+            IdCurso = idCurso;
+            Papel = papel;
+            Imagem = imagem;
+        }
+        public UserViewModel(string nome, string email, int idCurso)
+        {
+            Nome = nome;
+            Email = email;
+            IdCurso = idCurso;
+        }
         public UserViewModel(int id, string nome, string email, int idCurso, string papel)
         {
             Id = id;
@@ -16,13 +31,8 @@ namespace SistemaGestaoTcc.Application.ViewModels
             IdCurso = idCurso;
             Papel = papel;
         }
-        public UserViewModel(string nome, string email, int idCurso)
-        {
-            Nome = nome;
-            Email = email;
-            IdCurso = idCurso;
-        }
         public int? Id { get; set; }
+        public string? Imagem { get; set; }
         public string? Nome { get; set; }
         public string Email { get; set; }
         public int IdCurso { get; set; }

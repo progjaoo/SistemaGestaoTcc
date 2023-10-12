@@ -32,7 +32,7 @@ namespace SistemaGestaoTcc.API.Controllers
                 }
                 string nomeArquivoBlob = $"{idProjeto}-{Guid.NewGuid()}{Path.GetExtension(file.FileName)}";
 
-                await _projetoArquivoRepository.Upload(file, nomeArquivoBlob);
+                await _projetoArquivoRepository.UploadArquivos(file, nomeArquivoBlob);
 
                 var projetoArquivo = new ProjetoArquivo
                 {
@@ -43,7 +43,7 @@ namespace SistemaGestaoTcc.API.Controllers
 
                 projeto.ProjetoArquivo.Add(projetoArquivo);
 
-                await _projectRepository.SaveChangesAsync();
+                await _projetoArquivoRepository.SaveChangesAsync();
 
                 return Ok("Arquivo enviado com sucesso.");
             }
@@ -59,6 +59,8 @@ namespace SistemaGestaoTcc.API.Controllers
                 return BadRequest($"Ocorreu um erro ao enviar o arquivo: {ex.Message}");
             }
         }
+
+
         [HttpGet("listarArquivos")]
         public async Task<IActionResult> GetAllAsync()
         {

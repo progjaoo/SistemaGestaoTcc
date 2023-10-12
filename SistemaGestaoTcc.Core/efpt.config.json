@@ -60,7 +60,7 @@
          "ObjectType": 0
       }
    ],
-   "UiHint": "thralljr\\sqlexpress.SistemaTcc2.dbo",
+   "UiHint": "thralljr\\sqlexpress.SistemaPI.dbo",
    "UncountableWords": null,
    "UseBoolPropertiesWithoutDefaultSql": false,
    "UseDatabaseNames": false,

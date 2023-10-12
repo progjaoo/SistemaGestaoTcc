@@ -26,7 +26,7 @@ namespace SistemaGestaoTcc.Application.Commands.Users.UpdateUser
 
             var passwordHash = _authService.ComputeSha256Hash(request.Senha);
 
-            user.Update(request.Nome, passwordHash);
+            user.Update(request.IdCurso, request.Nome, passwordHash);
 
             await _userRepository.SaveChangesAsync();
 

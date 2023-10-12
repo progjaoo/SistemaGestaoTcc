@@ -13,7 +13,7 @@ namespace SistemaGestaoTcc.Core.Interfaces
         Task<List<ProjetoArquivo>> GetAllAsync();
         Task<List<string>> ListBlobFilesAsync();
         Task AddAsync(ProjetoArquivo projetoArquivo);
-        Task Upload(IFormFile file, string nomeArquivoBlob);
+        Task UploadArquivos(IFormFile file, string nomeArquivoBlob);
         Task<byte[]> DownloadBlobAsync(string nomeArquivo);
         Task SaveChangesAsync();
     }

@@ -19,6 +19,8 @@ public partial class Usuario : BaseEntity
 
     public int IdCurso { get; set; }
 
+    public string Imagem { get; set; }
+
     public string Nome { get; set; }
 
     public string Email { get; set; }
@@ -43,9 +45,10 @@ public partial class Usuario : BaseEntity
 
     public virtual ICollection<UsuarioProjeto> UsuarioProjeto { get; set; } = new List<UsuarioProjeto>();
 
-    public void Update(string nome, string senha)
+    public void Update(int idCurso, string nome, string senha)
     {
         Nome = nome;
         Senha = senha;
+        IdCurso = idCurso;
     }
 }
