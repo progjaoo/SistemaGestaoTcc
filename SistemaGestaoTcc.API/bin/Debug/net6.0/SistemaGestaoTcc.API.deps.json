@@ -2044,7 +2044,8 @@
         "dependencies": {
           "Dapper": "2.0.151",
           "Microsoft.AspNetCore.Http.Features": "2.2.0",
-          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.10"
+          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.10",
+          "SendGrid": "9.28.1"
         },
         "runtime": {
           "SistemaGestaoTcc.Core.dll": {}

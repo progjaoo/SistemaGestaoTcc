@@ -13,6 +13,7 @@ using SistemaGestaoTcc.Application.Queries.Projects.GetProjectsByUser;
 using SistemaGestaoTcc.Core.Interfaces;
 using SistemaGestaoTcc.Core.Models;
 using SistemaGestaoTcc.Infrastructure.Repositories;
+using SendGrid.Helpers.Errors.Model;
 
 namespace SistemaGestaoTcc.API.Controllers
 {
@@ -22,12 +23,13 @@ namespace SistemaGestaoTcc.API.Controllers
         private readonly IMediator _mediator;
         private readonly IProjectRepository _projectRepository;
         private readonly IEnvioImagemRepository _envioImagemRepository;
-
-        public ProjectsController(IMediator mediator, IProjectRepository projectRepository, IEnvioImagemRepository envioImagemRepository)
+        private readonly IProjetoArquivoService _projetoArquivoService;
+        public ProjectsController(IMediator mediator, IProjectRepository projectRepository, IEnvioImagemRepository envioImagemRepository, IProjetoArquivoService projetoArquivoService)
         {
             _mediator = mediator;
             _projectRepository = projectRepository;
             _envioImagemRepository = envioImagemRepository;
+            _projetoArquivoService = projetoArquivoService;
         }
 
         [HttpGet]
@@ -111,26 +113,16 @@ namespace SistemaGestaoTcc.API.Controllers
         {
             try
             {
-                var projeto = await _projectRepository.GetById(idProjeto);
-                if (projeto == null)
-                {
-                    return NotFound("Projeto não encontrado.");
-                }
-                if (file == null || file.Length == 0)
-                {
-                    return BadRequest("Nenhum arquivo enviado.");
-                }
-                string nomeArquivoBlob = $"Projeto-{idProjeto}-{Guid.NewGuid()}{Path.GetExtension(file.FileName)}";
-
-                await _envioImagemRepository.UploadImage(file, nomeArquivoBlob);
-
-                projeto.Imagem = nomeArquivoBlob;
-
-                await _projectRepository.SaveChangesAsync();
-
-                await _envioImagemRepository.SaveChangesAsync();
-
-                return Ok("Arquivo enviado com sucesso.");
+                await _projetoArquivoService.EnviarImagemProjeto(idProjeto, file);
+                return Ok("Imagem enviada com sucesso.");
+            }
+            catch (NotFoundException ex)
+            {
+                return NotFound(ex.Message);
+            }
+            catch (BadRequestException ex)
+            {
+                return BadRequest(ex.Message);
             }
             catch (Exception ex)
             {

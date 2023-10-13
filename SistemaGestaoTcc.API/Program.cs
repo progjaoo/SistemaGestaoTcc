@@ -9,6 +9,7 @@ using SistemaGestaoTcc.Application.Commands.Courses.CreateCourse;
 using SistemaGestaoTcc.Application.Commands.ProjectComment.CreateComment;
 using SistemaGestaoTcc.Application.Commands.Projects.CreateProject;
 using SistemaGestaoTcc.Application.Commands.Users.CreateUser;
+using SistemaGestaoTcc.Application.Services;
 using SistemaGestaoTcc.Core.Interfaces;
 using SistemaGestaoTcc.Core.Models;
 using SistemaGestaoTcc.Infrastructure.Authentication;
@@ -99,8 +100,10 @@ builder.Services.AddScoped<IConviteRepository, ConviteRepository>();
 builder.Services.AddScoped<IUsuarioProjetoRepository, UsuarioProjetoRepository>();
 builder.Services.AddScoped<INotaRepository, NotaRepository>();
 builder.Services.AddScoped<IAuthService, AuthService>();
-builder.Services.AddTransient<IProjetoArquivoRepository, ProjetoArquivoRepository>();
-builder.Services.AddTransient<IEnvioImagemRepository, EnvioImagemRepository>();
+builder.Services.AddScoped<IProjetoArquivoRepository, ProjetoArquivoRepository>();
+builder.Services.AddScoped<IEnvioImagemRepository, EnvioImagemRepository>();
+builder.Services.AddTransient<IProjetoArquivoService, ProjetoArquivoService>();
+builder.Services.AddScoped<IEmailService, EmailService>();
 
 
 builder.Services.AddHttpClient();

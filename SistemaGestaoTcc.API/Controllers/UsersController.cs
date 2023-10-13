@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using SendGrid.Helpers.Errors.Model;
 using SistemaGestaoTcc.Application.Commands.Users.CreateUser;
 using SistemaGestaoTcc.Application.Commands.Users.LoginUser;
 using SistemaGestaoTcc.Application.Commands.Users.UpdateUser;
@@ -21,12 +22,14 @@ namespace SistemaGestaoTcc.API.Controllers
         private readonly IMediator _mediator;
         private readonly IUserRepository _userRepository;
         private readonly IEnvioImagemRepository _envioImagemRepository;
+        private readonly IProjetoArquivoService _projetoArquivoService;
 
-        public UsersController(IMediator mediator, IUserRepository userRepository, IEnvioImagemRepository envioImagemRepository)
+        public UsersController(IMediator mediator, IUserRepository userRepository, IEnvioImagemRepository envioImagemRepository, IProjetoArquivoService projetoArquivoService)
         {
             _mediator = mediator;
             _userRepository = userRepository;
             _envioImagemRepository = envioImagemRepository;
+            _projetoArquivoService = projetoArquivoService;
         }
 
         [HttpGet("userByRole")]
@@ -114,25 +117,16 @@ namespace SistemaGestaoTcc.API.Controllers
         {
             try
             {
-                var usuario = await _userRepository.GetById(idUsuario);
-                if (usuario == null)
-                {
-                    return NotFound("Projeto não encontrado.");
-                }
-                if (file == null || file.Length == 0)
-                {
-                    return BadRequest("Nenhum arquivo enviado.");
-                }
-                string nomeArquivoBlob = $"Usuario-{idUsuario}-{Guid.NewGuid()}{Path.GetExtension(file.FileName)}";
-
-                await _envioImagemRepository.UploadImage(file, nomeArquivoBlob);
-                usuario.Imagem = nomeArquivoBlob;
-
-                await _userRepository.SaveChangesAsync();
-
-                await _envioImagemRepository.SaveChangesAsync();
-
-                return Ok("Arquivo enviado com sucesso.");
+                await _projetoArquivoService.EnviarImagemUsuario(idUsuario, file);
+                return Ok("Imagem enviada com sucesso.");
+            }
+            catch (NotFoundException ex)
+            {
+                return NotFound(ex.Message);
+            }
+            catch (BadRequestException ex)
+            {
+                return BadRequest(ex.Message);
             }
             catch (Exception ex)
             {

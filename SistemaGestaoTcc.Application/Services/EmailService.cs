@@ -1,11 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using SendGrid;
+﻿using SendGrid;
 using SendGrid.Helpers.Mail;
 using SistemaGestaoTcc.Application.Helpers;
+using SistemaGestaoTcc.Core.Interfaces;
 
 namespace SistemaGestaoTcc.Application.Services
 {
-    public class EmailService
+    public class EmailService : IEmailService
     {
 
         public async Task ConviteEmailAsync(EmailAddress paraEmail, string assunto, string linkEndereco, string conteudo, string botaoNome)

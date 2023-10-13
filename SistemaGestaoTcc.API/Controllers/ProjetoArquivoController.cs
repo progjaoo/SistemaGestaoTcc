@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using SendGrid.Helpers.Errors.Model;
 using SistemaGestaoTcc.Core.Interfaces;
 using SistemaGestaoTcc.Core.Models;
 
@@ -10,10 +11,12 @@ namespace SistemaGestaoTcc.API.Controllers
     {
         private readonly IProjetoArquivoRepository _projetoArquivoRepository;
         private readonly IProjectRepository _projectRepository;
-        public ProjetoArquivoController(IProjetoArquivoRepository projetoArquivoRepository, IProjectRepository projectRepository)
+        private readonly IProjetoArquivoService _projetoArquivoService;
+        public ProjetoArquivoController(IProjetoArquivoRepository projetoArquivoRepository, IProjectRepository projectRepository, IProjetoArquivoService projetoArquivoService)
         {
             _projetoArquivoRepository = projetoArquivoRepository;
             _projectRepository = projectRepository;
+            _projetoArquivoService = projetoArquivoService;
         }
 
         [HttpPost("enviarArquivos")]
@@ -21,31 +24,16 @@ namespace SistemaGestaoTcc.API.Controllers
         {
             try
             {
-                var projeto = await _projectRepository.GetById(idProjeto);
-                if (projeto == null)
-                {
-                    return NotFound("Projeto não encontrado.");
-                }
-                if (file == null || file.Length == 0)
-                {
-                    return BadRequest("Nenhum arquivo enviado.");
-                }
-                string nomeArquivoBlob = $"{idProjeto}-{Guid.NewGuid()}{Path.GetExtension(file.FileName)}";
-
-                await _projetoArquivoRepository.UploadArquivos(file, nomeArquivoBlob);
-
-                var projetoArquivo = new ProjetoArquivo
-                {
-                    IdProjeto = idProjeto,
-                    DiretorioArquivo = nomeArquivoBlob,
-                    CriadoEm = DateTime.Now
-                };
-
-                projeto.ProjetoArquivo.Add(projetoArquivo);
-
-                await _projetoArquivoRepository.SaveChangesAsync();
-
+                await _projetoArquivoService.EnviarArquivoParaProjeto(idProjeto, file);
                 return Ok("Arquivo enviado com sucesso.");
+            }
+            catch (NotFoundException ex)
+            {
+                return NotFound(ex.Message);
+            }
+            catch (BadRequestException ex)
+            {
+                return BadRequest(ex.Message);
             }
             catch (Exception ex)
             {
@@ -59,8 +47,6 @@ namespace SistemaGestaoTcc.API.Controllers
                 return BadRequest($"Ocorreu um erro ao enviar o arquivo: {ex.Message}");
             }
         }
-
-
         [HttpGet("listarArquivos")]
         public async Task<IActionResult> GetAllAsync()
         {
