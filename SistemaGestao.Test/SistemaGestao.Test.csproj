@@ -23,10 +23,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Application\Commands\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\SistemaGestaoTcc.Application\SistemaGestaoTcc.Application.csproj" />
     <ProjectReference Include="..\SistemaGestaoTcc.Core\SistemaGestaoTcc.Core.csproj" />
   </ItemGroup>
