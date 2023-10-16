@@ -17,7 +17,8 @@ namespace SistemaGestaoTcc.Application.Commands.Projects.CreateProject
         public async Task<int> Handle(CreateProjectCommand request, CancellationToken cancellationToken)
         {
             var project = new Projeto(request.IdCurso, request.Nome, request.Descricao);
-
+            
+            project.Start();
 
             await _projectRepository.AddASync(project);
             await _projectRepository.SaveChangesAsync();

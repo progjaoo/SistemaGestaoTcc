@@ -3,7 +3,6 @@ using SistemaGestaoTcc.Application.Commands.Projects.CreateProject;
 using SistemaGestaoTcc.Application.Commands.Users.CreateUser;
 using SistemaGestaoTcc.Core.Interfaces;
 using SistemaGestaoTcc.Core.Models;
-using SistemaGestaoTcc.Infrastructure.Repositories;
 
 namespace SistemaGestao.Test.Application.Commands
 {
