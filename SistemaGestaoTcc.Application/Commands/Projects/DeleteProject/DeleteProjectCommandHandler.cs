@@ -22,7 +22,7 @@ namespace SistemaGestaoTcc.Application.Commands.Projects.DeleteProject
         {
             var project = await _projectRepository.GetById(request.Id);
 
-            project.Cancel();
+            project.Cancel();           
 
             await _projectRepository.SaveChangesAsync();
 

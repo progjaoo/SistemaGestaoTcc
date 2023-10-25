@@ -83,6 +83,17 @@ namespace SistemaGestaoTcc.Infrastructure.Repositories
                 await sqlConnection.ExecuteAsync(script, new { estado = projeto.Estado, datainicio = projeto.DataInicio, projeto.Id });
             }
         }
+        public async Task Finalizar(int id)
+        {
+            var projeto = await _dbcontext.Projeto.FindAsync(id);
+
+            if (projeto != null)
+            {
+                projeto.Finish();
+
+                await _dbcontext.SaveChangesAsync();
+            }
+        }
         public async Task TornarPublico(int id)
         {
             var projeto = await _dbcontext.Projeto.FindAsync(id);

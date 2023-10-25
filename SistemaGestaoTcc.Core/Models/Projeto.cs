@@ -67,11 +67,22 @@ public partial class Projeto : BaseEntity
             Estado = StatusProjeto.InProgress;
         }
     }
+
+    public void Finish()
+    {
+        if (Estado == StatusProjeto.Created || Estado == StatusProjeto.InProgress)
+        {
+            Estado = StatusProjeto.Finished;
+        }
+    }
     public void Cancel()
     {
         if (Estado == StatusProjeto.Created || Estado == StatusProjeto.InProgress)
         {
             Estado = StatusProjeto.Canceled;
+        }
+        else if(Estado == StatusProjeto.Canceled){
+            Estado = StatusProjeto.InProgress;
         }
     }
 }
