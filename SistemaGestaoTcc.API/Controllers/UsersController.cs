@@ -96,9 +96,10 @@ namespace SistemaGestaoTcc.API.Controllers
             }
             return Ok(loginUserViewModel);
         }
-        [HttpPut("atualizarUsuario")]
+        [HttpPut("{id}/atualizarUsuario")]
         public async Task<IActionResult> UpdateUser(int id, [FromBody] UpdateUserCommand command)
         {
+            command.Id = id;
             await _mediator.Send(command);
 
             return NoContent();
