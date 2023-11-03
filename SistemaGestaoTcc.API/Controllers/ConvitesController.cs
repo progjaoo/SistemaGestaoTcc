@@ -38,6 +38,15 @@ namespace SistemaGestaoTcc.API.Controllers
 
             return Ok(convite);
         }
+        [HttpGet("ConvitesPorProjeto/{IdProjeto}")]
+        public async Task<IActionResult> GetAllByProjectIdAsync(int IdProjeto)
+        {
+            var getAllQuery = new GetAllConvitesQuery(IdProjeto);
+
+            var convite = await _mediator.Send(getAllQuery);
+
+            return Ok(convite);
+        }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
@@ -55,6 +64,15 @@ namespace SistemaGestaoTcc.API.Controllers
         [HttpPost("enviarConvite")]
         public async Task<IActionResult> EnviarConvite([FromBody] EnviarConviteCommand command)
         {
+            var getAllQuery = new GetAllConvitesQuery(command.IdUsuario);
+
+            var convites = await _mediator.Send(getAllQuery);
+
+            if(convites.SingleOrDefault(x => x.IdProjeto == command.IdProjeto) != null)
+            {
+                return BadRequest("Convite ja enviado para este projeto.");
+            }
+
             var project = await _projectRepository.GetById(command.IdProjeto);
             var user = await _userRepository.GetById(command.IdUsuario);
 
@@ -100,6 +118,7 @@ namespace SistemaGestaoTcc.API.Controllers
             {
                 UsuarioProjeto usuarioProjeto = new UsuarioProjeto(invite.IdProjeto, invite.IdUsuario);
                 await _usuarioProjetoRepository.AddASync(usuarioProjeto);
+                await _usuarioProjetoRepository.SaveChangesAsync();
             }
             return Ok("Convite respondido com suscesso!");
 

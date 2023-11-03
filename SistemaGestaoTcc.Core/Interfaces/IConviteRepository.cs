@@ -11,6 +11,7 @@ namespace SistemaGestaoTcc.Core.Interfaces
         Task<Convite> GetById(int id);
         Task<List<Convite>> GetAllAsync(string query);
         Task<List<Convite>> GetAllByUserId(int id);
+        Task<List<Convite>> GetAllByProjectId(int id);
         Task AddASync(Convite convite);
         Task SaveChangesAsync();
         Task DeleteConvite(int id);

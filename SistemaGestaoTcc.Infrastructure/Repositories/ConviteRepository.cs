@@ -38,6 +38,15 @@ namespace SistemaGestaoTcc.Infrastructure.Repositories
             .ToListAsync();
         }
 
+        public async Task<List<Convite>> GetAllByProjectId(int id)
+        {
+            return await _dbcontext.Convite
+            .Where(up => up.IdProjeto == id)
+            .Where(up => up.Aceito == Core.Enums.ConviteAceito.Pendente)
+            .Include(up => up.IdProjetoNavigation)
+            .ToListAsync();
+        }
+
         public async Task<Convite> GetById(int id)
         {
             return await _dbcontext.Convite.SingleOrDefaultAsync(p => p.Id == id);

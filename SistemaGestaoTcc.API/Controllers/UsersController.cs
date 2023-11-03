@@ -9,6 +9,7 @@ using SistemaGestaoTcc.Application.Queries.Users.GetAllUserByRole;
 using SistemaGestaoTcc.Application.Queries.Users.GetAllUsersByCourse;
 using SistemaGestaoTcc.Application.Queries.Users.GetUser;
 using SistemaGestaoTcc.Application.Queries.Users.GetUserByEmail;
+using SistemaGestaoTcc.Application.Queries.Users.FindUsers;
 using SistemaGestaoTcc.Core.Interfaces;
 using SistemaGestaoTcc.Core.Models;
 using SistemaGestaoTcc.Infrastructure.Repositories;
@@ -32,6 +33,17 @@ namespace SistemaGestaoTcc.API.Controllers
             _projetoArquivoService = projetoArquivoService;
         }
 
+        [HttpGet("findUsers")]
+        public async Task<IActionResult> FindUsers([FromQuery] FindUsersQuery query)
+        {
+            if(query.Papel != "Aluno" && query.Papel != "Professor")
+            {
+                return BadRequest("Papel inválido");
+            }
+            var listUsersRole = await _mediator.Send(query);
+
+            return Ok(listUsersRole);
+        }
         [HttpGet("userByRole")]
         public async Task<IActionResult> GetAllByRole(string papel)
         {
@@ -46,6 +58,15 @@ namespace SistemaGestaoTcc.API.Controllers
             var getAllByCourse = new GetAllByCourseQuery(id);
 
             var listUsers = await _mediator.Send(getAllByCourse);
+
+            return Ok(listUsers);
+        }
+        [HttpGet("userByProject")]
+        public async Task<IActionResult> GetAllUserByProject(int id)
+        {
+            var getAllByProject = new GetAllByProjectQuery(id);
+
+            var listUsers = await _mediator.Send(getAllByProject);
 
             return Ok(listUsers);
         }

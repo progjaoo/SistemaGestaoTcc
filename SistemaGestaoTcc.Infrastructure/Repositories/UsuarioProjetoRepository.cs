@@ -32,9 +32,13 @@ namespace SistemaGestaoTcc.Infrastructure.Repositories
             return await _dbcontext.UsuarioProjeto.Where(up => up.IdUsuario == id).ToListAsync();
         }
 
-        public async Task<List<UsuarioProjeto>> GetAllByProjectId(int id)
+        public async Task<List<Usuario>> GetAllByProjectId(int id)
         {
-            return await _dbcontext.UsuarioProjeto.Where(up => up.IdProjeto == id).ToListAsync();
+            var listUserProject = await _dbcontext.UsuarioProjeto.Where(up => up.IdProjeto == id).Select(up => up.IdUsuario).ToListAsync();
+
+            return await _dbcontext.Usuario
+            .Where(p => listUserProject.Contains(p.Id))
+            .ToListAsync();
         }
 
         public async Task<UsuarioProjeto> GetById(int id)
